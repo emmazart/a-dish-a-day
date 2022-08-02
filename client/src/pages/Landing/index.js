@@ -10,8 +10,8 @@ function Landing() {
                 <header>
                     <h1>A Dish A Day / Header component coming soon</h1>
                 </header>
-                <h1>For independent recipe developers & home chefs</h1>
-                <Button></Button>
+                <h1>for independent recipe writers <br /> & home chefs</h1>
+                <Button variant='contained' href=''>Login or Signup</Button>
             </Paper>
         </Container>
 
