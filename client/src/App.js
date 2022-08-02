@@ -1,9 +1,12 @@
 import './App.css';
+import { UserProvider } from './utils/GlobalState';
 import Landing from '../src/pages/Landing';
 
 function App() {
   return (
-    <Landing className="landing-page"></Landing>
+    <UserProvider>
+      <Landing className="landing-page"></Landing>
+    </UserProvider>
   );
 }
 
