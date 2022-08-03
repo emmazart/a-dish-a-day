@@ -73,10 +73,11 @@ const ResponsiveAppBar = () => {
     return (
         <AppBar
             position="fixed"
+            elevation={0}
             style={{
-                backgroundColor: "black",
+                backgroundColor: "transparent",
                 color: "red",
-                boxShadow: "0px 0px 0px 0px"
+                
             }}>
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
