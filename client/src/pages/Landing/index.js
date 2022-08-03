@@ -1,5 +1,8 @@
 import React from 'react';
-import { Container, Paper, Button } from '@mui/material';
+import { Link } from 'react-router-dom';
+import Paper from '@mui/material/Paper';
+import Button from '@mui/material/Button';
+
 import Header from '../../components/Header';
 
 function Landing() {
@@ -9,7 +12,10 @@ function Landing() {
             <Paper className='landing-hero' elevation={3}>
                 <Header></Header>
                 <h1>for independent recipe writers <br /> & home chefs</h1>
-                <Button variant='contained' href=''>Login or Signup</Button>
+                <Link to="/login">
+                    <Button variant='contained'>Login</Button>
+                </Link>
+                <Link to="/signup">Don't have an account? Sign Up</Link>
             </Paper>
         </section>
 
