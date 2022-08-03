@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Paper, Button } from '@mui/material';
+import { Paper, Button } from '@mui/material';
 import Header from '../../components/Header';
 
 function Landing() {
