@@ -11,6 +11,7 @@
 // export default Navigation;
 
 import React from "react";
+import './nav.style.css';
 
 function Navigation(props) {
   const tabs = ["Login", "Protein Search", "View All Recipes", "About"];
