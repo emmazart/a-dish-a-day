@@ -1,9 +1,10 @@
+const { Tag} = require("../models");
 const resolvers = {
     Query: {
-      helloWorld: () => {
-        return 'Hello world!';
+      tags: async () => {
+        return Tag.find();
       }
     }
   };
 
-  module.exports =resolvers;
+  module.exports = resolvers;

@@ -6,6 +6,10 @@ const typeDefs = gql`
     type Query {
         helloWorld: String
     }
+    
+    type Tag {
+        tagName: String
+    }
 `;
 
 
