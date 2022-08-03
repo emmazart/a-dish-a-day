@@ -2,16 +2,18 @@
 const { gql } = require('apollo-server-express');
 
 // create our typeDefs
+//QUESTION: tags are associated with recipes, but they must be queried. If only ever referenced through an individual recipe, how access tags by themselves (for selections ie buttons)?
 const typeDefs = gql`
     type Query {
         helloWorld: String
     }
     
-    type Tag {
-        tagName: String
-    }
+    
 `;
-
+/*
+type Tag {
+        tagName: String
+    }*/
 
 // export the typeDefs
 module.exports = typeDefs;

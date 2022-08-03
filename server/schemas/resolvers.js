@@ -1,10 +1,14 @@
-const { Tag} = require("../models");
+const { tagSchema} = require("../models");
 const resolvers = {
     Query: {
-      helloWorld: () => {
-        return 'Hello world!';
-      }
+      
     }
   };
 
   module.exports = resolvers;
+
+  /*
+  tags: async () => {
+        return tagSchema.find();
+      }
+      */
