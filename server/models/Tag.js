@@ -27,5 +27,4 @@ const tagSchema = new Schema(
     }
 );
 
-const Tag = model('Tag', tagSchema);
-module.exports('Tag');
+module.exports('tagSchema');
