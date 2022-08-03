@@ -1,6 +1,6 @@
 const { Schema, model } = require('mongoose');
 //const { Tag } = require('../schemas/resolvers');
-const {tagSchema} = import('./Tag');
+const {tagSchema} = require('./Tag');
 
 
 //ALL FIELD NAMES WILL BE SINGULAR
