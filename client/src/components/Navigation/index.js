@@ -47,7 +47,7 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
-import { yellow } from '@mui/material/colors';
+import { color } from '@mui/system';
 
 const pages = ['Protein Search', 'View Recipes', 'About'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
@@ -94,7 +94,7 @@ const ResponsiveAppBar = () => {
                             fontFamily: 'monospace',
                             fontWeight: 700,
                             letterSpacing: '.3rem',
-                            color: 'inherit',
+                            color: 'blue',
                             textDecoration: 'none',
                         }}
                     >
@@ -137,7 +137,7 @@ const ResponsiveAppBar = () => {
                             ))}
                         </Menu>
                     </Box>
-                    <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+                    {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
                     <Typography
                         variant="h5"
                         noWrap
@@ -155,13 +155,13 @@ const ResponsiveAppBar = () => {
                         }}
                     >
                         LOGO
-                    </Typography>
+                    </Typography> */}
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         {pages.map((page) => (
                             <Button
                                 key={page}
                                 onClick={handleCloseNavMenu}
-                                sx={{ my: 3, color: 'white', display: 'block' }}
+                                sx={{ my: 3, color: 'orange', display: 'block' }}
                             >
                                 {page}
                             </Button>
@@ -174,7 +174,7 @@ const ResponsiveAppBar = () => {
                                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg"
                                 style={{
                                     color: 'red',
-                                    backgroundColor: 'yellow'
+                                    backgroundColor: 'yellow',
 
                                 }} />
                             </IconButton>
@@ -198,7 +198,7 @@ const ResponsiveAppBar = () => {
                             {settings.map((setting) => (
                                 <MenuItem key={setting} onClick={handleCloseUserMenu}
                                 style={{
-                                    backgroundColor: 'black'
+                                    backgroundColor: 'blue'
                                 }}>
                                     <Typography textAlign="center">{setting}</Typography>
                                 </MenuItem>
