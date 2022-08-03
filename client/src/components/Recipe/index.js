@@ -57,7 +57,7 @@ export default function RecipeCard({recipe}) {
       <CardMedia
         component="img"
         height="194"
-        image="/static/images/cards/paella.jpg"
+        image={recipe.image}
         alt="Paella dish"
       />
       <CardContent>
@@ -88,7 +88,7 @@ export default function RecipeCard({recipe}) {
           <Typography>Instructons:</Typography>
           <Typography paragraph>{recipe.instructions}</Typography>
           <Typography>
-           `Submitted by {Author}`
+           `Submitted by {recipe.author}`
           </Typography>
             <Rating/>
         </CardContent>
