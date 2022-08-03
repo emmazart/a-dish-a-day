@@ -20,25 +20,18 @@ const userSchema = new Schema(
       required: true,
       minlength: 5
     },
-    favorites: [
+    favorite: [
       {
         type: Schema.Types.ObjectId,
         ref: 'Recipe'
       }
     ],
-    tags: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: 'Tags'
-      }
-    ]
-  },
   {
     toJSON: {
       virtuals: true
     }
   }
-);
+});
 
 // set up pre-save middleware to create password
 userSchema.pre('save', async function(next) {
