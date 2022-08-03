@@ -1,26 +1,21 @@
 import React from 'react';
-import { Paper, Button } from '@mui/material';
+import { Link } from 'react-router-dom';
+import Paper from '@mui/material/Paper';
+import Button from '@mui/material/Button';
+
 import Header from '../../components/Header';
 
 function Landing() {
-
-    function handleLogin() {
-        // route to SignInOrSignUp page
-        // render Login form
-    }
-
-    function handleSignup() {
-        // route to SignInOrSignUp page
-        // render Sign up form
-    }
 
     return(
         <section className='landing-container'>
             <Paper className='landing-hero' elevation={3}>
                 <Header></Header>
                 <h1>for independent recipe writers <br /> & home chefs</h1>
-                <Button variant='contained' onClick={handleLogin}>Login</Button>
-                <p onClick={handleSignup}><a>Don't have an account? Sign Up</a></p>
+                <Link to="/login">
+                    <Button variant='contained'>Login</Button>
+                </Link>
+                <Link to="/signup">Don't have an account? Sign Up</Link>
             </Paper>
         </section>
 
