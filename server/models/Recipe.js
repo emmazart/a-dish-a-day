@@ -1,6 +1,6 @@
 const { Schema, model } = require('mongoose');
 //const { Tag } = require('../schemas/resolvers');
-const {tagSchema} = require('./Tag');
+const tagSchema = require('./Tag');
 
 
 //ALL FIELD NAMES WILL BE SINGULAR
@@ -49,4 +49,5 @@ const recipeSchema = new Schema(
 
 
 const Recipe = model('Recipe', recipeSchema); 
-module.exports('Recipe');
+
+module.exports = Recipe;
