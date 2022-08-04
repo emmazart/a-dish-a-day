@@ -40,6 +40,7 @@ export default function RecipeCard({recipe}) {
     setExpanded(!expanded);
   };
   return (
+    <>
     <Card className='card' sx={{ maxWidth: 345 }}>
       <CardHeader
         // avatar={
@@ -94,5 +95,6 @@ export default function RecipeCard({recipe}) {
         </CardContent>
       </Collapse>
     </Card>
+    </>
   );
 }
