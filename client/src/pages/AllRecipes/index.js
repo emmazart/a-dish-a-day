@@ -1,5 +1,5 @@
 import RecipeCard from "../../components/Recipe";
-import React from 'react'
+import React, {useState} from 'react'
 // import * as React from 'react';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
@@ -8,15 +8,13 @@ import Select, { SelectChangeEvent } from '@mui/material/Select';
 import Button from '@mui/material/Button';
 
 
-
-
-export default function recipeSearch() {
-    const [search, setSearch] = React.useState<string | number>('');
-    const [open, setOpen] = React.useState(false);
+export default function RecipeSearch() {
+    const [search, setSearch] = useState('');
+    const [open, setOpen] = useState(false);
   
-    // const handleChange = (event: SelectChangeEvent<typeof search>) => {
-    //   setAge(event.target.value);
-    // };
+    const handleChange = (event: SelectChangeEvent<typeof search>) => {
+      setSearch(event.target.value);
+    };
   
     const handleClose = () => {
       setOpen(false);
@@ -29,7 +27,7 @@ export default function recipeSearch() {
     return (
       <div>
         <Button sx={{ display: 'block', mt: 2 }} onClick={handleOpen}>
-          Open the select
+          Filter Recipes
         </Button>
         <FormControl sx={{ m: 1, minWidth: 120 }}>
           <InputLabel id="demo-controlled-open-select-label">Search</InputLabel>
@@ -39,8 +37,8 @@ export default function recipeSearch() {
             open={open}
             onClose={handleClose}
             onOpen={handleOpen}
-            value={age}
-            label="Age"
+            value={search}
+            label="Search"
             onChange={handleChange}
           >
             <MenuItem value="">
@@ -53,6 +51,7 @@ export default function recipeSearch() {
             <MenuItem value={30}>Vegetarian</MenuItem>
           </Select>
         </FormControl>
+        <RecipeCard/>
       </div>
     );
   }
@@ -76,9 +75,9 @@ export default function recipeSearch() {
 
 
 
-const index = () => {
+// const index = () => {
 
-    const [recipes, setRecipes] = React.useState([]);
+//     const [recipes, setRecipes] = React.useState([]);
     //const recipes = [
     //    {title, ingredients, instructions, author, imageSrc}
     //];
@@ -95,12 +94,12 @@ const index = () => {
 
 
 
-  return (
-    recipes.map((recipe, index) => {
-        <RecipeCard recipe={recipe} key={index} />
-    }
+//   return (
+//     recipes.map((recipe, index) => {
+//         <RecipeCard recipe={recipe} key={index} />
+//     }
     
-  )
-)}
+//   )
+// )}
 
 // export default index
