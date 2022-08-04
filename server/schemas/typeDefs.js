@@ -9,6 +9,7 @@ const typeDefs = gql`
     type Query {
         tags: [Tag]
         users: [User]
+        recipe: [Recipe]
     }
 
 
@@ -22,6 +23,13 @@ const typeDefs = gql`
         password: String
     }
     
+    type Recipe {
+        recipeTitle: String
+        img: String
+        description: String
+        author: String
+      
+    }
     
 `;
 // export the typeDefs
