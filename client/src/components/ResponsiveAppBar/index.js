@@ -49,6 +49,7 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 // import AdbIcon from '@mui/icons-material/Adb';
 // import { color } from '@mui/system';
+import styles from './nav.module.css';
 
 const pages = [
     { name: "Protein Search", link: "/recipes"}, 
@@ -95,7 +96,7 @@ const ResponsiveAppBar = () => {
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
-                    <Link to="/login">
+                    <Link to="/login" className={styles.title}>
                         <Typography
                             variant="h6"
                             noWrap
@@ -145,7 +146,7 @@ const ResponsiveAppBar = () => {
                             }}
                         >
                             {pages.map((page) => (
-                                    <MenuItem key={page.name} onClick={handleCloseNavMenu}>
+                                    <MenuItem key={page.name} className={styles.dropdown} onClick={handleCloseNavMenu}>
                                             <Typography textAlign="center">{page.name}</Typography>
                                     </MenuItem>
                             ))}
@@ -206,10 +207,8 @@ const ResponsiveAppBar = () => {
                             onClose={handleCloseUserMenu}
                         >
                             {settings.map((setting) => (
-                                <MenuItem key={setting.name} component={Link} to={setting.link} onClick={handleCloseUserMenu}
-                                style={{
-                                    backgroundColor: 'white'
-                                }}>
+                                <MenuItem className={styles.dropdown} key={setting.name} component={Link} to={setting.link} onClick={handleCloseUserMenu}
+                                >
                                     <Typography textAlign="center">{setting.name}</Typography>
                                 </MenuItem>
                             ))}

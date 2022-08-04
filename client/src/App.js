@@ -7,6 +7,7 @@ import SignUp from '../src/components/SignUp';
 import About from './pages/About';
 import NoMatch from '../src/pages/NoMatch';
 import Dashboard from './pages/Dashboard';
+import RecipeSearch from './pages/AllRecipes';
 
 function App() {
   return (
@@ -32,6 +33,10 @@ function App() {
           <Route 
             path="/dashboard"
             element={<Dashboard />}
+          />
+          <Route 
+            path="/recipes"
+            element={<RecipeSearch />}
           />
           <Route 
             path="*"

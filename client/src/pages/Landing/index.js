@@ -16,7 +16,7 @@ function Landing() {
                 <Link to="/login">
                     <Button variant='contained'>Login</Button>
                 </Link>
-                <Link to="/signup">Don't have an account? Sign Up</Link>
+                <Link to="/signup" className={styles.signup}>Don't have an account? Sign Up</Link>
             </Paper>
         </section>
 
