@@ -51,9 +51,9 @@ import AdbIcon from '@mui/icons-material/Adb';
 import { color } from '@mui/system';
 
 // const pages = [
-//     { name: 'Protein Search', link: '/'}, 
-//     { name: 'View Recipes', link: '/recipes'}, 
-//     { name: 'About', link: '/about'}, 
+//     { name: "Protein Search", link: "/"}, 
+//     { name: "View Recipes", link: "/recipes"}, 
+//     { name: "About", link: "/about"}, 
 // ];
 const pages = ['Protein Search', 'View Recipes', 'About'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
