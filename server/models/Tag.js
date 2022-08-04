@@ -1,4 +1,4 @@
-const { Schema, model } = require('mongoose');
+const { Schema } = require('mongoose');
 
 
 //ALL FIELD NAMES WILL BE SINGULAR
@@ -16,15 +16,15 @@ const tagSchema = new Schema(
         tagName: { //TO BE SEPERATED BY COMMA
             type: String,
             unique: true,
-            required: true            
+            required: true
         }
 
     },
     {
         toJSON: {
-            virtuals: true//reminder virutals are like pseudofields
+            getters: true//reminder virutals are like pseudofields
         }
     }
 );
-
-module.exports('tagSchema');
+//ping
+module.exports = tagSchema;
