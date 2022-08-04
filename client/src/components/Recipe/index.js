@@ -60,8 +60,8 @@ export default function RecipeCard({recipe}) {
       <CardMedia
         component="img"
         height="194"
-        image={recipe.image}
-        alt="Paella dish"
+        image={recipe.image.src}
+        alt={recipe.image.alt}
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary">

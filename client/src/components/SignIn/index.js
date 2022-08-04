@@ -1,4 +1,5 @@
 // template from MUI getting started templates
+import RecipeSearch from '../../pages/AllRecipes'
 import * as React from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
@@ -92,6 +93,7 @@ export default function SignIn() {
           </Box>
         </Box>
         <Copyright sx={{ mt: 8, mb: 4 }} />
+        <RecipeSearch/>
       </Container>
     </ThemeProvider>
   );

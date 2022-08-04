@@ -1,5 +1,5 @@
 import RecipeCard from "../../components/Recipe";
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 // import * as React from 'react';
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
@@ -9,8 +9,30 @@ import Button from '@mui/material/Button';
 
 
 export default function RecipeSearch() {
-    const [search, setSearch] = useState('');
+    const [recipes, setRecipes] = useState([
+      {title:"the title", ingredients: "ingredients", instructions: "instructions", author: "author", image:{src:"broken/image/link.jpg", alt:"broken iamge text"}}
+    ]);
+    const [filteredRecipes, setFilteredRecipes] = useState([]);
+    const [search, setSearch] = useState('all');
     const [open, setOpen] = useState(false);
+
+    useEffect(() => {
+      setRecipes(recipes)
+      setFilteredRecipes(recipes)
+    }, [recipes])
+    
+
+    useEffect(() => {
+      let r = recipes;
+      if (search !== "all") {
+        r = recipes.filter(recipe => {
+          return recipe.tag === search
+        })
+      }
+      setFilteredRecipes(r)
+      
+    }, [search])
+
   
     const handleChange = (event: SelectChangeEvent<typeof search>) => {
       setSearch(event.target.value);
@@ -41,65 +63,20 @@ export default function RecipeSearch() {
             label="Search"
             onChange={handleChange}
           >
-            <MenuItem value="">
-              <em>All</em>
-            </MenuItem>
-            <MenuItem value={10}>Chicken</MenuItem>
-            <MenuItem value={20}>Seafood</MenuItem>
-            <MenuItem value={30}>Beef</MenuItem>
-            <MenuItem value={30}>Pork</MenuItem>
-            <MenuItem value={30}>Vegetarian</MenuItem>
+            <MenuItem value='all'>All</MenuItem>
+            <MenuItem value='chicken'>Chicken</MenuItem>
+            <MenuItem value='seafood'>Seafood</MenuItem>
+            <MenuItem value='beef'>Beef</MenuItem>
+            <MenuItem value='pork'>Pork</MenuItem>
+            <MenuItem value='vegetarian'>Vegetarian</MenuItem>
           </Select>
         </FormControl>
-        <RecipeCard/>
+
+        {filteredRecipes.map((recipe, index) => {
+          return <RecipeCard recipe={recipe} key={index} />
+        })}
+
       </div>
     );
   }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const index = () => {
-
-//     const [recipes, setRecipes] = React.useState([]);
-    //const recipes = [
-    //    {title, ingredients, instructions, author, imageSrc}
-    //];
-    // Function to fetch data from graphql
-    // use setRecipes to set the returned data
-
-
-
-
-
-
-    // function to search
-    // when someone types in the form, filter the recipes and set them
-
-
-
-//   return (
-//     recipes.map((recipe, index) => {
-//         <RecipeCard recipe={recipe} key={index} />
-//     }
-    
-//   )
-// )}
-
-// export default index
