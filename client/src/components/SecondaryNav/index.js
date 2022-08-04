@@ -13,7 +13,7 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 // import AdbIcon from '@mui/icons-material/Adb';
-// import { color } from '@mui/system';
+import { color } from '@mui/system';
 
 const pages = [
     { name: "Protein Search", link: "/recipes"}, 
@@ -71,8 +71,8 @@ const SecondaryNav = () => {
                                 fontFamily: 'monospace',
                                 fontWeight: 700,
                                 letterSpacing: '.3rem',
-                                color: 'blue',
-                                textDecoration: 'none',
+                                color: 'black',
+                                textDecoration: 'none'
                             }}
                         >
                             A Dish A Day
@@ -140,7 +140,7 @@ const SecondaryNav = () => {
                                 key={page.name}
                                 component={Link} to={page.link}
                                 onClick={handleCloseNavMenu}
-                                sx={{ my: 3, color: 'white', display: 'block' }}
+                                sx={{ my: 3, color: 'black', display: 'block' }}
                             >
                                 {page.name}
                             </Button>
@@ -150,9 +150,9 @@ const SecondaryNav = () => {
                     <Box sx={{ flexGrow: 0 }}>
                         <Tooltip title="Open settings">
                             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg"
+                                <MenuIcon alt="Remy Sharp" src="/static/images/avatar/2.jpg"
                                 style={{
-                                    color: 'white',
+                                    color: 'black',
                                     backgroundColor: 'black',
 
                                 }} />
