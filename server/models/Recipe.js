@@ -21,7 +21,6 @@ const recipeSchema = new Schema(
         },
         author: {
             type: String,
-            required: true,
             minlength: 1
         },
         img: {
@@ -32,11 +31,11 @@ const recipeSchema = new Schema(
             //1 clobe of garlic
             //2 glasses of milk
             type: Array,
-            required: true
+          
         },
         preperationStep: { //contains actual cooking instructions
             type: Array, //retrieve steps and auto increment step count ie 1. 1 clobe of garlic, 2. 2 glasses of milk
-            required: true,
+            
             trim: true
         },
         tag: [
