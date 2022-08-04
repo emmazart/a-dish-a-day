@@ -3,14 +3,14 @@ import { Link } from 'react-router-dom';
 import Paper from '@mui/material/Paper';
 import Button from '@mui/material/Button';
 
-import Header from '../../components/Header';
+import ResponsiveAppBar from '../../components/ResponsiveAppBar';
 
 function Landing() {
 
     return(
         <section className='landing-container'>
             <Paper className='landing-hero' elevation={3}>
-                <Header></Header>
+                <ResponsiveAppBar></ResponsiveAppBar>
                 <h1>for independent recipe writers <br /> & home chefs</h1>
                 <Link to="/login">
                     <Button variant='contained'>Login</Button>
