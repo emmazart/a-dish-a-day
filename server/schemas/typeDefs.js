@@ -8,11 +8,18 @@ const { gql } = require('apollo-server-express');
 const typeDefs = gql`
     type Query {
         tags: [Tag]
+        users: [User]
     }
 
 
     type Tag {
         tagName: String
+    }
+
+    type User {
+        username: String
+        email: String
+        password: String
     }
     
     
