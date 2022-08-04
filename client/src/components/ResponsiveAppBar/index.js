@@ -50,6 +50,7 @@ const ResponsiveAppBar = () => {
     
 
     return (
+        <div className={styles.appbar}>
         <AppBar
             position="fixed"
             elevation={0}
@@ -182,6 +183,7 @@ const ResponsiveAppBar = () => {
                 </Toolbar>
             </Container>
         </AppBar>
+        </div>
     );
 };
 

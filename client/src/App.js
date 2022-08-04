@@ -16,7 +16,7 @@ function App() {
         <Routes>
           <Route
             path="/"
-            element={<Landing className="landing-page" />}
+            element={<Landing />}
           />
           <Route 
             path="/login"
