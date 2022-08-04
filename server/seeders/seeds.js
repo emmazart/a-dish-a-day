@@ -1,7 +1,7 @@
 //const faker = require('faker');
 const userSeeds = require('./userSeeds.json');
 const tagSeeds = require('./tagSeeds.json');
-const Recipe =require('./recipe.jason')
+const recipeSeeds =require('./recipeSeeds.json')
 const db = require('../config/connection');
 const { Recipe, User, Tag } = require('../models');
 
@@ -17,7 +17,7 @@ db.once('open', async () => {
 
         await Recipe.deleteMany({});
     
-        await Recipe.create(tagSeeds);
+        await Recipe.create(recipeSeeds);
     
         
       } catch (err) {

@@ -26,10 +26,10 @@ const typeDefs = gql`
     
     type Recipe {
         recipeTitle: String
-        img: String
         description: String
         author: String
-      
+        img: String
+        
     }
     
 `;
