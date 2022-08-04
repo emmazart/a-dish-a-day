@@ -7,7 +7,7 @@ const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
     type Query {
-        tags: Tag
+        tags: [Tag]
     }
 
 
