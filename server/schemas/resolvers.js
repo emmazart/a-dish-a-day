@@ -1,4 +1,4 @@
-const { User, Recipe } = require("../models");
+const { Tag, Recipe } = require("../models");
 
 const { AuthenticationError } = require('apollo-server-express');
 
@@ -7,14 +7,11 @@ const { AuthenticationError } = require('apollo-server-express');
 
 const resolvers = {
     Query: {
+      tags: async () => {
+        return Tag.find();
+      }
       
     }
   };
 
   module.exports = resolvers;
-
-  /*
-  tags: async () => {
-        return tagSchema.find();
-      }
-      */
