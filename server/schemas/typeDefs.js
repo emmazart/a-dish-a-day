@@ -8,6 +8,7 @@ const { gql } = require('apollo-server-express');
 const typeDefs = gql`
     type Query {
         tags: [Tag]
+        tag(tagName: String!): Tag
         users: [User]
         recipe: [Recipe]
     }

@@ -10,6 +10,9 @@ const resolvers = {
       tags: async () => {
         return Tag.find();
       },
+      tag: async (parent, {tagName}) => {
+        return Tag.findOne({tagName});
+      },
       users: async () => {
         return User.find();
       },
