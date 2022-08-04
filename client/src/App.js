@@ -4,7 +4,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Landing from '../src/pages/Landing';
 import SignIn from '../src/components/SignIn';
 import SignUp from '../src/components/SignUp';
+import About from './pages/About';
 import NoMatch from '../src/pages/NoMatch';
+import Dashboard from './pages/Dashboard';
 
 function App() {
   return (
@@ -20,8 +22,16 @@ function App() {
             element={<SignIn />}
           />
           <Route 
-            path="signup"
+            path="/signup"
             element={<SignUp />}
+          />
+          <Route 
+            path="/about"
+            element={<About />}
+          />
+          <Route 
+            path="/dashboard"
+            element={<Dashboard />}
           />
           <Route 
             path="*"
