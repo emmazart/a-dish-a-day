@@ -6,6 +6,7 @@ import SignIn from '../src/components/SignIn';
 import SignUp from '../src/components/SignUp';
 import About from './pages/About';
 import NoMatch from '../src/pages/NoMatch';
+import Dashboard from './pages/Dashboard';
 
 function App() {
   return (
@@ -27,6 +28,10 @@ function App() {
           <Route 
             path="/about"
             element={<About />}
+          />
+          <Route 
+            path="/dashboard"
+            element={<Dashboard />}
           />
           <Route 
             path="*"
