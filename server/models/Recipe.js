@@ -24,6 +24,9 @@ const recipeSchema = new Schema(
             required: true,
             minlength: 1
         },
+        img: {
+            type: String
+        },
         ingredient: { 
             //WHEN PARSING INTO ARRAY, SPLIT BY COMMA i.e 1 clobe of garlic, 2 glasses of milk -> 
             //1 clobe of garlic

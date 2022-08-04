@@ -16,7 +16,7 @@ const tagSchema = new Schema(
         tagName: { //TO BE SEPERATED BY COMMA
             type: String,
             unique: true,
-            required: true            
+            required: true
         }
 
     },
@@ -26,5 +26,5 @@ const tagSchema = new Schema(
         }
     }
 );
-
+//ping
 module.exports = tagSchema;
