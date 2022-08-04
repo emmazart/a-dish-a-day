@@ -1,18 +1,15 @@
 /* Navigation Component Styling */
 
-* {
+.appbar > * {
     color: white;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 /* HAMBURGER MENU ITEM STYLES */
 .dropdown > p {
     color: black;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 /* A DISH A DAY STYLES */
-.title > span {
+.title > span, path {
     color: white;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }

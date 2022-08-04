@@ -19,6 +19,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 // import MoreVertIcon from '@mui/icons-material/MoreVert';
 import Rating from '@mui/material/Rating';
 import Ratings from '../Rating';
+import recipeStyles from './recipe.module.css';
 
 interface ExpandMoreProps extends IconButtonProps {
   expand: boolean;
