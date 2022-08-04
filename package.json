@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/MNlegion/A-Dish-A-Day#readme",
   "dependencies": {
+    "@material-ui/styles": "^4.11.5",
     "@mui/icons-material": "^5.8.4",
     "concurrently": "^7.3.0"
   }
