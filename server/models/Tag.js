@@ -1,4 +1,4 @@
-const { Schema } = require('mongoose');
+const { Schema, model } = require('mongoose');
 
 
 //ALL FIELD NAMES WILL BE SINGULAR
@@ -27,4 +27,5 @@ const tagSchema = new Schema(
     }
 );
 //ping
-module.exports = tagSchema;
+const Tag = model('Tag', tagSchema);
+module.exports = Tag;
