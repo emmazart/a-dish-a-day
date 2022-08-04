@@ -47,15 +47,16 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
+import { Fragment } from 'react';
 import AdbIcon from '@mui/icons-material/Adb';
 import { color } from '@mui/system';
 
-// const pages = [
-//     { name: "Protein Search", link: "/"}, 
-//     { name: "View Recipes", link: "/recipes"}, 
-//     { name: "About", link: "/about"}, 
-// ];
-const pages = ['Protein Search', 'View Recipes', 'About'];
+const pages = [
+    { name: "Protein Search", link: "/"}, 
+    { name: "View Recipes", link: "/recipes"}, 
+    { name: "About", link: "/about"}, 
+];
+// const pages = ['Protein Search', 'View Recipes', 'About'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const ResponsiveAppBar = () => {
@@ -77,6 +78,8 @@ const ResponsiveAppBar = () => {
         setAnchorElUser(null);
     };
 
+    
+
     return (
         <AppBar
             position="fixed"
@@ -93,7 +96,7 @@ const ResponsiveAppBar = () => {
                         <Typography
                             variant="h6"
                             noWrap
-                            component="a"
+                            component="span"
                             href="/"
                             sx={{
                                 mr: 2,
@@ -139,9 +142,9 @@ const ResponsiveAppBar = () => {
                             }}
                         >
                             {pages.map((page) => (
-                                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                        <Typography textAlign="center">{page}</Typography>
-                                </MenuItem>
+                                    <MenuItem key={page.name} onClick={handleCloseNavMenu}>
+                                            <Typography textAlign="center">{page.name}</Typography>
+                                    </MenuItem>
                             ))}
                         </Menu>
                     </Box>
@@ -167,11 +170,11 @@ const ResponsiveAppBar = () => {
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         {pages.map((page) => (
                             <Button
-                                key={page}
+                                key={page.name}
                                 onClick={handleCloseNavMenu}
                                 sx={{ my: 3, color: 'white', display: 'block' }}
                             >
-                                {page}
+                                {page.name}
                             </Button>
                         ))}
                     </Box>
