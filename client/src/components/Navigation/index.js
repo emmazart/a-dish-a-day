@@ -47,17 +47,20 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import { Fragment } from 'react';
-import AdbIcon from '@mui/icons-material/Adb';
-import { color } from '@mui/system';
+// import AdbIcon from '@mui/icons-material/Adb';
+// import { color } from '@mui/system';
 
 const pages = [
-    { name: "Protein Search", link: "/"}, 
+    { name: "Protein Search", link: "/recipes"}, 
     { name: "View Recipes", link: "/recipes"}, 
     { name: "About", link: "/about"}, 
 ];
-// const pages = ['Protein Search', 'View Recipes', 'About'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const settings = [
+    { name: 'Profile', link: "/profile"},
+    { name: 'Account', link: "/account"},
+    { name: 'Dashboard', link: "/dashboard"},
+    { name: 'Logout', link: "/"},
+];
 
 const ResponsiveAppBar = () => {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -92,7 +95,7 @@ const ResponsiveAppBar = () => {
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
-                    <Link to="/">
+                    <Link to="/login">
                         <Typography
                             variant="h6"
                             noWrap
@@ -171,6 +174,7 @@ const ResponsiveAppBar = () => {
                         {pages.map((page) => (
                             <Button
                                 key={page.name}
+                                component={Link} to={page.link}
                                 onClick={handleCloseNavMenu}
                                 sx={{ my: 3, color: 'white', display: 'block' }}
                             >
@@ -207,11 +211,11 @@ const ResponsiveAppBar = () => {
                             onClose={handleCloseUserMenu}
                         >
                             {settings.map((setting) => (
-                                <MenuItem key={setting} onClick={handleCloseUserMenu}
+                                <MenuItem key={setting.name} component={Link} to={setting.link} onClick={handleCloseUserMenu}
                                 style={{
                                     backgroundColor: 'white'
                                 }}>
-                                    <Typography textAlign="center">{setting}</Typography>
+                                    <Typography textAlign="center">{setting.name}</Typography>
                                 </MenuItem>
                             ))}
                         </Menu>
