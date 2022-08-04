@@ -94,7 +94,7 @@ const ResponsiveAppBar = () => {
                             fontFamily: 'monospace',
                             fontWeight: 700,
                             letterSpacing: '.3rem',
-                            color: 'blue',
+                            color: 'black',
                             textDecoration: 'none',
                         }}
                     >
@@ -161,7 +161,7 @@ const ResponsiveAppBar = () => {
                             <Button
                                 key={page}
                                 onClick={handleCloseNavMenu}
-                                sx={{ my: 3, color: 'orange', display: 'block' }}
+                                sx={{ my: 3, color: 'white', display: 'block' }}
                             >
                                 {page}
                             </Button>
@@ -173,8 +173,8 @@ const ResponsiveAppBar = () => {
                             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg"
                                 style={{
-                                    color: 'red',
-                                    backgroundColor: 'yellow',
+                                    color: 'white',
+                                    backgroundColor: 'black',
 
                                 }} />
                             </IconButton>
@@ -198,7 +198,7 @@ const ResponsiveAppBar = () => {
                             {settings.map((setting) => (
                                 <MenuItem key={setting} onClick={handleCloseUserMenu}
                                 style={{
-                                    backgroundColor: 'blue'
+                                    backgroundColor: 'white'
                                 }}>
                                     <Typography textAlign="center">{setting}</Typography>
                                 </MenuItem>
