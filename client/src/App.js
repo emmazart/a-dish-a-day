@@ -29,10 +29,10 @@ function App() {
             path="/about"
             element={<About />}
           />
-          <Route 
+          {/* <Route 
             path="/dashboard"
             element={<Dashboard />}
-          />
+          /> */}
           <Route 
             path="*"
             element={<NoMatch />}
