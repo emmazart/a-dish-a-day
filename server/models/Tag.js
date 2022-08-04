@@ -1,4 +1,4 @@
-const { Schema } = require('mongoose');
+const { Schema, model } = require('mongoose');
 
 
 //ALL FIELD NAMES WILL BE SINGULAR
@@ -11,7 +11,6 @@ const { Schema } = require('mongoose');
 //each tag individual? (retrieve by tag name/id)
 //tag contains array of strings? (retrieve array, then search for corresponding string in the array)
 //how would recipe be inserted manually?
-//model so when referenced in recipe, it is not two separate sets of tags even if they have the same tag(schema)
 const tagSchema = new Schema(
     {
         tagName: { //TO BE SEPERATED BY COMMA
@@ -28,4 +27,8 @@ const tagSchema = new Schema(
     }
 );
 //ping
-module.exports = tagSchema;
+const Tag = model('Tag', tagSchema);
+module.exports = Tag;
+
+
+//model so when referenced in recipe, it is not two separate sets of tags even if they have the same tag(schema)

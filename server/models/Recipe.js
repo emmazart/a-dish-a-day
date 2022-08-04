@@ -1,6 +1,6 @@
 const { Schema, model } = require('mongoose');
 //const { Tag } = require('../schemas/resolvers');
-const tagSchema = require('./Tag');
+const tag = require('./Tag');
 
 
 //ALL FIELD NAMES WILL BE SINGULAR
@@ -39,7 +39,12 @@ const recipeSchema = new Schema(
             required: true,
             trim: true
         },
-        tag: [tagSchema]
+        tag: [
+            {
+              type: Schema.Types.ObjectId,
+              ref: 'Tag'
+            }
+          ]
     },
     {
         toJSON: {
