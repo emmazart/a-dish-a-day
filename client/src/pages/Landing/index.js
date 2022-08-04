@@ -11,7 +11,7 @@ function Landing() {
     return(
         <section className={styles.container}>
             <Paper className={styles.hero} elevation={3}>
-                <ResponsiveAppBar className={styles.nav}></ResponsiveAppBar>
+                <ResponsiveAppBar></ResponsiveAppBar>
                 <h1>for independent recipe writers <br /> & home chefs</h1>
                 <Link to="/login">
                     <Button variant='contained'>Login</Button>

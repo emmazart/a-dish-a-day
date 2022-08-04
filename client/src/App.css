@@ -5,21 +5,3 @@
 a {
   text-decoration: none;
 }
-
-/* CUSTOM FOOTER */
-
-.footer {
-  display: flex;
-  justify-content: center;
-}
-
-.footer-list {
-  list-style: none;
-  display: flex;
-  width: 30%;
-  align-items: center;
-  justify-content: space-around;
-  padding-left: 0;
-}
-
-/* NAVIGATION COMPONENT */

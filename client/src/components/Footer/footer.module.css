@@ -1,0 +1,13 @@
+.footer {
+    display: flex;
+    justify-content: center;
+}
+  
+.list {
+    list-style: none;
+    display: flex;
+    width: 30%;
+    align-items: center;
+    justify-content: space-around;
+    padding-left: 0;
+}
