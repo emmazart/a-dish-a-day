@@ -34,6 +34,7 @@
 // export default Navigation;
 
 import * as React from 'react';
+import { Link } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -49,6 +50,11 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import { color } from '@mui/system';
 
+// const pages = [
+//     { name: "Protein Search", link: "/"}, 
+//     { name: "View Recipes", link: "/recipes"}, 
+//     { name: "About", link: "/about"}, 
+// ];
 const pages = ['Protein Search', 'View Recipes', 'About'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
@@ -83,23 +89,25 @@ const ResponsiveAppBar = () => {
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
-                    <Typography
-                        variant="h6"
-                        noWrap
-                        component="a"
-                        href="/"
-                        sx={{
-                            mr: 2,
-                            display: { xs: 'none', md: 'flex' },
-                            fontFamily: 'monospace',
-                            fontWeight: 700,
-                            letterSpacing: '.3rem',
-                            color: 'black',
-                            textDecoration: 'none',
-                        }}
-                    >
-                        A Dish A Day
-                    </Typography>
+                    <Link to="/">
+                        <Typography
+                            variant="h6"
+                            noWrap
+                            component="a"
+                            href="/"
+                            sx={{
+                                mr: 2,
+                                display: { xs: 'none', md: 'flex' },
+                                fontFamily: 'monospace',
+                                fontWeight: 700,
+                                letterSpacing: '.3rem',
+                                color: 'blue',
+                                textDecoration: 'none',
+                            }}
+                        >
+                            A Dish A Day
+                        </Typography>
+                    </Link>
 
                     <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
                         <IconButton
@@ -132,7 +140,7 @@ const ResponsiveAppBar = () => {
                         >
                             {pages.map((page) => (
                                 <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <Typography textAlign="center">{page}</Typography>
+                                        <Typography textAlign="center">{page}</Typography>
                                 </MenuItem>
                             ))}
                         </Menu>
@@ -210,4 +218,5 @@ const ResponsiveAppBar = () => {
         </AppBar>
     );
 };
+
 export default ResponsiveAppBar;
