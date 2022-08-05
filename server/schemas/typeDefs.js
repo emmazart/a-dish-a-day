@@ -10,9 +10,9 @@ const typeDefs = gql`
         tags: [Tag]
         tag(tagName: String!): Tag
         users: [User]
-        recipe: [Recipe]
+        recipes: [Recipe]
+        recipe(recipeTitle: String!): Recipe
     }
-
 
     type Tag {
         tagName: String

@@ -16,10 +16,16 @@ const resolvers = {
       users: async () => {
         return User.find();
       },
-      recipe: async () => {
+      recipes: async () => {
         return Recipe.find();
+      },
+      recipe: async (parent, {recipeTitle}) => {
+        return Tag.findOne({recipeTitle});
       }
-    }
+    }, 
+
+    
+
   };
 
   module.exports = resolvers;
