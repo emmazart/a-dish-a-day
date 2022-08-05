@@ -6,7 +6,7 @@ const db = require('../config/connection');
 const { Recipe, User, Tag } = require('../models');
 
 db.once('open', async () => {
-    try {
+    try {//each one of itself does not throw e11000
         await User.deleteMany({});
     
         await User.create(userSeeds);
