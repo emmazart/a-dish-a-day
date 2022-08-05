@@ -1,5 +1,5 @@
-import React from 'react';
-import { Box, Grid } from '@mui/material';
+import React, { useState } from 'react';
+import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import dashStyles from './dashboard.module.css';
@@ -11,6 +11,7 @@ const Dashboard = () => {
 
     const recipes = [
         {
+            id: 1,
             recipeTitle: "Chicken Parm",
             description: "This is a great chicken dish",
             author: "Emma",
@@ -20,6 +21,7 @@ const Dashboard = () => {
             tag: ["Chicken"]
         },
         {
+            id: 2,
             recipeTitle: "Chicken Parm",
             description: "This is a great chicken dish",
             author: "Emma",
@@ -29,6 +31,7 @@ const Dashboard = () => {
             tag: ["Chicken"]
         },
         {
+            id: 3,
             recipeTitle: "Chicken Parm",
             description: "This is a great chicken dish",
             author: "Emma",
@@ -40,7 +43,8 @@ const Dashboard = () => {
     ]
 
     // implement state to keep track of which recipe has been selected to review
-    
+    const [currentRecipe, setCurrentRecipe] = useState({ title: '' });
+
     const handleSubmitReview = (e) => {
         e.preventDefault();
         console.log('submitted');
@@ -62,6 +66,8 @@ const Dashboard = () => {
                                     title={recipe.recipeTitle}
                                     author={recipe.author}
                                     description={recipe.description}
+                                    currentRecipe={currentRecipe}
+                                    setCurrentRecipe={setCurrentRecipe}
                                     >
                                     </FavoriteRecipe>
                                 )
@@ -70,7 +76,7 @@ const Dashboard = () => {
                         </section>
 
                         {/* Review section */}
-                        <section className-={dashStyles.formContainer} >
+                        <section className={dashStyles.formContainer} >
                             <Box className={dashStyles.form} component="form" onSubmit={handleSubmitReview} noValidate sx={{ mt: 3 }}>
                                 <h2>Review recipe</h2>
                                 <TextField

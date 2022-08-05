@@ -8,7 +8,14 @@ import Typography from '@mui/material/Typography';
 import cardStyles from './favorite.module.css';
 
 function FavoriteRecipe(props) {
-    const { source, author, title, description } = props;
+    const { source, author, title, description, currentRecipe, setCurrentRecipe } = props;
+
+    function handleClick() {
+        setCurrentRecipe({
+            name: `${title}`
+        })
+    };
+
   return (
     <Card className={cardStyles.card} sx={{ minWidth: 275 }}>
       <CardMedia
@@ -34,7 +41,7 @@ function FavoriteRecipe(props) {
         </Typography>
       </CardContent>
       <CardActions className={cardStyles.btnContainer}>
-        <Button size="small">Write a review</Button>
+        <Button onClick={handleClick} size="small">Write a review</Button>
       </CardActions>
     </Card>
   );
