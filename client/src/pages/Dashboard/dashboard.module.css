@@ -6,3 +6,22 @@
     display: flex;
     flex-direction: column;
 }
+
+.form {
+    padding: 1rem;
+    margin: 1rem;
+}
+
+@media only screen and (min-width: 768px) {
+    .main {
+        flex-direction: row;
+    }
+
+    .formContainer {
+        width: 25vw;
+    }
+
+    .recipeContainer {
+        width: 60vw;
+    }
+}

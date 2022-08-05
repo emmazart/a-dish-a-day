@@ -1,5 +1,7 @@
 import React from 'react';
+import { Box, Grid } from '@mui/material';
 import Button from '@mui/material/Button';
+import TextField from '@mui/material/TextField';
 import dashStyles from './dashboard.module.css';
 import SecondaryNav from '../../components/SecondaryNav';
 import Footer from '../../components/Footer';
@@ -37,6 +39,13 @@ const Dashboard = () => {
         }
     ]
 
+    // implement state to keep track of which recipe has been selected to review
+    
+    const handleSubmitReview = (e) => {
+        e.preventDefault();
+        console.log('submitted');
+    };
+
     return (
         <div className={dashStyles.test}>
             <SecondaryNav></SecondaryNav>
@@ -44,7 +53,7 @@ const Dashboard = () => {
                 <main className={dashStyles.main}>
 
                         {/* Recent recipes */}
-                        <section>
+                        <section className={dashStyles.recipeContainer}>
                             {recipes.map((recipe, index) => {
                                 return (
                                     <FavoriteRecipe
@@ -61,12 +70,28 @@ const Dashboard = () => {
                         </section>
 
                         {/* Review section */}
-                        <section>
-                            <form>
-                                <h2>Review this recipe</h2>
-                                <textarea></textarea>
-                                <Button>Submit</Button>
-                            </form>
+                        <section className-={dashStyles.formContainer} >
+                            <Box className={dashStyles.form} component="form" onSubmit={handleSubmitReview} noValidate sx={{ mt: 3 }}>
+                                <h2>Review recipe</h2>
+                                <TextField
+                                    name="reviewText"
+                                    required
+                                    fullWidth
+                                    multiline
+                                    rows={4}
+                                    id="reviewText"
+                                    label="Your review here"
+                                    autoFocus
+                                />
+                                <Button
+                                type="submit"
+                                fullWidth
+                                variant="contained"
+                                sx={{ mt: 3, mb: 2 }}
+                                >
+                                Submit
+                                </Button>
+                            </Box>
                         </section>
                 </main>
             <Footer />
