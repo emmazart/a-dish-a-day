@@ -2,8 +2,8 @@ import React from 'react';
 import Button from '@mui/material/Button';
 import dashStyles from './dashboard.module.css';
 import SecondaryNav from '../../components/SecondaryNav';
-import Recipe from '../../components/Recipe';
 import Footer from '../../components/Footer';
+import FavoriteRecipe from '../../components/FavoriteRecipe';
 
 const Dashboard = () => {
 
@@ -47,11 +47,14 @@ const Dashboard = () => {
                         <section>
                             {recipes.map((recipe, index) => {
                                 return (
-                                    <card key={index}>
-                                        <img src={recipe.img}></img>
-                                        <h2>{recipe.recipeTitle}</h2>
-                                        <p>{recipe.description}</p>
-                                    </card>
+                                    <FavoriteRecipe
+                                    key={index}
+                                    source={recipe.img}
+                                    title={recipe.recipeTitle}
+                                    author={recipe.author}
+                                    description={recipe.description}
+                                    >
+                                    </FavoriteRecipe>
                                 )
                             })}
                                 
