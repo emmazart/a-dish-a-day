@@ -19,13 +19,10 @@ const resolvers = {
       recipes: async () => {
         return Recipe.find();
       },
-      recipe: async (parent, {recipeTitle}) => {
-        return Tag.findOne({recipeTitle});
+      recipe: async (parent, {_id}) => {
+        return Recipe.findOne({_id});
       }
-    }, 
-
-    
-
+    }
   };
 
   module.exports = resolvers;
