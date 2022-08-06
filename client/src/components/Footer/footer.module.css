@@ -11,3 +11,7 @@
     justify-content: space-around;
     padding-left: 0;
 }
+
+.list path {
+    color: black;
+}
