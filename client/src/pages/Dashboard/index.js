@@ -8,6 +8,8 @@ import SecondaryNav from '../../components/SecondaryNav';
 import Footer from '../../components/Footer';
 import FavoriteRecipe from '../../components/FavoriteRecipe';
 
+import Review from '../../components/Review';
+
 const Dashboard = () => {
 
     const recipes = [
@@ -43,34 +45,11 @@ const Dashboard = () => {
         }
     ];
 
-    const labels = {
-        0: 'Terrible',
-        1: 'Bad',
-        2: 'Poor',
-        3: 'Decent',
-        4: 'Very Good',
-        5: 'Delicious!',
-      };
-
     // implement state to keep track of which recipe has been selected to review
     const [currentRecipe, setCurrentRecipe] = useState({ title: '', _id: '' });
 
     // implement state to set star rating
     const [value, setValue] = useState();
-
-    const handleSubmitReview = (e) => {
-        e.preventDefault();
-
-        // post request to db 
-        // {
-        //     _id: {currentRecipe._id},
-        //     user: {}
-        //     reviewText: {},
-        //     reviewStars: {value}
-        // }
-
-        console.log('submitted');
-    };
 
     return (
         <div className={dashStyles.test}>
@@ -100,41 +79,11 @@ const Dashboard = () => {
 
                         {/* Review section */}
                         <section className={dashStyles.formContainer} >
-                            <Box className={dashStyles.form} component="form" onSubmit={handleSubmitReview} noValidate sx={{ mt: 3 }}>
-                                {currentRecipe.title ?
-                                <h2>Write a review for <br /> {currentRecipe.title}</h2> :
-                                <h2>Write a review!</h2>
-                                }
-                                <TextField
-                                    name="reviewText"
-                                    required
-                                    fullWidth
-                                    multiline
-                                    rows={4}
-                                    id="reviewText"
-                                    // label="Your review here"
-                                    placeholder='Your review here'
-                                    autoFocus
-                                />
-                                <Rating
-                                className={dashStyles.rating}
-                                size="large"
-                                name="simple-controlled"
+                            <Review
                                 value={value}
-                                onChange={(event, newValue) => {
-                                    setValue(newValue);
-                                }}
-                                />
-                                <Box sx={{ ml: 2 }}>{labels[value]}</Box>
-                                <Button
-                                type="submit"
-                                fullWidth
-                                variant="contained"
-                                sx={{ mt: 3, mb: 2 }}
-                                >
-                                Submit
-                                </Button>
-                            </Box>
+                                setValue={setValue}
+                                currentRecipe={currentRecipe}
+                            ></Review>
                         </section>
                 </main>
             <Footer />
