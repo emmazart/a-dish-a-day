@@ -17,15 +17,15 @@ import secondNavStyles from './nav.module.css';
 import { color } from '@mui/system';
 
 const pages = [
-    { name: "Protein Search", link: "/recipes"}, 
-    { name: "View Recipes", link: "/recipes"}, 
-    { name: "About", link: "/about"}, 
+    { name: "Protein Search", link: "/recipes" },
+    { name: "View Recipes", link: "/recipes" },
+    { name: "About", link: "/about" },
 ];
 const settings = [
-    { name: 'Profile', link: "/profile"},
-    { name: 'Account', link: "/account"},
-    { name: 'Dashboard', link: "/dashboard"},
-    { name: 'Logout', link: "/"},
+    { name: 'Profile', link: "/profile" },
+    { name: 'Account', link: "/account" },
+    { name: 'Dashboard', link: "/dashboard" },
+    { name: 'Logout', link: "/" },
 ];
 
 const SecondaryNav = () => {
@@ -47,7 +47,7 @@ const SecondaryNav = () => {
         setAnchorElUser(null);
     };
 
-    
+
 
     return (
         <AppBar
@@ -80,7 +80,7 @@ const SecondaryNav = () => {
                         </Typography>
                     </Link>
 
-                    <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+                    {/* <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
                         <IconButton
                             size="large"
                             aria-label="account of current user"
@@ -115,7 +115,7 @@ const SecondaryNav = () => {
                                     </MenuItem>
                             ))}
                         </Menu>
-                    </Box>
+                    </Box> */}
                     {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
                     <Typography
                         variant="h5"
@@ -152,15 +152,16 @@ const SecondaryNav = () => {
                         <Tooltip title="Open settings">
                             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                                 <MenuIcon alt="Remy Sharp" src="/static/images/avatar/2.jpg"
-                                style={{
-                                    color: 'black',
-                                    backgroundColor: 'black',
-
-                                }} />
+                                    sx={{
+                                        color: 'white',
+                                        backgroundColor: 'blue',
+                                        
+                                    }} />
                             </IconButton>
                         </Tooltip>
                         <Menu
-                            sx={{ mt: '45px' }}
+                            sx={{ 
+                                mt: '45px' }}
                             id="menu-appbar"
                             anchorEl={anchorElUser}
                             anchorOrigin={{
@@ -177,10 +178,15 @@ const SecondaryNav = () => {
                         >
                             {settings.map((setting) => (
                                 <MenuItem key={setting.name} component={Link} to={setting.link} onClick={handleCloseUserMenu}
-                                style={{
-                                    backgroundColor: 'white'
-                                }}>
-                                    <Typography textAlign="center">{setting.name}</Typography>
+                                    style={{
+                                        backgroundColor: 'white'
+                                    }}>
+                                    <Typography
+                                        // textAlign="center"
+                                        color='textSecondary'
+                                        letterSpacing='.1rem'
+                                    >
+                                        {setting.name}</Typography>
                                 </MenuItem>
                             ))}
                         </Menu>
