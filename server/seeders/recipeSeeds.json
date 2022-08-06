@@ -12,7 +12,7 @@
     {
         "recipeTitle" : "Good Pizza",
         "description" : "Bacon and Hamberger",
-        "author" : "Larry Jones",
+        "author" : "Justin Huang",
         "img" : "",
         "ingredients" : [],
         "preperationStep" : [],
@@ -21,8 +21,19 @@
     },
     {
         "recipeTitle" : "Mac N Cheese",
-        "description" : " Noodles and cheese and thats it",
-        "author" : "The Smart Kid",
+        "description" : " Better Mac than mom's",
+        "author" : "Cris Lee",
+        "img" : "",
+        "ingredients" : [],
+        "preperationStep" : [],
+        "tag": []
+        
+    }
+    ,
+    {
+        "recipeTitle" : "Fried Chicken Meal",
+        "description" : "Homemade Southern Fried Chicken",
+        "author" : "Roda Hassan",
         "img" : "",
         "ingredients" : [],
         "preperationStep" : [],
