@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import Grid from '@mui/material/Grid';
@@ -8,7 +8,13 @@ import { styled } from '@mui/material/styles';
 import detailStyles from './singlerecipe.module.css';
 import Review from '../../components/Review';
 
-function SingleRecipe() {
+const SingleRecipe = () => {
+
+  // implement state to keep track of which recipe has been selected to review
+  const [currentRecipe, setCurrentRecipe] = useState({ title: '', _id: '' });
+
+  // implement state to set star rating
+    const [value, setValue] = useState();
 
     const Item = styled(Paper)(({ theme }) => ({
         backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -44,6 +50,11 @@ function SingleRecipe() {
                 {/* REVIEW SECTION */}
                 <Grid item xs={12} lg={4}>
                     <Item>
+                        <Review
+                            value={value}
+                            setValue={setValue}
+                            currentRecipe={currentRecipe}
+                        ></Review>
                     </Item>
                 </Grid>
 

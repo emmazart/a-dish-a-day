@@ -67,7 +67,7 @@ function Review(props) {
         className={reviewStyles.rating}
         size="large"
         name="simple-controlled"
-        value={value}
+        value={value ?? 0}
         onChange={(event, newValue) => {
           setValue(newValue);
         }}

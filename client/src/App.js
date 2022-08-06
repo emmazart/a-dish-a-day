@@ -1,4 +1,5 @@
 import './App.css';
+import React from 'react';
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 import { UserProvider } from './utils/GlobalState';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -20,7 +21,10 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
+
+
 function App() {
+
   return (
     <ApolloProvider client={client}>
     <UserProvider>
@@ -44,7 +48,7 @@ function App() {
           />
           <Route 
             path="/dashboard"
-            element={<Dashboard />}
+            element={<Dashboard/>}
           />
           <Route 
             path="/recipes"
