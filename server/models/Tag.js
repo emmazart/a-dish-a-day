@@ -28,4 +28,26 @@ const tagSchema = new Schema(
 );
 //ping
 const Tag = model('Tag', tagSchema);
+
 module.exports = Tag;
+
+
+//model so when referenced in recipe, it is not two separate sets of tags even if they have the same tag(schema)
+/*
+QUERY APOLLO
+query($tagName: String!) {
+  tags {
+    tagName
+  },
+  tag(tagName: "Beef") {
+    tagName
+  }
+}
+
+mutation($addTagTagName2: String!){
+  addTag(tagName: "contains nuts") {
+    tagName
+  }
+}
+*/
+
