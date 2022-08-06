@@ -6,18 +6,18 @@
         "username" : "Cris", 
         "email" : "Waters59@hotmail.com", 
         "password" : "kGjRfUNWUIRwfS_", 
-        "favorites": []   
+        "favorite": []   
     },
     {
         "username" : "Justin", 
         "email" : "Waters59@gmail.com", 
         "password" : "jRfUNWUIRwfS_", 
-        "favorites": []   
+        "favorite": []   
     },
     {
         "username" : "Andre", 
         "email" : "ablankholm@gmail.com", 
         "password" : "Pleasehelp", 
-        "favorites": []   
+        "favorite": []   
     }
 ]
