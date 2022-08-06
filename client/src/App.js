@@ -1,24 +1,50 @@
-import logo from './logo.svg';
 import './App.css';
+import { UserProvider } from './utils/GlobalState';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Landing from '../src/pages/Landing';
+import SignIn from '../src/components/SignIn';
+import SignUp from '../src/components/SignUp';
+import About from './pages/About';
+import NoMatch from '../src/pages/NoMatch';
+import Dashboard from './pages/Dashboard';
+import RecipeSearch from './pages/AllRecipes';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <UserProvider>
+      <Router>
+        <Routes>
+          <Route
+            path="/"
+            element={<Landing />}
+          />
+          <Route 
+            path="/login"
+            element={<SignIn />}
+          />
+          <Route 
+            path="/signup"
+            element={<SignUp />}
+          />
+          <Route 
+            path="/about"
+            element={<About />}
+          />
+          <Route 
+            path="/dashboard"
+            element={<Dashboard />}
+          />
+          <Route 
+            path="/recipes"
+            element={<RecipeSearch />}
+          />
+          <Route 
+            path="*"
+            element={<NoMatch />}
+          />
+        </Routes>
+      </Router>
+    </UserProvider>
   );
 }
 

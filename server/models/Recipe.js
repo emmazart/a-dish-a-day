@@ -1,10 +1,14 @@
 const { Schema, model } = require("mongoose");
 //const { Tag } = require('../schemas/resolvers');
+
 const tag = require("./Tag");
+
+
 
 //ALL FIELD NAMES WILL BE SINGULAR
 //<filename(lowercase)>Schema
 const recipeSchema = new Schema(
+
   {
     recipeTitle: {
       type: String,

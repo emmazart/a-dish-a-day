@@ -1,0 +1,15 @@
+/* Navigation Component Styling */
+
+.appbar > * {
+    color: white;
+}
+
+/* HAMBURGER MENU ITEM STYLES */
+.dropdown > p {
+    color: black;
+}
+
+/* A DISH A DAY STYLES */
+.title > span, path {
+    color: white;
+}

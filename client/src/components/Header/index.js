@@ -1,9 +1,12 @@
-// imports
+import React from 'react';
+import SecondayNav from '../SecondaryNav';
 
 
 function Header() {
     return (
-        <div></div>
+        <div>
+            <SecondayNav></SecondayNav>
+        </div>
     )
 }
 
