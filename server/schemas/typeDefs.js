@@ -20,8 +20,13 @@ const typeDefs = gql`
         tagName: String
     }
 
+    type Auth {
+        token: ID!
+        user: User
+    }
+
     type User {
-        _id: String
+        _id: ID
         username: String
         email: String
         password: String
@@ -42,9 +47,11 @@ const typeDefs = gql`
 
 
 
-    
+
     type Mutation {
         addTag(tagName: String!): Tag
+        login(email: String!, password: String!): Auth
+        addUser(username: String!, email: String!, password: String!): Auth
     }
     
 `;
