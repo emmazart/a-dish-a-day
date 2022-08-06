@@ -14,6 +14,7 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../../utils/mutations';
+import Auth from '../../utils/auth';
 
 function Copyright(props) {
   return (
@@ -41,6 +42,7 @@ export default function SignUp() {
     const formData = new FormData(event.currentTarget);
 
     try {
+      // destructured 'data' because that's what's being returned from addUser query in Apollo
       const { data } = await addUser({
         variables: {
           email: formData.get('email'),
@@ -48,8 +50,10 @@ export default function SignUp() {
           password: formData.get('password'),
         }
       });
-      console.log("new user signed up", data.addUser.user);
-      // redierect to dashboard
+      console.log("new user signed up", data.addUser);
+
+      // login method called from utils/auth takes in token and redirects user to dashboard
+      Auth.login(data.addUser.token)
 
     } catch (e) {
       console.log(e);

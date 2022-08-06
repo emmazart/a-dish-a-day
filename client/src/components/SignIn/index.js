@@ -12,6 +12,10 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
+import { useMutation } from '@apollo/client';
+import { LOGIN_USER } from '../../utils/mutations';
+import Auth from '../../utils/auth';
+
 function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
@@ -28,13 +32,30 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function SignIn() {
-  const handleSubmit = (event) => {
+
+  const [loginUser, { error }] = useMutation(LOGIN_USER);
+
+
+  const handleSubmit = async event => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
+    const formData = new FormData(event.currentTarget);
+
+    try {
+      // destructured 'data' because that's what's being returned from addUser query in Apollo
+      const { data } = await loginUser({
+        variables: {
+          email: formData.get('email'),
+          password: formData.get('password'),
+        }
+      });
+      console.log("logged in", data.login);
+      
+      // login method called from utils/auth takes in token and redirects user to dashboard
+      Auth.login(data.login.token);
+
+    } catch (e) {
+      console.log(e);
+    }
   };
 
   return (
