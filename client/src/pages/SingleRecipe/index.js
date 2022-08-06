@@ -11,21 +11,32 @@ import Review from '../../components/Review';
 import { useQuery } from "@apollo/client";
 import { QUERY_RECIPE_ID } from '../../utils/queries';
 
-const SingleRecipe = () => {
+function SingleRecipe() {
+
+    // const recipe = {
+    //     "recipeTitle" : "Chicken Parm",
+    //     "description" : "This is a great chicken dish",
+    //     "author" : "Emma",
+    //     "img" : "https://placekitten.com/400/200",
+    //     "ingredients" : ["chicken", "parmesan", "tomato sauce", "pasta"],
+    //     "preperationStep" : ["1: do this", "2: to this second", "3: do this third"],
+    //     "tag": []
+    // }
 
     // query database for single recipe
-    const { loading, error, data } = useQuery(QUERY_RECIPE_ID, {
-        variables: { id: "62eea93bee6cb472a20a7791" }
+    
+    const { error, loading, data } = useQuery(QUERY_RECIPE_ID, {
+        variables: { id: "62eecc95846969b8e564065a" }
     });
+    
+    const { recipeTitle, _id, description, ingredient, img, preperationStep } = data?.recipe || [];
+    // console.log('RECIPE DATA', recipe);
 
-    console.log('RECIPE DATA', data);
-
-//   // implement state to keep track of which recipe has been selected to review
-//   const [currentRecipe, setCurrentRecipe] = useState({ title: '', _id: '' });
-
+  // implement state to keep track of which recipe has been selected to review
+  const [currentRecipe, setCurrentRecipe] = useState({ title: `${recipeTitle}`, _id: `${_id}` });
 
   // implement state to set star rating
-    const [value, setValue] = useState();
+  const [value, setValue] = useState();
 
     const Item = styled(Paper)(({ theme }) => ({
         backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -42,30 +53,54 @@ const SingleRecipe = () => {
 
                 {/* recipe title always takes up full 12 columns */}
                 <Grid item xs={12}>
-                    <Item>{data.recipeTitle}</Item>
+                    <Item>
+                        {/* <Typography variant="h2">{recipe.recipeTitle}</Typography> 
+                        <Typography variant="h3">{recipe.description}</Typography> */}
+                        <h2>{recipeTitle}</h2>
+                        <h3>{description}</h3>
+                    </Item>
                 </Grid>
 
                 {/* recipe image */}
                 <Grid item xs={12} md={6} lg={4}>
-                    <Item>Image</Item>
+                    <Item>
+                        <img src={img} alt="finished recipe"></img>
+                    </Item>
                 </Grid>
 
                 <Grid item xs={12} md={6} lg={8}>
-                    <Item>Ingredients</Item>
+                    <Item>
+                        <h4>Ingredients</h4>
+                        <ul>
+                        {ingredient.map(ingredient => {
+                            return (
+                                <li>{ingredient}</li>
+                            )})}
+                        </ul>
+                    </Item>
                 </Grid>
 
                 <Grid item xs={12}>
-                    <Item>Instructions</Item>
+                    <Item>
+                        <h4>Instructions</h4>
+                        <ol>
+                            {preperationStep.map(step => {
+                                return (
+                                    <li>{step}</li>
+                                )
+                            })}
+                        </ol>
+                    </Item>
                 </Grid>
 
                 {/* REVIEW SECTION */}
                 <Grid item xs={12} lg={4}>
                     <Item>
-                        {/* <Review
+                        <Review
                             value={value}
                             setValue={setValue}
                             currentRecipe={currentRecipe}
-                        ></Review> */}
+                        ></Review>
                     </Item>
                 </Grid>
 
