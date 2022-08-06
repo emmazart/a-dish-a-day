@@ -8,10 +8,21 @@ import { styled } from '@mui/material/styles';
 import detailStyles from './singlerecipe.module.css';
 import Review from '../../components/Review';
 
+import { useQuery } from "@apollo/client";
+import { QUERY_RECIPE_ID } from '../../utils/queries';
+
 const SingleRecipe = () => {
 
-  // implement state to keep track of which recipe has been selected to review
-  const [currentRecipe, setCurrentRecipe] = useState({ title: '', _id: '' });
+    // query database for single recipe
+    const { loading, error, data } = useQuery(QUERY_RECIPE_ID, {
+        variables: { id: "62eea93bee6cb472a20a7791" }
+    });
+
+    console.log('RECIPE DATA', data);
+
+//   // implement state to keep track of which recipe has been selected to review
+//   const [currentRecipe, setCurrentRecipe] = useState({ title: '', _id: '' });
+
 
   // implement state to set star rating
     const [value, setValue] = useState();
@@ -31,7 +42,7 @@ const SingleRecipe = () => {
 
                 {/* recipe title always takes up full 12 columns */}
                 <Grid item xs={12}>
-                    <Item>Recipe Title and description</Item>
+                    <Item>{data.recipeTitle}</Item>
                 </Grid>
 
                 {/* recipe image */}
@@ -50,11 +61,11 @@ const SingleRecipe = () => {
                 {/* REVIEW SECTION */}
                 <Grid item xs={12} lg={4}>
                     <Item>
-                        <Review
+                        {/* <Review
                             value={value}
                             setValue={setValue}
                             currentRecipe={currentRecipe}
-                        ></Review>
+                        ></Review> */}
                     </Item>
                 </Grid>
 
