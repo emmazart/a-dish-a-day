@@ -6,6 +6,23 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import Button from '@mui/material/Button';
+import { useQuery, gql } from '@apollo/client';
+
+const QUERY = gql`
+{
+  recipes {
+    recipeTitle
+    description
+    author
+    img
+    ingredient
+    preperationStep
+    tag {
+      tagName
+    }
+}
+}
+`
 
 export default function RecipeSearch() {
     const [recipes, setRecipes] = useState([
@@ -16,6 +33,15 @@ export default function RecipeSearch() {
     const [open, setOpen] = useState(false);
 
     useEffect(() => {
+     
+     
+
+
+
+
+
+
+
       setRecipes(recipes)
       setFilteredRecipes(recipes)
     }, [recipes])
@@ -44,9 +70,14 @@ export default function RecipeSearch() {
     const handleOpen = () => {
       setOpen(true);
     };
-  
+
+    const { data, loading, error } = useQuery(QUERY);
+    if (loading) return "loading"
+    if (error) return <pre>{error.message}</pre>
+    console.log(data)
     return (
       <div>
+
         <Button sx={{ display: 'block', mt: 2 }} onClick={handleOpen}>
           Filter Recipes
         </Button>
@@ -71,7 +102,7 @@ export default function RecipeSearch() {
           </Select>
         </FormControl>
 
-        {filteredRecipes.map((recipe, index) => {
+        {data.recipes.map((recipe, index) => {
           return <RecipeCard recipe={recipe} key={index} />
         })}
 

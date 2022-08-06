@@ -44,7 +44,7 @@ export default function RecipeCard({recipe}) {
   };
   return (
     <>
-    <Card className='card' sx={{ maxWidth: 345 }}>
+    <Card className='card' sx={{ maxWidth: 345 }} style={{backgroundColor: "green", marginBottom: "20px"}}>
       <CardHeader
         // avatar={
         //   <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
@@ -56,20 +56,17 @@ export default function RecipeCard({recipe}) {
         //     <MoreVertIcon />
         //   </IconButton>
         // }
-        title={recipe.title}
+        title={recipe.recipeTitle}
       />
       <CardMedia
         component="img"
         height="194"
-        image={recipe.image.src}
-        alt={recipe.image.alt}
+        image={recipe.img}
+        alt="Some alt"
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
-        
-
-
-
+        {recipe.description}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
@@ -91,9 +88,9 @@ export default function RecipeCard({recipe}) {
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
           <Typography>Ingredients:</Typography>
-          <Typography paragraph>{recipe.ingredients}</Typography>
+          <Typography paragraph>{recipe.ingredient}</Typography>
           <Typography>Instructons:</Typography>
-          <Typography paragraph>{recipe.instructions}</Typography>
+          <Typography paragraph>{recipe.preparationStep}</Typography>
           <Typography>
            `Submitted by {recipe.author}`
           </Typography>
