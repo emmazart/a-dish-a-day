@@ -1,38 +1,3 @@
-// import React from "react";
-// import './nav.style.css';
-
-// function Navigation(props) {
-//   const tabs = ["Login", "Protein Search", "View All Recipes", "About"];
-//   return (
-//     <div>
-//       <ul>
-//         {tabs.map((tab) => (
-//           <li
-//             className={
-//               props.currentPage === tab ? "nav-item is-active" : "nav-item"
-//             }
-//             key={tab}
-//           >
-//             <a
-//               href={"#" + tab.toLowerCase()}
-// Whenever a tab is clicked on,
-// the current page is set through the handlePageChange props.
-//               onClick={() => props.handlePageChange(tab)}
-//               className={
-//                 props.currentPage === tab ? "nav-link active" : "nav-link"
-//               }
-//             >
-//               {tab}
-//             </a>
-//           </li>
-//         ))}
-//       </ul>
-//     </div>
-//   );
-// }
-
-// export default Navigation;
-
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
@@ -47,16 +12,21 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import AdbIcon from '@mui/icons-material/Adb';
-import { color } from '@mui/system';
+// import AdbIcon from '@mui/icons-material/Adb';
+// import { color } from '@mui/system';
+import styles from './nav.module.css';
 
-// const pages = [
-//     { name: "Protein Search", link: "/"}, 
-//     { name: "View Recipes", link: "/recipes"}, 
-//     { name: "About", link: "/about"}, 
-// ];
-const pages = ['Protein Search', 'View Recipes', 'About'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+const pages = [
+    { name: "Protein Search", link: "/recipes"}, 
+    { name: "View Recipes", link: "/recipes"}, 
+    { name: "About", link: "/about"}, 
+];
+const settings = [
+    { name: 'Profile', link: "/profile"},
+    { name: 'Account', link: "/account"},
+    { name: 'Dashboard', link: "/dashboard"},
+    { name: 'Logout', link: "/"},
+];
 
 const ResponsiveAppBar = () => {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -77,7 +47,10 @@ const ResponsiveAppBar = () => {
         setAnchorElUser(null);
     };
 
+    
+
     return (
+        <div className={styles.appbar}>
         <AppBar
             position="fixed"
             elevation={0}
@@ -89,11 +62,11 @@ const ResponsiveAppBar = () => {
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
-                    <Link to="/">
+                    <Link to="/login" className={styles.title}>
                         <Typography
                             variant="h6"
                             noWrap
-                            component="a"
+                            component="span"
                             href="/"
                             sx={{
                                 mr: 2,
@@ -139,9 +112,9 @@ const ResponsiveAppBar = () => {
                             }}
                         >
                             {pages.map((page) => (
-                                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                        <Typography textAlign="center">{page}</Typography>
-                                </MenuItem>
+                                    <MenuItem key={page.name} className={styles.dropdown} onClick={handleCloseNavMenu}>
+                                            <Typography textAlign="center">{page.name}</Typography>
+                                    </MenuItem>
                             ))}
                         </Menu>
                     </Box>
@@ -167,11 +140,12 @@ const ResponsiveAppBar = () => {
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         {pages.map((page) => (
                             <Button
-                                key={page}
+                                key={page.name}
+                                component={Link} to={page.link}
                                 onClick={handleCloseNavMenu}
-                                sx={{ my: 3, color: 'orange', display: 'block' }}
+                                sx={{ my: 3, color: 'white', display: 'block' }}
                             >
-                                {page}
+                                {page.name}
                             </Button>
                         ))}
                     </Box>
@@ -179,12 +153,7 @@ const ResponsiveAppBar = () => {
                     <Box sx={{ flexGrow: 0 }}>
                         <Tooltip title="Open settings">
                             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                                <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg"
-                                style={{
-                                    color: 'red',
-                                    backgroundColor: 'yellow',
-
-                                }} />
+                                <MenuIcon />
                             </IconButton>
                         </Tooltip>
                         <Menu
@@ -204,11 +173,9 @@ const ResponsiveAppBar = () => {
                             onClose={handleCloseUserMenu}
                         >
                             {settings.map((setting) => (
-                                <MenuItem key={setting} onClick={handleCloseUserMenu}
-                                style={{
-                                    backgroundColor: 'blue'
-                                }}>
-                                    <Typography textAlign="center">{setting}</Typography>
+                                <MenuItem className={styles.dropdown} key={setting.name} component={Link} to={setting.link} onClick={handleCloseUserMenu}
+                                >
+                                    <Typography textAlign="center">{setting.name}</Typography>
                                 </MenuItem>
                             ))}
                         </Menu>
@@ -216,6 +183,7 @@ const ResponsiveAppBar = () => {
                 </Toolbar>
             </Container>
         </AppBar>
+        </div>
     );
 };
 

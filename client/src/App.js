@@ -4,7 +4,10 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Landing from '../src/pages/Landing';
 import SignIn from '../src/components/SignIn';
 import SignUp from '../src/components/SignUp';
+import About from './pages/About';
 import NoMatch from '../src/pages/NoMatch';
+import Dashboard from './pages/Dashboard';
+import RecipeSearch from './pages/AllRecipes';
 
 function App() {
   return (
@@ -13,15 +16,27 @@ function App() {
         <Routes>
           <Route
             path="/"
-            element={<Landing className="landing-page" />}
+            element={<Landing />}
           />
           <Route 
             path="/login"
             element={<SignIn />}
           />
           <Route 
-            path="signup"
+            path="/signup"
             element={<SignUp />}
+          />
+          <Route 
+            path="/about"
+            element={<About />}
+          />
+          <Route 
+            path="/dashboard"
+            element={<Dashboard />}
+          />
+          <Route 
+            path="/recipes"
+            element={<RecipeSearch />}
           />
           <Route 
             path="*"
