@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useEffect } from 'react';
 import Card from '@mui/material/Card';
 import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
@@ -8,13 +8,20 @@ import Typography from '@mui/material/Typography';
 import cardStyles from './favorite.module.css';
 
 function FavoriteRecipe(props) {
-    const { source, author, title, description, currentRecipe, setCurrentRecipe } = props;
+    const { _id, source, author, title, description, currentRecipe, setCurrentRecipe } = props;
 
     function handleClick() {
         setCurrentRecipe({
-            name: `${title}`
+            title: `${title}`,
+            _id: `${_id}`
         })
     };
+
+    // rerender page when currentRecipe is changed
+    useEffect(() => {
+        console.log(currentRecipe)
+    }, [currentRecipe]);
+
 
   return (
     <Card className={cardStyles.card} sx={{ minWidth: 275 }}>

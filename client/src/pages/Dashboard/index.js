@@ -11,7 +11,7 @@ const Dashboard = () => {
 
     const recipes = [
         {
-            id: 1,
+            _id: 1,
             recipeTitle: "Chicken Parm",
             description: "This is a great chicken dish",
             author: "Emma",
@@ -21,7 +21,7 @@ const Dashboard = () => {
             tag: ["Chicken"]
         },
         {
-            id: 2,
+            _id: 2,
             recipeTitle: "Chicken Parm",
             description: "This is a great chicken dish",
             author: "Emma",
@@ -31,7 +31,7 @@ const Dashboard = () => {
             tag: ["Chicken"]
         },
         {
-            id: 3,
+            _id: 3,
             recipeTitle: "Chicken Parm",
             description: "This is a great chicken dish",
             author: "Emma",
@@ -43,10 +43,19 @@ const Dashboard = () => {
     ]
 
     // implement state to keep track of which recipe has been selected to review
-    const [currentRecipe, setCurrentRecipe] = useState({ title: '' });
+    const [currentRecipe, setCurrentRecipe] = useState({ title: '', _id: '' });
 
     const handleSubmitReview = (e) => {
         e.preventDefault();
+
+        // post request to db 
+        // {
+        //     _id: {currentRecipe._id},
+        //     user: {}
+        //     reviewText: {},
+        //     reviewStars: {}
+        // }
+
         console.log('submitted');
     };
 
@@ -64,6 +73,7 @@ const Dashboard = () => {
                                     key={index}
                                     source={recipe.img}
                                     title={recipe.recipeTitle}
+                                    _id={recipe._id}
                                     author={recipe.author}
                                     description={recipe.description}
                                     currentRecipe={currentRecipe}
@@ -78,7 +88,7 @@ const Dashboard = () => {
                         {/* Review section */}
                         <section className={dashStyles.formContainer} >
                             <Box className={dashStyles.form} component="form" onSubmit={handleSubmitReview} noValidate sx={{ mt: 3 }}>
-                                <h2>Review recipe</h2>
+                                <h2>Write a review for <br /> {currentRecipe.title}</h2>
                                 <TextField
                                     name="reviewText"
                                     required
