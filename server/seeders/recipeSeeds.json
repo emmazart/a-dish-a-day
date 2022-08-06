@@ -3,7 +3,30 @@
         "recipeTitle" : "the best meal never maid",
         "description" : "Chicken Pot Pie",
         "author" : "some old guy name Andre",
-        "img" : ""
+        "img" : "",
+        "ingredients" : [],
+        "preperationStep" : [],
+        "tag": []
+        
+    },
+    {
+        "recipeTitle" : "Good Pizza",
+        "description" : "Bacon and Hamberger",
+        "author" : "Larry Jones",
+        "img" : "",
+        "ingredients" : [],
+        "preperationStep" : [],
+        "tag": []
+        
+    },
+    {
+        "recipeTitle" : "Mac N Cheese",
+        "description" : " Noodles and cheese and thats it",
+        "author" : "The Smart Kid",
+        "img" : "",
+        "ingredients" : [],
+        "preperationStep" : [],
+        "tag": []
         
     }
 ]
