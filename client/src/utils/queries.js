@@ -11,3 +11,11 @@ export const QUERY_RECIPES = gql`
     }
   }
 `;
+
+export const QUERY_TAGS = gql`
+  query Tags {
+    tags {
+      tagName
+    }
+  }
+`;
