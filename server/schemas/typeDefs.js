@@ -31,7 +31,9 @@ const typeDefs = gql`
         description: String
         author: String
         img: String
-        
+        ingredient: [String]
+        preperationStep: [String]
+        tag: [Tag]        
         
     }
     
