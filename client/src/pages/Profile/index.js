@@ -2,17 +2,14 @@ import React from 'react';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 
-function About() {
+function Profile() {
     return (
         <>
         <Header></Header>
-        <section className="title">
-            <h1>About Us</h1>
-            
-        </section>
+            <h1>Profile</h1>
         <Footer></Footer>
         </>
     )
 }
 
-export default About;
+export default Profile;

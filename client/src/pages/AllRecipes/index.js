@@ -7,7 +7,24 @@ import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import Button from '@mui/material/Button';
 
+import { useQuery } from '@apollo/client';
+import { QUERY_RECIPES, QUERY_TAGS } from '../../utils/queries';
+
 export default function RecipeSearch() {
+
+  // GET RECIPE DATA FROM APOLLO
+  const { loading, data } = useQuery(QUERY_RECIPES);
+  // allRecipes will contain all returned data
+  const allRecipes = data?.recipes || []; 
+
+  // // GET TAG DATA FROM APOLLO
+  // const tagData = useQuery(QUERY_TAGS);
+  // const tags = tagData.data;
+  // tags.map(tag => console.log('MAPPING', tag));
+  // // const allTags = tagData?.data.data.tags || [];
+  // console.log("TAGSSSSSS", tags);
+
+
     const [recipes, setRecipes] = useState([
       {title:"the title", ingredients: "ingredients", instructions: "instructions", author: "author", image:{src:"broken/image/link.jpg", alt:"broken iamge text"}}
     ]);

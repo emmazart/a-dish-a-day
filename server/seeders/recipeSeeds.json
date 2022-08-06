@@ -1,0 +1,32 @@
+[
+    {
+        "recipeTitle" : "Chicken Pot Pie",
+        "description" : "the best meal never maid",
+        "author" : "some old guy name Andre",
+        "img" : "https://placekitten.com/400/200",
+        "ingredients" : [],
+        "preperationStep" : [],
+        "tag": []
+        
+    },
+    {
+        "recipeTitle" : "Good Pizza",
+        "description" : "Bacon and Hamberger",
+        "author" : "Larry Jones",
+        "img" : "https://placekitten.com/400/200",
+        "ingredients" : [],
+        "preperationStep" : [],
+        "tag": []
+        
+    },
+    {
+        "recipeTitle" : "Mac N Cheese",
+        "description" : " Noodles and cheese and thats it",
+        "author" : "The Smart Kid",
+        "img" : "https://placekitten.com/400/200",
+        "ingredients" : [],
+        "preperationStep" : [],
+        "tag": []
+        
+    }
+]

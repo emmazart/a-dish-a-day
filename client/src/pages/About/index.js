@@ -6,7 +6,7 @@ function About() {
     return (
         <>
         <Header></Header>
-        <section className="title">
+        
             <h1>About Us</h1>
             <hr></hr>
 
@@ -31,7 +31,7 @@ function About() {
             
                 </div>
             </div>
-        </section>
+      
         <Footer></Footer>
         </>
     )

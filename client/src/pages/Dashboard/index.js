@@ -9,41 +9,46 @@ import Footer from '../../components/Footer';
 import FavoriteRecipe from '../../components/FavoriteRecipe';
 
 import Review from '../../components/Review';
+import { useQuery } from '@apollo/client';
+import { QUERY_RECIPES } from '../../utils/queries';
 
 const Dashboard = () => {
 
-    const recipes = [
-        {
-            _id: 1,
-            recipeTitle: "Chicken Parm",
-            description: "This is a great chicken dish",
-            author: "Emma",
-            img: "https://placekitten.com/400/200",
-            ingredient: ["chicken", "parmesan", "tomato sauce", "pasta"],
-            preprationStep: ["1: do this", "2: to this second", "3: do this third"],
-            tag: ["Chicken"]
-        },
-        {
-            _id: 2,
-            recipeTitle: "Chicken Parm",
-            description: "This is a great chicken dish",
-            author: "Emma",
-            img: "https://placekitten.com/400/200",
-            ingredient: ["chicken", "parmesan", "tomato sauce", "pasta"],
-            preprationStep: ["1: do this", "2: to this second", "3: do this third"],
-            tag: ["Chicken"]
-        },
-        {
-            _id: 3,
-            recipeTitle: "Chicken Parm",
-            description: "This is a great chicken dish",
-            author: "Emma",
-            img: "https://placekitten.com/400/200",
-            ingredient: ["chicken", "parmesan", "tomato sauce", "pasta"],
-            preprationStep: ["1: do this", "2: to this second", "3: do this third"],
-            tag: ["Chicken"]
-        }
-    ];
+    const { loading, data } = useQuery(QUERY_RECIPES);
+    const recipes = data?.recipes || [];
+    
+    // const recipes = [
+    //     {
+    //         _id: 1,
+    //         recipeTitle: "Chicken Parm",
+    //         description: "This is a great chicken dish",
+    //         author: "Emma",
+    //         img: "https://placekitten.com/400/200",
+    //         ingredient: ["chicken", "parmesan", "tomato sauce", "pasta"],
+    //         preprationStep: ["1: do this", "2: to this second", "3: do this third"],
+    //         tag: ["Chicken"]
+    //     },
+    //     {
+    //         _id: 2,
+    //         recipeTitle: "Chicken Parm",
+    //         description: "This is a great chicken dish",
+    //         author: "Emma",
+    //         img: "https://placekitten.com/400/200",
+    //         ingredient: ["chicken", "parmesan", "tomato sauce", "pasta"],
+    //         preprationStep: ["1: do this", "2: to this second", "3: do this third"],
+    //         tag: ["Chicken"]
+    //     },
+    //     {
+    //         _id: 3,
+    //         recipeTitle: "Chicken Parm",
+    //         description: "This is a great chicken dish",
+    //         author: "Emma",
+    //         img: "https://placekitten.com/400/200",
+    //         ingredient: ["chicken", "parmesan", "tomato sauce", "pasta"],
+    //         preprationStep: ["1: do this", "2: to this second", "3: do this third"],
+    //         tag: ["Chicken"]
+    //     }
+    // ];
 
     // implement state to keep track of which recipe has been selected to review
     const [currentRecipe, setCurrentRecipe] = useState({ title: '', _id: '' });
