@@ -6,6 +6,7 @@ import Box from '@mui/material/Box';
 import Paper from '@mui/material/Paper';
 import { styled } from '@mui/material/styles';
 import detailStyles from './singlerecipe.module.css';
+import Review from '../../components/Review';
 
 function SingleRecipe() {
 
@@ -42,7 +43,8 @@ function SingleRecipe() {
 
                 {/* REVIEW SECTION */}
                 <Grid item xs={12} lg={4}>
-                    <Item>review form</Item>
+                    <Item>
+                    </Item>
                 </Grid>
 
                 <Grid item xs={12} lg={8}>
