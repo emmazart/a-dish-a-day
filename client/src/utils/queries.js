@@ -7,6 +7,7 @@ export const QUERY_RECIPES = gql`
       recipeTitle
       description
       author
+      img
     }
   }
 `;

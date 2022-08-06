@@ -12,6 +12,9 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
+import { useMutation } from '@apollo/client';
+import { ADD_USER } from '../../utils/mutations';
+
 function Copyright(props) {
   return (
     <Typography variant="body2" color="text.secondary" align="center" {...props}>
@@ -28,13 +31,29 @@ function Copyright(props) {
 const theme = createTheme();
 
 export default function SignUp() {
-  const handleSubmit = (event) => {
+
+  // USE MUTATION
+  const [addUser, { error }] = useMutation(ADD_USER);
+
+  // SIGNUP FORM LOGIC
+  const handleSubmit = async event => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
+    const formData = new FormData(event.currentTarget);
+
+    try {
+      const { data } = await addUser({
+        variables: {
+          email: formData.get('email'),
+          username: formData.get('email'),
+          password: formData.get('password'),
+        }
+      });
+      console.log("new user signed up", data.addUser.user);
+      // redierect to dashboard
+
+    } catch (e) {
+      console.log(e);
+    }
   };
 
   return (
@@ -56,7 +75,7 @@ export default function SignUp() {
           </Typography>
           <Box component="form" noValidate onSubmit={handleSubmit} sx={{ mt: 3 }}>
             <Grid container spacing={2}>
-              <Grid item xs={12} sm={6}>
+              {/* <Grid item xs={12} sm={6}>
                 <TextField
                   autoComplete="given-name"
                   name="firstName"
@@ -76,7 +95,7 @@ export default function SignUp() {
                   name="lastName"
                   autoComplete="family-name"
                 />
-              </Grid>
+              </Grid> */}
               <Grid item xs={12}>
                 <TextField
                   required
