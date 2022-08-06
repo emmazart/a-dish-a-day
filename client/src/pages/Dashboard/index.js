@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
+import Rating from '@mui/material/Rating';
 import TextField from '@mui/material/TextField';
 import dashStyles from './dashboard.module.css';
 import SecondaryNav from '../../components/SecondaryNav';
@@ -40,10 +41,22 @@ const Dashboard = () => {
             preprationStep: ["1: do this", "2: to this second", "3: do this third"],
             tag: ["Chicken"]
         }
-    ]
+    ];
+
+    const labels = {
+        0: 'Terrible',
+        1: 'Bad',
+        2: 'Poor',
+        3: 'Decent',
+        4: 'Very Good',
+        5: 'Delicious!',
+      };
 
     // implement state to keep track of which recipe has been selected to review
     const [currentRecipe, setCurrentRecipe] = useState({ title: '', _id: '' });
+
+    // implement state to set star rating
+    const [value, setValue] = useState();
 
     const handleSubmitReview = (e) => {
         e.preventDefault();
@@ -53,7 +66,7 @@ const Dashboard = () => {
         //     _id: {currentRecipe._id},
         //     user: {}
         //     reviewText: {},
-        //     reviewStars: {}
+        //     reviewStars: {value}
         // }
 
         console.log('submitted');
@@ -88,7 +101,10 @@ const Dashboard = () => {
                         {/* Review section */}
                         <section className={dashStyles.formContainer} >
                             <Box className={dashStyles.form} component="form" onSubmit={handleSubmitReview} noValidate sx={{ mt: 3 }}>
-                                <h2>Write a review for <br /> {currentRecipe.title}</h2>
+                                {currentRecipe.title ?
+                                <h2>Write a review for <br /> {currentRecipe.title}</h2> :
+                                <h2>Write a review!</h2>
+                                }
                                 <TextField
                                     name="reviewText"
                                     required
@@ -96,9 +112,20 @@ const Dashboard = () => {
                                     multiline
                                     rows={4}
                                     id="reviewText"
-                                    label="Your review here"
+                                    // label="Your review here"
+                                    placeholder='Your review here'
                                     autoFocus
                                 />
+                                <Rating
+                                className={dashStyles.rating}
+                                size="large"
+                                name="simple-controlled"
+                                value={value}
+                                onChange={(event, newValue) => {
+                                    setValue(newValue);
+                                }}
+                                />
+                                <Box sx={{ ml: 2 }}>{labels[value]}</Box>
                                 <Button
                                 type="submit"
                                 fullWidth
