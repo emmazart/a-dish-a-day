@@ -1,5 +1,8 @@
 .card {
     margin: 2rem;
+    flex-basis: auto;
+    flex-grow: 1;
+    flex-shrink: 1;
 }
 
 /* card actions container centers button */
