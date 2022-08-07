@@ -4,6 +4,7 @@ import React, {useState, useEffect} from 'react'
 import InputLabel from '@mui/material/InputLabel';
 import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
+import FormGroup from '@mui/material/FormGroup';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import Button from '@mui/material/Button';
 import { useQuery, gql } from '@apollo/client';
@@ -12,41 +13,8 @@ import SecondayNav from '../../components/SecondaryNav';
 import recipeStyles from './recipes.module.css';
 
 
-// //query all recipes MOVED TO utils/queries
-// const QUERY_ALL_RECIPES = gql`
-// {
-//   recipes {
-//     recipeTitle
-//     description
-//     author
-//     img
-//     ingredient
-//     preperationStep
-//     tag {
-//       tagName
-//     }
-//   }
-// }
-// `
-// //query recipe by id
-// const QUERY_RECIPE_ID = gql`
-// query Recipe($id: String!) {
-//   recipe(_id: $id) {
-//     recipeTitle
-//     description
-//     author
-//     img
-//     ingredient
-//     preperationStep
-//   }
-// }
-// `
-
 export default function RecipeSearch() {
     const id = "62eeef9f31ff208513efd696";
-    // const { data, loading, error } = useQuery(QUERY_RECIPE_ID, {
-    //  variables: { id },
-    // });
     const { data, loading, error } = useQuery(QUERY_ALL_RECIPES);
     const [filteredRecipes, setFilteredRecipes] = useState([]);
     const [search, setSearch] = useState('all');
@@ -89,30 +57,32 @@ export default function RecipeSearch() {
 
     return (
       <div>
-      <SecondayNav/>
-        <Button sx={{ display: 'block', mt: 2 }} onClick={handleOpen}>
-          Filter Recipes
-        </Button>
-        <FormControl className= "search" sx={{ m: 1, minWidth: 120 }}>
-          <InputLabel  id="demo-controlled-open-select-label">Search</InputLabel>
-          <Select
-            labelId="demo-controlled-open-select-label"
-            id="demo-controlled-open-select"
-            open={open}
-            onClose={handleClose}
-            onOpen={handleOpen}
-            value={search}
-            label="Search"
-            onChange={handleChange}
-          >
-            <MenuItem value='all'>All</MenuItem>
-            <MenuItem value='chicken'>Chicken</MenuItem>
-            <MenuItem value='seafood'>Seafood</MenuItem>
-            <MenuItem value='beef'>Beef</MenuItem>
-            <MenuItem value='pork'>Pork</MenuItem>
-            <MenuItem value='vegetarian'>Vegetarian</MenuItem>
-          </Select>
-        </FormControl>
+        <SecondayNav/>
+        <FormGroup id="search">
+          <Button sx={{ display: 'block', mt: 2 }} onClick={handleOpen}>
+            Filter Recipes
+          </Button>
+          <FormControl sx={{ m: 1, minWidth: 120 }}>
+            <InputLabel  id="demo-controlled-open-select-label">Search</InputLabel>
+            <Select
+              labelId="demo-controlled-open-select-label"
+              id="demo-controlled-open-select"
+              open={open}
+              onClose={handleClose}
+              onOpen={handleOpen}
+              value={search}
+              label="Search"
+              onChange={handleChange}
+            >
+              <MenuItem value='all'>All</MenuItem>
+              <MenuItem value='chicken'>Chicken</MenuItem>
+              <MenuItem value='seafood'>Seafood</MenuItem>
+              <MenuItem value='beef'>Beef</MenuItem>
+              <MenuItem value='pork'>Pork</MenuItem>
+              <MenuItem value='vegetarian'>Vegetarian</MenuItem>
+            </Select>
+          </FormControl>
+        </FormGroup>
         <div className={recipeStyles.all}>
         {data.recipes.map((recipe, index) => {
           return <RecipeCard recipe={recipe} key={index} />
