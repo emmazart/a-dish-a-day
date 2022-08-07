@@ -8,7 +8,8 @@ import Select, { SelectChangeEvent } from '@mui/material/Select';
 import Button from '@mui/material/Button';
 import { useQuery, gql } from '@apollo/client';
 
-const QUERY = gql`
+//query all recipes
+const QUERY_ALL_RECIPES = gql`
 {
   recipes {
     recipeTitle
@@ -20,43 +21,50 @@ const QUERY = gql`
     tag {
       tagName
     }
+  }
 }
+`
+//query recipe by id
+const QUERY_RECIPE_ID = gql`
+query Recipe($id: String!) {
+  recipe(_id: $id) {
+    recipeTitle
+    description
+    author
+    img
+    ingredient
+    preperationStep
+  }
 }
 `
 
 export default function RecipeSearch() {
-    const [recipes, setRecipes] = useState([
-      {title:"the title", ingredients: "ingredients", instructions: "instructions", author: "author", image:{src:"broken/image/link.jpg", alt:"broken iamge text"}}
-    ]);
+    const id = "62eeef9f31ff208513efd696";
+    // const { data, loading, error } = useQuery(QUERY_RECIPE_ID, {
+    //  variables: { id },
+    // });
+    const { data, loading, error } = useQuery(QUERY_ALL_RECIPES);
     const [filteredRecipes, setFilteredRecipes] = useState([]);
     const [search, setSearch] = useState('all');
     const [open, setOpen] = useState(false);
 
     useEffect(() => {
-     
-     
-
-
-
-
-
-
-
-      setRecipes(recipes)
-      setFilteredRecipes(recipes)
-    }, [recipes])
+      if (!data) return
+      setFilteredRecipes(data.recipes)
+    }, [data])
     
 
-    useEffect(() => {
-      let r = recipes;
-      if (search !== "all") {
-        r = recipes.filter(recipe => {
-          return recipe.tag === search
-        })
-      }
-      setFilteredRecipes(r)
+    // useEffect(() => {
+    //   if (!data) return
+    //   let r = data.recipes;
+    //   if (search !== "all") {
+    //     r = data.recipes.filter(recipe => {
+    //       return data.recipe.tag.tagName === search
+    //     })
+    //   }
+    //   setFilteredRecipes(r)
       
-    }, [search])
+    // }, [search, data])
 
   
     const handleChange = (event: SelectChangeEvent<typeof search>) => {
@@ -71,7 +79,7 @@ export default function RecipeSearch() {
       setOpen(true);
     };
 
-    const { data, loading, error } = useQuery(QUERY);
+
     if (loading) return "loading"
     if (error) return <pre>{error.message}</pre>
     console.log(data)

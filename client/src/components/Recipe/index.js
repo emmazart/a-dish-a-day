@@ -21,6 +21,7 @@ import Rating from '@mui/material/Rating';
 import Ratings from '../Rating';
 import recipeStyles from './recipe.module.css';
 
+//recipe card//
 interface ExpandMoreProps extends IconButtonProps {
   expand: boolean;
 }
@@ -38,6 +39,10 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
 
 export default function RecipeCard({recipe}) {
   const [expanded, setExpanded] = React.useState(false);
+
+  const handleFavoriteClick = () => {
+
+  };
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
