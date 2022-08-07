@@ -15,7 +15,6 @@ const typeDefs = gql`
         recipe(_id: String!): Recipe
     }
 
-
     type Tag {
         tagName: String
     }
@@ -40,19 +39,16 @@ const typeDefs = gql`
         author: String
         img: String
         ingredient: [String]
-        preperationStep: [String]
+        preparationStep: [String]
         tag: [Tag]        
         
     }
-
-
-
-
 
     type Mutation {
         addTag(tagName: String!): Tag
         login(email: String!, password: String!): Auth
         addUser(username: String!, email: String!, password: String!): Auth
+        addFavorite(recipe_id: String!, user_id: String!): String
     }
     
 `;

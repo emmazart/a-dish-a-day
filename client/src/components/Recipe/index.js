@@ -20,7 +20,11 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Rating from '@mui/material/Rating';
 import Ratings from '../Rating';
 import recipeStyles from './recipe.module.css';
+import Auth from '../../utils/auth';
+import { useMutation } from '@apollo/client';
+import { ADD_FAVORITE } from '../../utils/mutations';
 
+//recipe card//
 interface ExpandMoreProps extends IconButtonProps {
   expand: boolean;
 }
@@ -38,13 +42,36 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
 
 export default function RecipeCard({recipe}) {
   const [expanded, setExpanded] = React.useState(false);
+  const [addFavorite, { data, loading, error }] = useMutation(ADD_FAVORITE);
+
+  const handleFavoriteClick = () => {
+    if (!Auth.loggedIn()) {
+      console.log("redirecting")
+      window.location.replace("/login");
+      
+    } 
+
+    const user = Auth.getProfile();
+    const recipe_id = recipe._id;
+    const user_id = user.data._id;
+
+    addFavorite({
+      variables: {
+        recipe_id: recipe_id,
+        user_id: user_id
+      }
+    }).then (result => {
+      alert(result.data.addFavorite)
+    });
+  };
 
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
+ 
   return (
     <>
-    <Card className='card' sx={{ maxWidth: 345 }}>
+    <Card className={recipeStyles.card} sx={{ maxWidth: 345 }}>
       <CardHeader
         // avatar={
         //   <Avatar sx={{ bgcolor: red[500] }} aria-label="recipe">
@@ -56,24 +83,21 @@ export default function RecipeCard({recipe}) {
         //     <MoreVertIcon />
         //   </IconButton>
         // }
-        title={recipe.title}
+        title={recipe.recipeTitle}
       />
       <CardMedia
         component="img"
         height="194"
-        image={recipe.image.src}
-        alt={recipe.image.alt}
+        image={recipe.img}
+        alt="Some alt"
       />
       <CardContent>
         <Typography variant="body2" color="text.secondary">
-        
-
-
-
+        {recipe.description}
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
+        <IconButton aria-label="add to favorites" onClick={handleFavoriteClick}>
           <FavoriteIcon />
         </IconButton>
         <IconButton aria-label="share">
@@ -91,9 +115,9 @@ export default function RecipeCard({recipe}) {
       <Collapse in={expanded} timeout="auto" unmountOnExit>
         <CardContent>
           <Typography>Ingredients:</Typography>
-          <Typography paragraph>{recipe.ingredients}</Typography>
-          <Typography>Instructons:</Typography>
-          <Typography paragraph>{recipe.instructions}</Typography>
+          <Typography paragraph>{recipe.ingredient}</Typography>
+           <Typography>Instructons:</Typography>
+          <Typography paragraph>{recipe.preparationStep}</Typography>
           <Typography>
            `Submitted by {recipe.author}`
           </Typography>
