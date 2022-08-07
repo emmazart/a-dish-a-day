@@ -8,6 +8,7 @@ import Select, { SelectChangeEvent } from '@mui/material/Select';
 import Button from '@mui/material/Button';
 import { useQuery, gql } from '@apollo/client';
 import { QUERY_ALL_RECIPES, QUERY_RECIPE_ID } from '../../utils/queries';
+import SecondayNav from '../../components/SecondaryNav';
 import recipeStyles from './recipes.module.css';
 
 // //query all recipes MOVED TO utils/queries
@@ -87,7 +88,7 @@ export default function RecipeSearch() {
     console.log(data)
     return (
       <div>
-
+      <SecondayNav/>
         <Button sx={{ display: 'block', mt: 2 }} onClick={handleOpen}>
           Filter Recipes
         </Button>

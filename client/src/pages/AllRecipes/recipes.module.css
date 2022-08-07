@@ -3,3 +3,7 @@
     width:100%;
     flex-wrap:wrap;
 }
+
+body {
+    background-color: antiquewhite;
+}
