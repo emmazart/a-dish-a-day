@@ -7,36 +7,37 @@ import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import Button from '@mui/material/Button';
 import { useQuery, gql } from '@apollo/client';
+import { QUERY_ALL_RECIPES, QUERY_RECIPE_ID } from '../../utils/queries';
 
-//query all recipes
-const QUERY_ALL_RECIPES = gql`
-{
-  recipes {
-    recipeTitle
-    description
-    author
-    img
-    ingredient
-    preperationStep
-    tag {
-      tagName
-    }
-  }
-}
-`
-//query recipe by id
-const QUERY_RECIPE_ID = gql`
-query Recipe($id: String!) {
-  recipe(_id: $id) {
-    recipeTitle
-    description
-    author
-    img
-    ingredient
-    preperationStep
-  }
-}
-`
+// //query all recipes MOVED TO utils/queries
+// const QUERY_ALL_RECIPES = gql`
+// {
+//   recipes {
+//     recipeTitle
+//     description
+//     author
+//     img
+//     ingredient
+//     preperationStep
+//     tag {
+//       tagName
+//     }
+//   }
+// }
+// `
+// //query recipe by id
+// const QUERY_RECIPE_ID = gql`
+// query Recipe($id: String!) {
+//   recipe(_id: $id) {
+//     recipeTitle
+//     description
+//     author
+//     img
+//     ingredient
+//     preperationStep
+//   }
+// }
+// `
 
 export default function RecipeSearch() {
     const id = "62eeef9f31ff208513efd696";

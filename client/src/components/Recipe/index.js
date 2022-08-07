@@ -94,7 +94,7 @@ export default function RecipeCard({recipe}) {
         <CardContent>
           <Typography>Ingredients:</Typography>
           <Typography paragraph>{recipe.ingredient}</Typography>
-          <Typography>Instructons:</Typography>
+           <Typography>Instructons:</Typography>
           <Typography paragraph>{recipe.preparationStep}</Typography>
           <Typography>
            `Submitted by {recipe.author}`
