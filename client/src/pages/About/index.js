@@ -11,7 +11,7 @@ function About() {
                 variant='h4'
                 color='textPrimary'
                 align='center'
-                margin='100px 0px 50px 0px'
+                margin='140px 0px 50px 0px'
             >
                 About Us
             </Typography>

@@ -4,9 +4,10 @@ import Button from '@mui/material/Button';
 import Rating from '@mui/material/Rating';
 import TextField from '@mui/material/TextField';
 import dashStyles from './dashboard.module.css';
-import SecondaryNav from '../../components/SecondaryNav';
 import Footer from '../../components/Footer';
 import FavoriteRecipe from '../../components/FavoriteRecipe';
+import Header from '../../components/Header';
+import { Typography } from '@mui/material';
 
 const Dashboard = () => {
 
@@ -74,8 +75,15 @@ const Dashboard = () => {
 
     return (
         <div className={dashStyles.test}>
-            <SecondaryNav></SecondaryNav>
-            <h2>Dashboard</h2>
+            <Header></Header>
+            <Typography
+                variant='h4'
+                color='textPrimary'
+                align='center'
+                margin='140px 0px 50px 0px'
+            >
+                Dashboard
+            </Typography>
                 <main className={dashStyles.main}>
 
                         {/* Recent recipes */}
