@@ -1,6 +1,7 @@
-/* .container {
-    border-bottom: solid 2px #faaf00;
-} */
+.form {
+    padding: 1rem;
+    margin: 1rem;
+}
 
 /* five star rating element styles */
 .rating {

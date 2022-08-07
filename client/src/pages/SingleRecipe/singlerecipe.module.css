@@ -9,3 +9,11 @@
     width: 85vw;
     padding: 2rem;
 }
+
+.ingredients {
+    list-style: none;
+}
+
+.main ul {
+    padding: 0;
+}

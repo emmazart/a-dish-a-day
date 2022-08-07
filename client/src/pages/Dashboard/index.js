@@ -8,7 +8,7 @@ import SecondaryNav from "../../components/SecondaryNav";
 import Footer from "../../components/Footer";
 import FavoriteRecipe from "../../components/FavoriteRecipe";
 
-import Review from "../../components/Review";
+import Review from "../../components/ReviewForm";
 import { useQuery } from "@apollo/client";
 import { QUERY_RECIPES } from "../../utils/queries";
 
