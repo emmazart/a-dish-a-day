@@ -3,7 +3,9 @@
     "recipeTitle": "Roast Leg of Lamb",
     "description": "A roasted leg of lamb is the perfect centerpiece for a special occasion meal, especially Easter dinner. Preparing an expensive cut of meat like this one can be anxiety-inducing, but we promise, YOU CAN DO THIS! Even prepared super simply, it can be incredibly delicious. Check out our tips below for making a leg of lamb you can be proud of.",
     "author": "ETHAN CALABRESE",
+
     "img": "../../client/src/assets/images/leg-of-lamb.jpeg",
+
     "ingredient": [
       "1/4 c. plus 1 tablespoon extra-virgin olive oil, plus more greasing",
       "3 cloves garlic, minced",
@@ -30,7 +32,9 @@
     "recipeTitle": "Poronkäristys (Sautéed Reindeer)",
     "description": "This dish hails from Finland, but is enjoyed in Sweden, Norway and Russia as well. What I like about this recipe is that it makes no assumptions the key to this delicious meal is slicing it thinly, seasoning it sparingly, and nudging it gently towards tenderness with a combination of light braising and some crisping at the end. The whole process takes about two hours from start to finish, but it is totally worth it.",
     "author": "The Swedish Chef",
+
     "img": "../../client/src/assets/images/Reindeer-Sauteed.webp",
+
     "ingredient": [
       "2 to 3 lbs boneless reindeer, venison, bison, or beef steak (round, sirloin, or chuck)",
       "2 tbsp butter",
@@ -56,7 +60,9 @@
     "recipeTitle": "Hearty Bison Stew",
     "description": "Although the American bison is often referred to as a buffalo, it is only a distant relative of the true buffalo (like the Asian water buffalo). Its closest relative is the European bison, also known as a wisent. Its meat is usually leaner than beef, high in iron, and sweeter-tasting. Because of its leanness, I find that it is best served in slow-cooked meals like this stew, as hamburgers, or as a grilled meat (like shish-kabobs) served medium-rare.",
     "author": "Wild Bill",
+
     "img": "../../client/src/assets/images/Bison-Stew.webp",
+
     "ingredient": [
       "1lb US Wellness Meats bison stew meat",
       "2 tbsp coconut oil or ghee",
@@ -91,7 +97,9 @@
     "recipeTitle": "Pichelsteiner",
     "description": "Pichelsteiner is a very typical stew, found in similar shapes and sizes all over the world. There are several stories to explain its invention, a common trait among stews. One folk tale details how a farmer wife fed the stew to a group of marauding soldiers, saving the day (and her family) with this new culinary invention. Another tale explains how a Bavarian chef prepared Pichelsteiner for party atop Büchelstein mountain (allegedly, the name of this dish morphed from there). Finally, the small Bavarian village of Regen, along the Czech border, claims ownership of this dish as well, which they have communally served at the anniversary of their church dedication in 1874.",
     "author": "Heir Spleigel",
+
     "img": "../../client/src/assets/images/Pichelsteiner.webp",
+
     "ingredient": ["1 lb boneless stew beef, cut into 1” chunks",
         "1 lb boneless pork shoulder, cut into 1” chunks",
         "1 lb boneless lamb shoulder, cut into 1” chunks",
@@ -140,7 +148,9 @@
         "description" : "Served it over angel hair pasta along with some steamed spinach and a salad, and a lovely bottle of dry, crisp white French wine. Oh my, what a meal",
         "author" : "Bill Bunt",
         "img" : "../../client/src/assets/images/shrimpscampi.JPG", 
+
         "ingredient" : ["6 tablespoons unsalted butter, softened", "1/4 cup olive oil ", "1 tablespoon minced garlic ", "1 tablespoon minced shallots ", "2 tablespoons minced fresh chives", "salt and freshly ground black pepper to taste", "1/2 teaspoon paprika", "2 pounds large shrimp - peeled and deveined "],
+
         "preparationStep" : ["Preheat grill for high heat.", "In a large bowl, mix together softened butter, olive oil, garlic, shallots, chives, salt, pepper, and paprika; add the shrimp, and toss to coat.", "Lightly oil grill grate. Cook the shrimp as close to the flame as possible for 2 to 3 minutes per side, or until opaque."],
         "tag": [{"tagName": "Seafood"}]
         
@@ -151,10 +161,12 @@
         "author" : "Bruce Bruceface",
         "img" : "../../client/src/assets/images/salmoncake.JPG", 
 
+
         "ingredient" : ["aa1 (14.75 ounce) can salmon, drained of all but 2 tablespoons of liquid, flaked", "1 large slice bread , crust removed, shredded (1 cup, 50g)", "3 tablespoons green onion, chopped", "1 medium garlic clove, minced", "1 tablespoon fresh dill, chopped, or 1 teaspoon dried", "3 tablespoons minced green bell pepper", "1 tablespoon flour", "1 large egg", "1/2 teaspoon sweet paprika", "1 teaspoon finely grated lemon zest", "2 teaspoons lemon juice", "quarter teaspoon kosher salt", "Several turns of freshly ground black pepper", "3  tablespoons extra virgin olive oil"],
         "preparationStep" : ["Mix the patty ingredients", "Form the patties", "Chill at least 30 minutes", "Brown in skillet"],
         "tag": [{"tagName": "Seafood"}]
         
+
     },
     
         {
