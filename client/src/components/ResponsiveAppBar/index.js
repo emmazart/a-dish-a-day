@@ -62,7 +62,7 @@ const ResponsiveAppBar = () => {
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
-                    <Link to="/login" className={styles.title}>
+                    <Link to="/" className={styles.title}>
                         <Typography
                             variant="h6"
                             noWrap

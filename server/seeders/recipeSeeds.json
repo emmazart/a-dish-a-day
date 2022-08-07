@@ -4,7 +4,7 @@
         "description" : "the best meal never maid",
         "author" : "some old guy name Andre",
         "img" : "https://placekitten.com/400/200",
-        "ingredients" : [],
+        "ingredient" : [],
         "preperationStep" : [],
         "tag": []
         
@@ -14,7 +14,7 @@
         "description" : "Bacon and Hamberger",
         "author" : "Larry Jones",
         "img" : "https://placekitten.com/400/200",
-        "ingredients" : [],
+        "ingredient" : [],
         "preperationStep" : [],
         "tag": []
         
@@ -24,8 +24,18 @@
         "description" : " Noodles and cheese and thats it",
         "author" : "The Smart Kid",
         "img" : "https://placekitten.com/400/200",
-        "ingredients" : [],
+        "ingredient" : [],
         "preperationStep" : [],
+        "tag": []
+        
+    },
+    {
+        "recipeTitle" : "Chicken Parm",
+        "description" : "This is a great chicken dish",
+        "author" : "Emma",
+        "img" : "https://placekitten.com/400/200",
+        "ingredient" : ["chicken", "parmesan", "tomato sauce", "pasta"],
+        "preperationStep" : ["1: do this", "2: to this second", "3: do this third"],
         "tag": []
         
     }

@@ -60,7 +60,7 @@ const SecondaryNav = () => {
             <Container maxWidth="xl">
                 <Toolbar disableGutters>
                     {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
-                    <Link to="/login">
+                    <Link to="/">
                         <Typography
                             variant="h6"
                             noWrap
