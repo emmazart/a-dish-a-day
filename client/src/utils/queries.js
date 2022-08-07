@@ -21,6 +21,7 @@ export const QUERY_RECIPES = gql`
 export const QUERY_ALL_RECIPES = gql`
 {
   recipes {
+    _id
     recipeTitle
     description
     author

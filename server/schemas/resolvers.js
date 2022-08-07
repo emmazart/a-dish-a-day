@@ -56,14 +56,14 @@ const resolvers = {
       },
       addFavorite: async (parent, args) => {
         const {recipe_id, user_id} = args;
-       
+
         User.findOne( { _id: user_id } )
         .then(user => {
           user.favorite.push(recipe_id);
           user.save();
         });
-
-        return;
+        
+        return "Favorite added";
       }
 
     }

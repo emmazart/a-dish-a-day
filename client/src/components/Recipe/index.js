@@ -42,21 +42,27 @@ const ExpandMore = styled((props: ExpandMoreProps) => {
 
 export default function RecipeCard({recipe}) {
   const [expanded, setExpanded] = React.useState(false);
+  const [addFavorite, { data, loading, error }] = useMutation(ADD_FAVORITE);
 
   const handleFavoriteClick = () => {
     if (!Auth.loggedIn()) {
-      // redirect to login?
-      // alert user that they're not logged in?
-    }
+      console.log("redirecting")
+      window.location.replace("/login");
+      
+    } 
 
     const user = Auth.getProfile();
-    const userId = user.data._id;
-    // get recipe id
+    const recipe_id = recipe._id;
+    const user_id = user.data._id;
 
-
-
-    // run the mutation to add id of the card clicked to the user's favorites array
-
+    addFavorite({
+      variables: {
+        recipe_id: recipe_id,
+        user_id: user_id
+      }
+    }).then (result => {
+      alert(result.data.addFavorite)
+    });
   };
 
   const handleExpandClick = () => {
