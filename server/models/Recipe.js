@@ -32,7 +32,7 @@ const recipeSchema = new Schema(
       //2 glasses of milk
       type: Array,
     },
-    preperationStep: {
+    preparationStep: {
       //contains actual cooking instructions
       type: Array, //retrieve steps and auto increment step count ie 1. 1 clobe of garlic, 2. 2 glasses of milk
 

@@ -3,8 +3,8 @@
     "recipeTitle": "Roast Leg of Lamb",
     "description": "A roasted leg of lamb is the perfect centerpiece for a special occasion meal, especially Easter dinner. Preparing an expensive cut of meat like this one can be anxiety-inducing, but we promise, YOU CAN DO THIS! Even prepared super simply, it can be incredibly delicious. Check out our tips below for making a leg of lamb you can be proud of.",
     "author": "ETHAN CALABRESE",
-    "img": "./A-Dish-A-Day/client/src/assets/images/leg-of-lamb.jpeg",
-    "ingredients": [
+    "img": "../../client/src/assets/images/leg-of-lamb.jpeg",
+    "ingredient": [
       "1/4 c. plus 1 tablespoon extra-virgin olive oil, plus more greasing",
       "3 cloves garlic, minced",
       "1 tbsp. minced rosemary, plus 2 sprigs",
@@ -16,7 +16,7 @@
       "8 oz. cipollini onions",
       "2 lemons, halved"
     ],
-    "preperationStep": [
+    "preparationStep": [
       "1. Heat oven to 400°. In a small bowl, combine 1/4 cup oil, garlic, chopped rosemary, and thyme.",
       "2. Place lamb in a large roasting dish, then season all over with salt and pepper.",
       "3. Brush herb oil all over lamb (you will not use it all right now). Roast 30 minutes.",
@@ -30,8 +30,8 @@
     "recipeTitle": "Poronkäristys (Sautéed Reindeer)",
     "description": "This dish hails from Finland, but is enjoyed in Sweden, Norway and Russia as well. What I like about this recipe is that it makes no assumptions the key to this delicious meal is slicing it thinly, seasoning it sparingly, and nudging it gently towards tenderness with a combination of light braising and some crisping at the end. The whole process takes about two hours from start to finish, but it is totally worth it.",
     "author": "The Swedish Chef",
-    "img": "./A-Dish-A-Day/client/src/assets/images/Reindeer-Sauteed.webp",
-    "ingredients": [
+    "img": "../../client/src/assets/images/Reindeer-Sauteed.webp",
+    "ingredient": [
       "2 to 3 lbs boneless reindeer, venison, bison, or beef steak (round, sirloin, or chuck)",
       "2 tbsp butter",
       "1 yellow onion, sliced",
@@ -45,19 +45,19 @@
       "mashed potatoes to serve",
       "sliced pickles to serve"
     ],
-    "preperationStep": [
+    "preparationStep": [
       "1. Freeze the meat for 20 minutes then slice as thin as possible; set aside.",
       "2. Warm the butter in a large skillet over medium heat. Add the onion and saute until softened, about 6 minutes. Stir in the garlic and saute until aromatic about 30 seconds. Add the meat, salt, pepper, allspice, and water; stir to combine. Bring to a simmer, then cover, reduce heat to low and gently simmer until the meat is tender, about 1 hour.",
       "3. Remove the lid and increase heat to medium-high. Saute, stirring often, until the water has evaporated and the meat turns dark brown and crispy, about 10 minutes. Serve atop mashed potatoes, garnished with sliced chives and serve with mashed potatoes, lingonberry preserves, and sliced pickles."
     ],
-    "tag": [{"tagName": "Other Meets"}]
+    "tag": [{"tagName": "Other Meats"}]
   },
   {
     "recipeTitle": "Hearty Bison Stew",
     "description": "Although the American bison is often referred to as a buffalo, it is only a distant relative of the true buffalo (like the Asian water buffalo). Its closest relative is the European bison, also known as a wisent. Its meat is usually leaner than beef, high in iron, and sweeter-tasting. Because of its leanness, I find that it is best served in slow-cooked meals like this stew, as hamburgers, or as a grilled meat (like shish-kabobs) served medium-rare.",
     "author": "Wild Bill",
-    "img": "/Users/cspower/Documents/Bootcamp/A-Dish-A-Day/client/src/assets/images/Bison-Stew.webp",
-    "ingredients": [
+    "img": "../../client/src/assets/images/Bison-Stew.webp",
+    "ingredient": [
       "1lb US Wellness Meats bison stew meat",
       "2 tbsp coconut oil or ghee",
       "1/2 tsp each salt and pepper",
@@ -73,7 +73,7 @@
       "1/2 cup frozen peas",
       "1 tsp chopped fresh parsley for garnish"
     ],
-    "preperationStep": [
+    "preparationStep": [
       "1. As with most of my red meat-based roasts/stews, I prefer a combination of chicken and beef stock as the braising liquid; it gives the dish its tastiness without an overbearing “beefiness”.",
       "2. Remove the bison meat from its packaging, and gently rinse with cold water and allow to drain dry. I was amazed at how well the stew meat was cut, and how lean and colorful it was!",
       "3. In a french/dutch oven, heat up the oil/ghee on medium/high heat for about five minutes. Season the meat with 1/2 tsp each salt and pepper, and brown the meat for a few minutes per side, in batches if needed. Altogether it took me eight minutes to brown the meat. Remove the browned meat and set it aside, leaving the oil inside the french/dutch oven.",
@@ -85,14 +85,14 @@
       "10. With a ladle, remove about 1 cup of the cooked potatoes, carrots, and parsnip (be sure to pick out the bison meat), and about 1/2 cup of the remaining broth. Blend your cup of veggies and 1/2 cup of broth together, making a sort of “potato/veggie” paste. Pour this paste back into the dutch oven, and stir everything together, while also stirring in the frozen peas.",
       "11. Cover and simmer on the stovetop on med/low heat for five minutes. Check for taste, adding salt and pepper as needed."
     ],
-    "tag": [{"tagName": "Other Meets"}]
+    "tag": [{"tagName": "Other Meats"}]
   },
   {
     "recipeTitle": "Pichelsteiner",
     "description": "Pichelsteiner is a very typical stew, found in similar shapes and sizes all over the world. There are several stories to explain its invention, a common trait among stews. One folk tale details how a farmer wife fed the stew to a group of marauding soldiers, saving the day (and her family) with this new culinary invention. Another tale explains how a Bavarian chef prepared Pichelsteiner for party atop Büchelstein mountain (allegedly, the name of this dish morphed from there). Finally, the small Bavarian village of Regen, along the Czech border, claims ownership of this dish as well, which they have communally served at the anniversary of their church dedication in 1874.",
     "author": "Heir Spleigel",
-    "img": "A-Dish-A-Day/client/src/assets/images/Pichelsteiner.webp",
-    "ingredients": ["1 lb boneless stew beef, cut into 1” chunks",
+    "img": "../../client/src/assets/images/Pichelsteiner.webp",
+    "ingredient": ["1 lb boneless stew beef, cut into 1” chunks",
         "1 lb boneless pork shoulder, cut into 1” chunks",
         "1 lb boneless lamb shoulder, cut into 1” chunks",
         "3 tbsp all-purpose gluten-free flour or white rice flour",
@@ -107,20 +107,20 @@
         "1 leek, sliced (about 1 cup sliced)",
         "1/2 head (~1 lb) green or savoy cabbage, cut into bite-sized chunks (about 3 cups chopped)",
         "chopped parsley to garnish"],
-    "preperationStep": ["1. Place the beef, pork, and lamb in a large mixing bowl; pat dry with paper towels, then toss with the flour, salt, and pepper until evenly coated. Warm the lard in a dutch oven over medium-high heat. Brown the meat in batches to prevent overcrowding, turning often, until dark brown and crispy at the edges, about 8 minutes per batch. Remove each batch with a slotted spoon and set aside, adding more lard to the pot if needed.",
+    "preparationStep": ["1. Place the beef, pork, and lamb in a large mixing bowl; pat dry with paper towels, then toss with the flour, salt, and pepper until evenly coated. Warm the lard in a dutch oven over medium-high heat. Brown the meat in batches to prevent overcrowding, turning often, until dark brown and crispy at the edges, about 8 minutes per batch. Remove each batch with a slotted spoon and set aside, adding more lard to the pot if needed.",
         "2. Once the meat is browned and out of the way, add the onions and reduce heat to medium; saute until softened, about 6 minutes. Return the meats to the pot and add the chicken broth and enough water to reach 3/4 of the way up the meat. Bring to a simmer, stirring with a wooden spoon and scraping up any browned bits at the bottom of the pot, then cover and reduce heat to low; simmer until the meats are just tender, about 1 1/2 hours, stirring occasionally. As the meats simmer, place the mushrooms in a small bowl and cover with warm water; set aside to reconstitute, about 15 minutes, then chop into bite-sized pieces (reserve the water you soaked them in).",
         "3. Stir in the potatoes, carrots, mushrooms, and the water you soaked the mushrooms in (minus any sediment that has accumulated at the bottom); simmer, uncovered, for another 20 minutes, stirring once or twice. Stir in the leek and cabbage, and simmer until the meat and vegetables are tender, about 10 more minutes. Add salt and pepper to taste, then serve garnished with parsley.",
         "** Electric pressure cooker (Instant Pot) instructions: Brown the floured meats in batches using the “Saute” function of the pressure-cooker, then remove the meats and saute the onions. Return the meats to the pot, plus the chicken broth, then pressure-cook under Manual high pressure for 30 minutes. Allow to depressurize naturally, then add the potatoes, carrots, mushrooms, leek, and cabbage, and pressure-cook for another 8 minutes. Allow to depressurize naturally, season with salt and pepper to taste, then serve garnished with chopped parsley.",
         "** For a richer experience, throw a couple marrow bones in the pot with the meat."],
-    "tag": [{"tagName": "Other Meets"}]
+    "tag": [{"tagName": "Other Meats"}]
   },
     {
         "recipeTitle" : "Peach Salsa Bowl",
         "description" : "These tasty bowls are one of our favorite summer dinners! I love the contrast of the sweet, refreshing peach salsa with the creamy avocado.",
         "author" : "Larry Jones",
         "img" : "../../client/src/assets/images/salsabowl.JPG", 
-        "ingredients" : ["1½ cups cooked black beans, drained and rinsed", "2 ripe avocados, sliced", "peach salsa", "cilantro", "lime slices"],
-        "preperationStep" : ["Assemble bowls with the rice, beans, and avocado.", "Top with scoops of the peach salsa and drizzle with the cilantro lime dressing. ", "Garnish with more herbs. Season to taste and serve with lime wedges."],
+        "ingredient" : ["1½ cups cooked black beans, drained and rinsed", "2 ripe avocados, sliced", "peach salsa", "cilantro", "lime slices"],
+        "preparationStep" : ["Assemble bowls with the rice, beans, and avocado.", "Top with scoops of the peach salsa and drizzle with the cilantro lime dressing. ", "Garnish with more herbs. Season to taste and serve with lime wedges."],
         "tag": [{"tagName": "Vegetarian"}]
         
     },
@@ -129,8 +129,8 @@
         "description" : "Bake a potato perfectly every time! With the olive oil & sea salt coating, it'll come out of the oven with crispy skin and fluffy insides that are delicious with your favorite toppings.",
         "author" : "Samuel Jones Gamgii",
         "img" : "../../client/src/assets/images/whatpotatoprecious.JPG",
-        "ingredients" : ["4 medium russet potatoes", "Extra-virgin olive oil", "Sea salt", "Cashew Cream Cheese", "Tempeh Bacon", "Chives"],
-        "preperationStep" : ["Preheat the oven to 425°F and line two baking sheet with parchment paper.", "Use a fork to poke a few holes into the potatoes.", "Place on the baking sheet, rub with olive oil, and sprinkle liberally with sea salt all over.", "Bake 45 to 60 minutes, or until the potato is fork-tender and the skin is crisp.",  "Slice open each potato.", "Assemble with a dollop of sour cream or cashew cream, tempeh bacon bits, and a sprinkle of chives.", "Serve with remaining cashew cream and tempeh bacon on the side."],
+        "ingredient" : ["4 medium russet potatoes", "Extra-virgin olive oil", "Sea salt", "Cashew Cream Cheese", "Tempeh Bacon", "Chives"],
+        "preparationStep" : ["Preheat the oven to 425°F and line two baking sheet with parchment paper.", "Use a fork to poke a few holes into the potatoes.", "Place on the baking sheet, rub with olive oil, and sprinkle liberally with sea salt all over.", "Bake 45 to 60 minutes, or until the potato is fork-tender and the skin is crisp.",  "Slice open each potato.", "Assemble with a dollop of sour cream or cashew cream, tempeh bacon bits, and a sprinkle of chives.", "Serve with remaining cashew cream and tempeh bacon on the side."],
         "tag": [{"tagName": "Vegetarian"}]
         
     },
@@ -139,8 +139,8 @@
         "description" : "Served it over angel hair pasta along with some steamed spinach and a salad, and a lovely bottle of dry, crisp white French wine. Oh my, what a meal",
         "author" : "Bill Bunt",
         "img" : "../../client/src/assets/images/shrimpscampi.JPG", 
-        "ingredients" : ["6 tablespoons unsalted butter, softened", "1/4 cup olive oil ", "1 tablespoon minced garlic ", "1 tablespoon minced shallots ", "2 tablespoons minced fresh chives", "salt and freshly ground black pepper to taste", "1/2 teaspoon paprika", "2 pounds large shrimp - peeled and deveined "],
-        "preperationStep" : ["Preheat grill for high heat.", "In a large bowl, mix together softened butter, olive oil, garlic, shallots, chives, salt, pepper, and paprika; add the shrimp, and toss to coat.", "Lightly oil grill grate. Cook the shrimp as close to the flame as possible for 2 to 3 minutes per side, or until opaque."],
+        "ingredient" : ["6 tablespoons unsalted butter, softened", "1/4 cup olive oil ", "1 tablespoon minced garlic ", "1 tablespoon minced shallots ", "2 tablespoons minced fresh chives", "salt and freshly ground black pepper to taste", "1/2 teaspoon paprika", "2 pounds large shrimp - peeled and deveined "],
+        "preparationStep" : ["Preheat grill for high heat.", "In a large bowl, mix together softened butter, olive oil, garlic, shallots, chives, salt, pepper, and paprika; add the shrimp, and toss to coat.", "Lightly oil grill grate. Cook the shrimp as close to the flame as possible for 2 to 3 minutes per side, or until opaque."],
         "tag": [{"tagName": "Seafood"}]
         
     },
@@ -149,8 +149,8 @@
         "description" : " Served it over angel hair pasta along with some steamed spinach and a salad, and a lovely bottle of dry, crisp white French wine. Oh my, what a meal",
         "author" : "Bruce Bruceface",
         "img" : "../../client/src/assets/images/salmoncake.JPG", 
-        "ingredients" : ["aa1 (14.75 ounce) can salmon, drained of all but 2 tablespoons of liquid, flaked", "1 large slice bread , crust removed, shredded (1 cup, 50g)", "3 tablespoons green onion, chopped", "1 medium garlic clove, minced", "1 tablespoon fresh dill, chopped, or 1 teaspoon dried", "3 tablespoons minced green bell pepper", "1 tablespoon flour", "1 large egg", "1/2 teaspoon sweet paprika", "1 teaspoon finely grated lemon zest", "2 teaspoons lemon juice", "quarter teaspoon kosher salt", "Several turns of freshly ground black pepper", "3  tablespoons extra virgin olive oil"],
-        "preperationStep" : ["Mix the patty ingredients", "Form the patties", "Chill at least 30 minutes", "Brown in skillet"],
+        "ingredient" : ["aa1 (14.75 ounce) can salmon, drained of all but 2 tablespoons of liquid, flaked", "1 large slice bread , crust removed, shredded (1 cup, 50g)", "3 tablespoons green onion, chopped", "1 medium garlic clove, minced", "1 tablespoon fresh dill, chopped, or 1 teaspoon dried", "3 tablespoons minced green bell pepper", "1 tablespoon flour", "1 large egg", "1/2 teaspoon sweet paprika", "1 teaspoon finely grated lemon zest", "2 teaspoons lemon juice", "quarter teaspoon kosher salt", "Several turns of freshly ground black pepper", "3  tablespoons extra virgin olive oil"],
+        "preparationStep" : ["Mix the patty ingredients", "Form the patties", "Chill at least 30 minutes", "Brown in skillet"],
         "tag": [{"tagName": "Seafood"}]
         
     },
@@ -160,7 +160,7 @@
           "description": "Chicken Korma Nadroo (Gluten-free, Paleo, Primal, Perfect Health Diet)",
           "author": "Daniel the Bootcamp TA",
           "img": "/client/src/assets/images/chicken-KoraNadroo.png",
-          "ingredients": ["3 lbs chicken bone-in thighs and drumsticks, skin removed, chopped crosswise against the bone",
+          "ingredient": ["3 lbs chicken bone-in thighs and drumsticks, skin removed, chopped crosswise against the bone",
           "1 tsp kosher salt, more to taste",
           "1/2 tsp black pepper, more to taste",
           "1/4 cup ghee",
@@ -182,7 +182,7 @@
           "1/2 lb lotus root, peeled and sliced into ¼” slices",
           "2 drops kewra water (optional)",
           "1/2 bunch cilantro, divided, to garnish"],
-          "preperationStep": ["1. Season the chicken with the salt and pepper. Warm the ghee in a dutch oven or deep skillet over medium heat; working in batches, brown the chicken until golden on each side, about 3 minutes per side. Remove and set aside the chicken as it browns.",
+          "preparationStep": ["1. Season the chicken with the salt and pepper. Warm the ghee in a dutch oven or deep skillet over medium heat; working in batches, brown the chicken until golden on each side, about 3 minutes per side. Remove and set aside the chicken as it browns.",
       
           "2. Increase the heat to medium-high, then add the ginger, garlic, chile peppers, cinnamon stick, cloves, cardamom pods, bay leaf, and cumin seeds; saute until aromatic, but not burnt, about 30 seconds. Reduce heat to medium, then stir in the onions and tomatoes; saute until softened, about 6 minutes, then stir in the turmeric, chili powder, and chicken stock. If youd like, you can blend this sauce in a high-speed blender until smooth, then pour it through a sieve for a velvety-smooth sauce; otherwise, proceed directly to the next step.",
           
@@ -196,7 +196,7 @@
           "description": "Mouth watering sticky wings",
           "author": "Mayra Ibarra",
           "img": "/client/src/assets/images/chicken-Caribbean-Sticky-Wings.png",
-          "ingredients": ["3-4 lbs chicken wings",
+          "ingredient": ["3-4 lbs chicken wings",
           "1 tbsp olive oil",
           "2 tsp kosher salt",
           "2 tsp paprika",
@@ -215,7 +215,7 @@
           "2 pinches ground cinnamon",
           "Caribbean hot sauce (optional, as desired)"],
       
-          "preperationStep": ["1. Pat the chicken pieces dry using paper towels, then transfer them to a large mixing bowl. Pour in the olive oil and toss to coat, then sprinkle in the salt, paprika, pepper, all spice, and ginger; mix together using your hands to coat everything evenly.",
+          "preparationStep": ["1. Pat the chicken pieces dry using paper towels, then transfer them to a large mixing bowl. Pour in the olive oil and toss to coat, then sprinkle in the salt, paprika, pepper, all spice, and ginger; mix together using your hands to coat everything evenly.",
       
           "2a. Traeger grilling instructions: With the lid open, turn the switch on and set the temperature dial to “smoke”. Once the grill starts to emit smoke, close the lid and set the dial to 350F. Wait for it to reach temperature, then distribute the wings evenly over the grill grates. Grill until the wings are golden and its skin appears crispy at the edges, about 45 minutes. About halfway through cooking, rearrange the chicken so that the pieces that look more done than others are swapped with the less-cooked pieces.",
           
@@ -231,13 +231,13 @@
           "description": "Filipino Stewed Chicken",
           "author": "Nathan Hedglin",
           "img": "/client/src/assets/images/chicken-chicken-adobo.png",
-          "ingredients": ["2/3 cup cane vinegar",
+          "ingredient": ["2/3 cup cane vinegar",
           "1/3 cup tamari",
           "15 cloves garlic, lightly smashed",
           "2 tbsp whole black peppercorns",
           "6 whole bay leaves",
           "4 lbs bone-in dark meat chicken (thighs, drumsticks, and wings)"],
-          "preperationStep": ["1. In a mixing bowl, combine the vinegar, soy sauce, garlic, peppercorns, and bay leaves. Place a handful of the chicken in a large re-sealable plastic bag, then pour in a little of the marinade. Continue to add chicken and marinade in batches to ensure the chicken is well-coated. Transfer to the fridge and marinate for at least 4 hours, but overnight preferred.",
+          "preparationStep": ["1. In a mixing bowl, combine the vinegar, soy sauce, garlic, peppercorns, and bay leaves. Place a handful of the chicken in a large re-sealable plastic bag, then pour in a little of the marinade. Continue to add chicken and marinade in batches to ensure the chicken is well-coated. Transfer to the fridge and marinate for at least 4 hours, but overnight preferred.",
       
           "2. Preheat the oven to 400F. Place the chicken (skin-side-up for the thighs) and marinade in a large rimmed baking sheet, then cover with tinfoil. Place the baking sheet in the center of the oven and roast for 30 minutes. Remove the tinfoil and turn the chicken pieces; roast, uncovered, for 20 more minutes. Turn the chicken and roast until the skin is browned and crispy, about 10 more minutes, then transfer to a serving dish and serve."],
           "tag": [{"tagName" : "Chicken"}]
@@ -247,7 +247,7 @@
           "description": "Seasoned Southern Fried Chicken",
           "author": "Roda Hassan",
           "img": "/client/src/assets/images/chicken-Fried Chicken.png",
-          "ingredients": [
+          "ingredient": [
             "4 lbs bone-in, skin-on chicken thighs and/or drumsticks",
             "2 cups full-fat buttermilk",
             "1 tbsp sea salt",
@@ -266,7 +266,7 @@
             "pinch of dried thyme",
             "3 cups lard, for frying, or more if needed"
           ],
-          "preperationStep": [
+          "preparationStep": [
             "1. Pat the chicken pieces dry with paper towels. In a resealable plastic bag, combine the chicken, buttermilk, and salt and refrigerate for at least 30 minutes but up to overnight—the longer the better. Drain the chicken in a colander, then let dry on a wire rack over a baking sheet for 30 minutes.",
       
             "2.Preheat your oven to 170°F. Combine the coating ingredients in a wide, shallow bowl. In a cast-iron skillet, heat the lard to about 340F. Pat the chicken pieces dry with paper towels, then coat them in the seasonings, shaking off the excess. Fry the chicken in batches until the internal temperature reaches 165F, about 10 minutes per side. As you finish each batch, place the cooked chicken pieces on a wire rack set over a baking sheet; put them in the oven to keep warm as you fry the remaining pieces."
@@ -278,7 +278,7 @@
           "description": "Chicken Parmesan (Grain-Free)",
           "author": "Akon Abazary",
           "img": "/client/src/assets/images/chicken-chicken parmesan.png",
-          "ingredients": [
+          "ingredient": [
             "25.5 oz jar pasta sauce",
             "4 chicken breasts",
             " 3 eggs, beaten",
@@ -296,7 +296,7 @@
             "1/4 cup lard, ghee, or coconut oil",
             "8oz mozzarella cheese, grated (omit to make dairy-free, see notes below)"
           ],
-          "preperationStep": [
+          "preparationStep": [
             "1. Empty the pasta sauce into a saucepan and bring to a simmer; reduce heat to low to keep warm while you prepare the chicken.",
       
             "2. Place the chicken flat on a cutting board, then slice the chicken lengthwise to make two thin butterflied cutlets. Gently pound with a meat tenderizer to an even thickness, about 1/2″, then set aside. Prepare three wide, shallow bowls to bread the cutlets. In the first bowl, combine the dusting ingredients. In the second bowl, add the beaten eggs. In the third bowl, add the breading ingredients.",
@@ -314,11 +314,11 @@
           "description": "3-2-1 Smoked Ribs",
           "author": "Shazeen",
           "img": "/client/src/assets/images/beef-Smoked-Ribs.png",
-          "ingredients": ["2 to 4 racks baby back or spare ribs",
+          "ingredient": ["2 to 4 racks baby back or spare ribs",
           "1/2 cup barbecue rub (or your favorite BBQ rub)",
           "1/4 cup apple juice (or 1 tbsp apple cider vinegar + 3 tbsp water + 1 tsp honey)",
           "1/2 cup barbecue sauce (or your favorite BBQ sauce)"],
-          "preperationStep": ["1. Remove the membrane from the bottom of the ribs, if they have it. It can be tricky, but try and peel off a corner piece, grab it firmly, and rip it all the way down. It takes some work, but this will expose the meat a bit better and make for a more flavorful and tender eating experience. Having a hard time? No worries, skip this step and move on (there's a lot of wiggle room in this recipe!).",
+          "preparationStep": ["1. Remove the membrane from the bottom of the ribs, if they have it. It can be tricky, but try and peel off a corner piece, grab it firmly, and rip it all the way down. It takes some work, but this will expose the meat a bit better and make for a more flavorful and tender eating experience. Having a hard time? No worries, skip this step and move on (there's a lot of wiggle room in this recipe!).",
       
           "2. Rub the ribs all over with the barbecue rub. You don't need to coat it with rub, just enough so that you impart some flavor. If you have the time, you can leave the rub on for an hour or two (I wouldn't go much longer than that).",
           
