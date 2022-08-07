@@ -39,7 +39,7 @@ const typeDefs = gql`
         author: String
         img: String
         ingredient: [String]
-        preperationStep: [String]
+        preparationStep: [String]
         tag: [Tag]        
         
     }

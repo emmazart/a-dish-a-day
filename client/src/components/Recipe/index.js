@@ -47,6 +47,7 @@ export default function RecipeCard({recipe}) {
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
+ 
   return (
     <>
     <Card className='card' sx={{ maxWidth: 345 }} style={{backgroundColor: "green", marginBottom: "20px"}}>

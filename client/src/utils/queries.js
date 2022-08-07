@@ -26,7 +26,7 @@ export const QUERY_ALL_RECIPES = gql`
     author
     img
     ingredient
-    preperationStep
+    preparationStep
     tag {
       tagName
     }
@@ -42,7 +42,7 @@ query Recipe($id: String!) {
     author
     img
     ingredient
-    preperationStep
+    preparationStep
   }
 }
 `

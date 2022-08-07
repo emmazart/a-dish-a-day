@@ -160,7 +160,7 @@
           "description": "Chicken Korma Nadroo (Gluten-free, Paleo, Primal, Perfect Health Diet)",
           "author": "Daniel the Bootcamp TA",
           "img": "/client/src/assets/images/chicken-KoraNadroo.png",
-          "ingredients": ["3 lbs chicken bone-in thighs and drumsticks, skin removed, chopped crosswise against the bone",
+          "ingredient": ["3 lbs chicken bone-in thighs and drumsticks, skin removed, chopped crosswise against the bone",
           "1 tsp kosher salt, more to taste",
           "1/2 tsp black pepper, more to taste",
           "1/4 cup ghee",
@@ -196,7 +196,7 @@
           "description": "Mouth watering sticky wings",
           "author": "Mayra Ibarra",
           "img": "/client/src/assets/images/chicken-Caribbean-Sticky-Wings.png",
-          "ingredients": ["3-4 lbs chicken wings",
+          "ingredient": ["3-4 lbs chicken wings",
           "1 tbsp olive oil",
           "2 tsp kosher salt",
           "2 tsp paprika",
@@ -231,7 +231,7 @@
           "description": "Filipino Stewed Chicken",
           "author": "Nathan Hedglin",
           "img": "/client/src/assets/images/chicken-chicken-adobo.png",
-          "ingredients": ["2/3 cup cane vinegar",
+          "ingredient": ["2/3 cup cane vinegar",
           "1/3 cup tamari",
           "15 cloves garlic, lightly smashed",
           "2 tbsp whole black peppercorns",
@@ -247,7 +247,7 @@
           "description": "Seasoned Southern Fried Chicken",
           "author": "Roda Hassan",
           "img": "/client/src/assets/images/chicken-Fried Chicken.png",
-          "ingredients": [
+          "ingredient": [
             "4 lbs bone-in, skin-on chicken thighs and/or drumsticks",
             "2 cups full-fat buttermilk",
             "1 tbsp sea salt",
@@ -278,7 +278,7 @@
           "description": "Chicken Parmesan (Grain-Free)",
           "author": "Akon Abazary",
           "img": "/client/src/assets/images/chicken-chicken parmesan.png",
-          "ingredients": [
+          "ingredient": [
             "25.5 oz jar pasta sauce",
             "4 chicken breasts",
             " 3 eggs, beaten",
@@ -314,7 +314,7 @@
           "description": "3-2-1 Smoked Ribs",
           "author": "Shazeen",
           "img": "/client/src/assets/images/beef-Smoked-Ribs.png",
-          "ingredients": ["2 to 4 racks baby back or spare ribs",
+          "ingredient": ["2 to 4 racks baby back or spare ribs",
           "1/2 cup barbecue rub (or your favorite BBQ rub)",
           "1/4 cup apple juice (or 1 tbsp apple cider vinegar + 3 tbsp water + 1 tsp honey)",
           "1/2 cup barbecue sauce (or your favorite BBQ sauce)"],
