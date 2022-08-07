@@ -1,4 +1,5 @@
 import './App.css';
+import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 import { UserProvider } from './utils/GlobalState';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Landing from '../src/pages/Landing';
@@ -9,8 +10,18 @@ import NoMatch from '../src/pages/NoMatch';
 import Dashboard from './pages/Dashboard';
 import RecipeSearch from './pages/AllRecipes';
 
+const httpLink = createHttpLink({
+  uri: 'http://localhost:3001/graphql',
+});
+
+const client = new ApolloClient({
+  link: httpLink,
+  cache: new InMemoryCache(),
+});
+
 function App() {
   return (
+    <ApolloProvider client={client}>
     <UserProvider>
       <Router>
         <Routes>
@@ -45,6 +56,7 @@ function App() {
         </Routes>
       </Router>
     </UserProvider>
+    </ApolloProvider>
   );
 }
 

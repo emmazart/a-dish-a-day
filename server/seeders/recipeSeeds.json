@@ -115,6 +115,7 @@
     "tag": [{"tagName": "Other Meats"}]
   },
     {
+
         "recipeTitle" : "Peach Salsa Bowl",
         "description" : "These tasty bowls are one of our favorite summer dinners! I love the contrast of the sweet, refreshing peach salsa with the creamy avocado.",
         "author" : "Larry Jones",
@@ -149,6 +150,7 @@
         "description" : " Served it over angel hair pasta along with some steamed spinach and a salad, and a lovely bottle of dry, crisp white French wine. Oh my, what a meal",
         "author" : "Bruce Bruceface",
         "img" : "../../client/src/assets/images/salmoncake.JPG", 
+
         "ingredient" : ["aa1 (14.75 ounce) can salmon, drained of all but 2 tablespoons of liquid, flaked", "1 large slice bread , crust removed, shredded (1 cup, 50g)", "3 tablespoons green onion, chopped", "1 medium garlic clove, minced", "1 tablespoon fresh dill, chopped, or 1 teaspoon dried", "3 tablespoons minced green bell pepper", "1 tablespoon flour", "1 large egg", "1/2 teaspoon sweet paprika", "1 teaspoon finely grated lemon zest", "2 teaspoons lemon juice", "quarter teaspoon kosher salt", "Several turns of freshly ground black pepper", "3  tablespoons extra virgin olive oil"],
         "preparationStep" : ["Mix the patty ingredients", "Form the patties", "Chill at least 30 minutes", "Brown in skillet"],
         "tag": [{"tagName": "Seafood"}]
