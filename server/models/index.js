@@ -4,3 +4,4 @@ const Review = require('./Review');
 const Tag = require('./Tag');//NOTE IT'S CALLED TAGSCHEMA
 
 module.exports = { User, Recipe, Tag, Review };
+
