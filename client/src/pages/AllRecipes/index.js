@@ -11,6 +11,7 @@ import { QUERY_ALL_RECIPES, QUERY_RECIPE_ID } from '../../utils/queries';
 import SecondayNav from '../../components/SecondaryNav';
 import recipeStyles from './recipes.module.css';
 
+
 // //query all recipes MOVED TO utils/queries
 // const QUERY_ALL_RECIPES = gql`
 // {
@@ -85,15 +86,15 @@ export default function RecipeSearch() {
 
     if (loading) return "loading"
     if (error) return <pre>{error.message}</pre>
-    console.log(data)
+
     return (
       <div>
       <SecondayNav/>
         <Button sx={{ display: 'block', mt: 2 }} onClick={handleOpen}>
           Filter Recipes
         </Button>
-        <FormControl sx={{ m: 1, minWidth: 120 }}>
-          <InputLabel id="demo-controlled-open-select-label">Search</InputLabel>
+        <FormControl className= "search" sx={{ m: 1, minWidth: 120 }}>
+          <InputLabel  id="demo-controlled-open-select-label">Search</InputLabel>
           <Select
             labelId="demo-controlled-open-select-label"
             id="demo-controlled-open-select"

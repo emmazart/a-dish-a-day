@@ -20,6 +20,9 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Rating from '@mui/material/Rating';
 import Ratings from '../Rating';
 import recipeStyles from './recipe.module.css';
+import Auth from '../../utils/auth';
+import { useMutation } from '@apollo/client';
+import { ADD_FAVORITE } from '../../utils/mutations';
 
 //recipe card//
 interface ExpandMoreProps extends IconButtonProps {
@@ -41,6 +44,18 @@ export default function RecipeCard({recipe}) {
   const [expanded, setExpanded] = React.useState(false);
 
   const handleFavoriteClick = () => {
+    if (!Auth.loggedIn()) {
+      // redirect to login?
+      // alert user that they're not logged in?
+    }
+
+    const user = Auth.getProfile();
+    const userId = user.data._id;
+    // get recipe id
+
+
+
+    // run the mutation to add id of the card clicked to the user's favorites array
 
   };
 
@@ -76,7 +91,7 @@ export default function RecipeCard({recipe}) {
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites">
+        <IconButton aria-label="add to favorites" onClick={handleFavoriteClick}>
           <FavoriteIcon />
         </IconButton>
         <IconButton aria-label="share">
