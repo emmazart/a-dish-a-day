@@ -44,7 +44,8 @@ const recipeSchema = new Schema(
     tag: [
       {
         type: Object,
-        ref: "Tag",
+        ref: "Tag"
+
       },
     ]
   },
