@@ -1,4 +1,6 @@
 import './App.css';
+import React from 'react';
+import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 import { UserProvider } from './utils/GlobalState';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Landing from '../src/pages/Landing';
@@ -8,9 +10,23 @@ import About from './pages/About';
 import NoMatch from '../src/pages/NoMatch';
 import Dashboard from './pages/Dashboard';
 import RecipeSearch from './pages/AllRecipes';
+import SingleRecipe from './pages/SingleRecipe';
+
+const httpLink = createHttpLink({
+  uri: 'http://localhost:3001/graphql',
+});
+
+const client = new ApolloClient({
+  link: httpLink,
+  cache: new InMemoryCache(),
+});
+
+
 
 function App() {
+
   return (
+    <ApolloProvider client={client}>
     <UserProvider>
       <Router>
         <Routes>
@@ -32,11 +48,15 @@ function App() {
           />
           <Route 
             path="/dashboard"
-            element={<Dashboard />}
+            element={<Dashboard/>}
           />
           <Route 
             path="/recipes"
             element={<RecipeSearch />}
+          />
+          <Route 
+            path="/singlerecipe"
+            element={<SingleRecipe />}
           />
           <Route 
             path="*"
@@ -45,6 +65,7 @@ function App() {
         </Routes>
       </Router>
     </UserProvider>
+    </ApolloProvider>
   );
 }
 

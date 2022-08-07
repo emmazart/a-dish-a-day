@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useState } from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -8,60 +9,103 @@ import Footer from '../../components/Footer';
 import FavoriteRecipe from '../../components/FavoriteRecipe';
 import Header from '../../components/Header';
 import { Typography } from '@mui/material';
+=======
+import React, { useState } from "react";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Rating from "@mui/material/Rating";
+import TextField from "@mui/material/TextField";
+import dashStyles from "./dashboard.module.css";
+import SecondaryNav from "../../components/SecondaryNav";
+import Footer from "../../components/Footer";
+import FavoriteRecipe from "../../components/FavoriteRecipe";
+
+import Review from "../../components/ReviewForm";
+import { useQuery } from "@apollo/client";
+import { QUERY_RECIPES } from "../../utils/queries";
+>>>>>>> 8b9814dc1d9815a8d3ce931f1637ff4c43ac75b0
 
 const Dashboard = () => {
+  // implement state to keep track of which recipe has been selected to review
+  const [currentRecipe, setCurrentRecipe] = useState({ title: "", _id: "" });
 
-    const recipes = [
-        {
-            _id: 1,
-            recipeTitle: "Chicken Parm",
-            description: "This is a great chicken dish",
-            author: "Emma",
-            img: "https://placekitten.com/400/200",
-            ingredient: ["chicken", "parmesan", "tomato sauce", "pasta"],
-            preprationStep: ["1: do this", "2: to this second", "3: do this third"],
-            tag: ["Chicken"]
-        },
-        {
-            _id: 2,
-            recipeTitle: "Chicken Parm",
-            description: "This is a great chicken dish",
-            author: "Emma",
-            img: "https://placekitten.com/400/200",
-            ingredient: ["chicken", "parmesan", "tomato sauce", "pasta"],
-            preprationStep: ["1: do this", "2: to this second", "3: do this third"],
-            tag: ["Chicken"]
-        },
-        {
-            _id: 3,
-            recipeTitle: "Chicken Parm",
-            description: "This is a great chicken dish",
-            author: "Emma",
-            img: "https://placekitten.com/400/200",
-            ingredient: ["chicken", "parmesan", "tomato sauce", "pasta"],
-            preprationStep: ["1: do this", "2: to this second", "3: do this third"],
-            tag: ["Chicken"]
-        }
-    ];
+  // implement state to set star rating
+  const [value, setValue] = useState();
 
-    const labels = {
-        0: 'Terrible',
-        1: 'Bad',
-        2: 'Poor',
-        3: 'Decent',
-        4: 'Very Good',
-        5: 'Delicious!',
-      };
+  const { loading, data } = useQuery(QUERY_RECIPES);
+  const recipes = data?.recipes || [];
 
-    // implement state to keep track of which recipe has been selected to review
-    const [currentRecipe, setCurrentRecipe] = useState({ title: '', _id: '' });
+  // const recipes = [
+  //     {
+  //         _id: 1,
+  //         recipeTitle: "Chicken Parm",
+  //         description: "This is a great chicken dish",
+  //         author: "Emma",
+  //         img: "https://placekitten.com/400/200",
+  //         ingredient: ["chicken", "parmesan", "tomato sauce", "pasta"],
+  //         preprationStep: ["1: do this", "2: to this second", "3: do this third"],
+  //         tag: ["Chicken"]
+  //     },
+  //     {
+  //         _id: 2,
+  //         recipeTitle: "Chicken Parm",
+  //         description: "This is a great chicken dish",
+  //         author: "Emma",
+  //         img: "https://placekitten.com/400/200",
+  //         ingredient: ["chicken", "parmesan", "tomato sauce", "pasta"],
+  //         preprationStep: ["1: do this", "2: to this second", "3: do this third"],
+  //         tag: ["Chicken"]
+  //     },
+  //     {
+  //         _id: 3,
+  //         recipeTitle: "Chicken Parm",
+  //         description: "This is a great chicken dish",
+  //         author: "Emma",
+  //         img: "https://placekitten.com/400/200",
+  //         ingredient: ["chicken", "parmesan", "tomato sauce", "pasta"],
+  //         preprationStep: ["1: do this", "2: to this second", "3: do this third"],
+  //         tag: ["Chicken"]
+  //     }
+  // ];
 
-    // implement state to set star rating
-    const [value, setValue] = useState();
+  return (
+    <div className={dashStyles.test}>
+      <SecondaryNav></SecondaryNav>
+      <h2>Dashboard</h2>
+      <main className={dashStyles.main}>
+        {/* Recent recipes */}
+        <section className={dashStyles.recipeContainer}>
+          {recipes.map((recipe, index) => {
+            return (
+              <FavoriteRecipe
+                key={index}
+                source={recipe.img}
+                title={recipe.recipeTitle}
+                _id={recipe._id}
+                author={recipe.author}
+                description={recipe.description}
+                currentRecipe={currentRecipe}
+                setCurrentRecipe={setCurrentRecipe}
+              ></FavoriteRecipe>
+            );
+          })}
+        </section>
 
-    const handleSubmitReview = (e) => {
-        e.preventDefault();
+        {/* Review section */}
+        <section className={dashStyles.formContainer}>
+          <Review
+            value={value}
+            setValue={setValue}
+            currentRecipe={currentRecipe}
+          ></Review>
+        </section>
+      </main>
+      <Footer />
+    </div>
+  );
+};
 
+<<<<<<< HEAD
         // post request to db 
         // {
         //     _id: {currentRecipe._id},
@@ -151,3 +195,6 @@ const Dashboard = () => {
 }
 
 export default Dashboard;
+=======
+export default Dashboard;
+>>>>>>> 8b9814dc1d9815a8d3ce931f1637ff4c43ac75b0

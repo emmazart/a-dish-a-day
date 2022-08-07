@@ -3,20 +3,6 @@
     flex-direction: column;
 }
 
-.form {
-    padding: 1rem;
-    margin: 1rem;
-}
-
-/* five star rating element styles */
-.rating {
-    margin-top: 1rem;
-}
-
-.rating path {
-    color: #faaf00;
-}
-
 @media only screen and (min-width: 768px) {
     .main {
         flex-direction: row;

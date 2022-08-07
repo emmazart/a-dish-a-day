@@ -7,22 +7,54 @@ const { gql } = require('apollo-server-express');
 
 const typeDefs = gql`
     type Query {
-        helloWorld: String
+        tags: [Tag]
+        tag(tagName: String!): Tag
+        users: [User]
+        user(_id: String!): User
+        recipes: [Recipe]
+        recipe(_id: String!): Recipe
     }
 
-   
+
+    type Tag {
+        tagName: String
+    }
+
+    type Auth {
+        token: ID!
+        user: User
+    }
 
     type User {
-        
+        _id: ID
         username: String
         email: String
-      }
+        password: String
+        favorite: [Recipe]
+    }
+    
+    type Recipe {
+        _id: String
+        recipeTitle: String
+        description: String
+        author: String
+        img: String
+        ingredient: [String]
+        preperationStep: [String]
+        tag: [Tag]        
+        
+    }
+
+
+
+
+
+    type Mutation {
+        addTag(tagName: String!): Tag
+        login(email: String!, password: String!): Auth
+        addUser(username: String!, email: String!, password: String!): Auth
+    }
     
 `;
-/*
-type Tag {
-        tagName: String
-    }*/
-
 // export the typeDefs
 module.exports = typeDefs;
