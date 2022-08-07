@@ -33,7 +33,7 @@
     "3. Before the sauce returns to a simmer, ladle some of the sauce into the yogurt to temper, then stir the yogurt into the main sauce. Bring to a simmer, stirring constantly to prevent the yogurt from curdling; simmer until the sauce has darkened and oil starts to form at the surface, about 15 minutes, stirring often to prevent scorching. Return the chicken and any accumulated juices to the pot. Cover, reduce heat to medium-low, and gently simmer until the chicken is just cooked through but still firm, about 15 mins; add more stock only if the sauce gets too thick as it simmers.",
     
     "4. Stir in the lotus root and simmer until the chicken and lotus root are tender, about 20 minutes, stirring occasionally to ensure each piece of chicken and lotus root spend time smothered in the sauce. Season with salt and pepper to taste, stir in the kewra water, then serve garnished with cilantro."],
-    "tag": []
+    "tag": [{"tagName" : "Chicken"}]
   },
   {
     "recipeTitle": "Caribbean Sticky Wings",
@@ -68,7 +68,7 @@
     "3. As the chicken cooks, combine the sauce ingredients in a small saucepan and bring to a simmer over medium-low heat. Simmer until the sauce appears glossy, about 8 minutes, stirring often; remove from heat and set aside.",
     
     "4. Place the wings in a large mixing bowl, the pour in half of the sauce and toss to coat. Depending on how sticky you like your wings, add the remaining half of the wings and repeat the process, or serve on the side as a dip."],
-    "tag": []
+    "tag": [{"tagName" : "Chicken"}]
   },
   {
     "recipeTitle": "Chicken Adobo",
@@ -84,7 +84,7 @@
     "preperationStep": ["1. In a mixing bowl, combine the vinegar, soy sauce, garlic, peppercorns, and bay leaves. Place a handful of the chicken in a large re-sealable plastic bag, then pour in a little of the marinade. Continue to add chicken and marinade in batches to ensure the chicken is well-coated. Transfer to the fridge and marinate for at least 4 hours, but overnight preferred.",
 
     "2. Preheat the oven to 400F. Place the chicken (skin-side-up for the thighs) and marinade in a large rimmed baking sheet, then cover with tinfoil. Place the baking sheet in the center of the oven and roast for 30 minutes. Remove the tinfoil and turn the chicken pieces; roast, uncovered, for 20 more minutes. Turn the chicken and roast until the skin is browned and crispy, about 10 more minutes, then transfer to a serving dish and serve."],
-    "tag": []
+    "tag": [{"tagName" : "Chicken"}]
   },
   {
     "recipeTitle": "Fried Chicken",
@@ -115,7 +115,7 @@
 
       "2.Preheat your oven to 170°F. Combine the coating ingredients in a wide, shallow bowl. In a cast-iron skillet, heat the lard to about 340F. Pat the chicken pieces dry with paper towels, then coat them in the seasonings, shaking off the excess. Fry the chicken in batches until the internal temperature reaches 165F, about 10 minutes per side. As you finish each batch, place the cooked chicken pieces on a wire rack set over a baking sheet; put them in the oven to keep warm as you fry the remaining pieces."
     ],
-    "tag": []
+    "tag": [{"tagName" : "Chicken"}]
   },
   {
     "recipeTitle": "Chicken Parmensan",
@@ -151,7 +151,7 @@
 
       "5. Spoon the pasta sauce over the cutlets, then sprinkle on the cheese. Place in the oven to bake until the cheese has melted, about 8 minutes, then broil for 2 minutes or until the cheese is spotty and golden (watch it like a hawk at this point). Remove from the oven and serve."
     ],
-    "tag": []
+    "tag": [{"tagName" : "Chicken"}]
   },
   {
     "recipeTitle": "Ribs",
@@ -175,6 +175,6 @@
     "6. Unwrap the ribs, and check them for doneness. You'll want to hold them with tongs and make sure they bend considerably - like they're close to tearing apart from gravity alone. Baby back ribs sometimes take longer than spare ribs. Once they're nice and bendy, brush with the barbecue sauce, then smoke (or bake) for another 1 hour, or until the sauce has caramelized. If you baked them in Step #5 but have the ability to put them back on the grill/smoker, definitely do that - finishing them in the oven should be used as a last resort (or if you're trying to save fuel).",
     
     "7. Rest the ribs for 5 minutes, then serve. Personally, I like to cut each rib individually with a pair of kitchen shears, to make it easier for the kids to eat. You do you."],
-    "tag": []
+    "tag": [{"tagName" : "Beef"}]
   }
 ]
