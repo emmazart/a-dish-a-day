@@ -1,43 +1,117 @@
 [
-    {
-        "recipeTitle" : "the best meal never maid",
-        "description" : "Chicken Pot Pie",
-        "author" : "some old guy name Andre",
-        "img" : "",
-        "ingredients" : [],
-        "preperationStep" : [],
-        "tag": []
-        
-    },
-    {
-        "recipeTitle" : "Good Pizza",
-        "description" : "Bacon and Hamberger",
-        "author" : "Justin Huang",
-        "img" : "",
-        "ingredients" : [],
-        "preperationStep" : [],
-        "tag": []
-        
-    },
-    {
-        "recipeTitle" : "Mac N Cheese",
-        "description" : " Better Mac than mom's",
-        "author" : "Cris Lee",
-        "img" : "",
-        "ingredients" : [],
-        "preperationStep" : [],
-        "tag": []
-        
-    }
-    ,
-    {
-        "recipeTitle" : "Fried Chicken Meal",
-        "description" : "Homemade Southern Fried Chicken",
-        "author" : "Roda Hassan",
-        "img" : "",
-        "ingredients" : [],
-        "preperationStep" : [],
-        "tag": []
-        
-    }
+  {
+    "recipeTitle": "Roast Leg of Lamb",
+    "description": "A roasted leg of lamb is the perfect centerpiece for a special occasion meal, especially Easter dinner. Preparing an expensive cut of meat like this one can be anxiety-inducing, but we promise, YOU CAN DO THIS! Even prepared super simply, it can be incredibly delicious. Check out our tips below for making a leg of lamb you can be proud of.",
+    "author": "ETHAN CALABRESE",
+    "img": "./A-Dish-A-Day/client/src/assets/images/leg-of-lamb.jpeg",
+    "ingredients": [
+      "1/4 c. plus 1 tablespoon extra-virgin olive oil, plus more greasing",
+      "3 cloves garlic, minced",
+      "1 tbsp. minced rosemary, plus 2 sprigs",
+      "1 tbsp. minced thyme",
+      "1 (6 lb.) leg of lamb",
+      "kosher salt",
+      "Freshly ground black pepper",
+      "2 heads garlic, cloves peeled",
+      "8 oz. cipollini onions",
+      "2 lemons, halved"
+    ],
+    "preperationStep": [
+      "1. Heat oven to 400°. In a small bowl, combine 1/4 cup oil, garlic, chopped rosemary, and thyme.",
+      "2. Place lamb in a large roasting dish, then season all over with salt and pepper.",
+      "3. Brush herb oil all over lamb (you will not use it all right now). Roast 30 minutes.",
+      "4. Meanwhile, in a medium bowl, stir together whole garlic cloves, onions, rosemary sprigs, and lemons with 1 tablespoon oil, salt, and pepper.",
+      "5. Reduce oven to 350°. Spread garlic, onions, rosemary, and lemon halves evenly around lamb, then coat lamb in more herb oil. Add ¼ cup water to roasting dish, then roast for 1 to 1 ½ hours more, until meat thermometer inserted into the thickest part of the roast registers about 145° to 150°.",
+      "6. Let lamb rest 15 minutes before carving and serving."
+    ],
+    "tag": [{"tagName": "Other Meats"}]
+  },
+  {
+    "recipeTitle": "Poronkäristys (Sautéed Reindeer)",
+    "description": "This dish hails from Finland, but is enjoyed in Sweden, Norway and Russia as well. What I like about this recipe is that it makes no assumptions the key to this delicious meal is slicing it thinly, seasoning it sparingly, and nudging it gently towards tenderness with a combination of light braising and some crisping at the end. The whole process takes about two hours from start to finish, but it is totally worth it.",
+    "author": "The Swedish Chef",
+    "img": "./A-Dish-A-Day/client/src/assets/images/Reindeer-Sauteed.webp",
+    "ingredients": [
+      "2 to 3 lbs boneless reindeer, venison, bison, or beef steak (round, sirloin, or chuck)",
+      "2 tbsp butter",
+      "1 yellow onion, sliced",
+      "2 cloves garlic",
+      "1 tsp salt, more to taste",
+      "½ tsp black pepper, more to taste",
+      "½ tsp ground allspice",
+      "1 cup water",
+      "sliced chives to garnish",
+      "lingonberry or cranberry preserves to serve",
+      "mashed potatoes to serve",
+      "sliced pickles to serve"
+    ],
+    "preperationStep": [
+      "1. Freeze the meat for 20 minutes then slice as thin as possible; set aside.",
+      "2. Warm the butter in a large skillet over medium heat. Add the onion and saute until softened, about 6 minutes. Stir in the garlic and saute until aromatic about 30 seconds. Add the meat, salt, pepper, allspice, and water; stir to combine. Bring to a simmer, then cover, reduce heat to low and gently simmer until the meat is tender, about 1 hour.",
+      "3. Remove the lid and increase heat to medium-high. Saute, stirring often, until the water has evaporated and the meat turns dark brown and crispy, about 10 minutes. Serve atop mashed potatoes, garnished with sliced chives and serve with mashed potatoes, lingonberry preserves, and sliced pickles."
+    ],
+    "tag": [{"tagName": "Other Meets"}]
+  },
+  {
+    "recipeTitle": "Hearty Bison Stew",
+    "description": "Although the American bison is often referred to as a buffalo, it is only a distant relative of the true buffalo (like the Asian water buffalo). Its closest relative is the European bison, also known as a wisent. Its meat is usually leaner than beef, high in iron, and sweeter-tasting. Because of its leanness, I find that it is best served in slow-cooked meals like this stew, as hamburgers, or as a grilled meat (like shish-kabobs) served medium-rare.",
+    "author": "Wild Bill",
+    "img": "/Users/cspower/Documents/Bootcamp/A-Dish-A-Day/client/src/assets/images/Bison-Stew.webp",
+    "ingredients": [
+      "1lb US Wellness Meats bison stew meat",
+      "2 tbsp coconut oil or ghee",
+      "1/2 tsp each salt and pepper",
+      "1 medium onion, chopped finely",
+      "2 cloves garlic, minced",
+      "1/4 cup red wine",
+      "1 cup each beef and chicken stock/broth",
+      "1/2 tsp dried thyme",
+      "2 bay leaves",
+      "2 russet potatoes, peeled and chopped into bite-sized chunks",
+      "2 carrots, peeled and chopped into bite-sized chunks",
+      "1 parsnip, peeled and chopped into bite-sized chunks",
+      "1/2 cup frozen peas",
+      "1 tsp chopped fresh parsley for garnish"
+    ],
+    "preperationStep": [
+      "1. As with most of my red meat-based roasts/stews, I prefer a combination of chicken and beef stock as the braising liquid; it gives the dish its tastiness without an overbearing “beefiness”.",
+      "2. Remove the bison meat from its packaging, and gently rinse with cold water and allow to drain dry. I was amazed at how well the stew meat was cut, and how lean and colorful it was!",
+      "3. In a french/dutch oven, heat up the oil/ghee on medium/high heat for about five minutes. Season the meat with 1/2 tsp each salt and pepper, and brown the meat for a few minutes per side, in batches if needed. Altogether it took me eight minutes to brown the meat. Remove the browned meat and set it aside, leaving the oil inside the french/dutch oven.",
+      "4. Preheat your oven to 300 degrees. Reduce the dutch oven heat to medium, and add the chopped onions and a dash of salt. Saute for about five minutes, until the onions are softened. Add the minced garlic and continue to saute for another 30 seconds. Add the red wine, beef and chicken broths, thyme, and bay leaves. Bring everything to a simmer.",
+      "6. Once the broth is simmering, add the browned bison meat, and place in the oven for 1 hour and 15 minutes.",
+      "7. While it is cooking, prepare your potatoes, carrots, and parsnip.",
+      "8. After an hour and 15 minutes, add the potatoes, carrots, and parsnip and return it to the oven. Bake for another 40 minutes, until the vegetables and meat are tender. Remove the bay leaves.",
+      "9. Rather than deal with making a flour roux or working with potato/arrowroot starch to thicken the stew, we are going to use the ingredients that are already in the stew. Pretty resourceful, huh?",
+      "10. With a ladle, remove about 1 cup of the cooked potatoes, carrots, and parsnip (be sure to pick out the bison meat), and about 1/2 cup of the remaining broth. Blend your cup of veggies and 1/2 cup of broth together, making a sort of “potato/veggie” paste. Pour this paste back into the dutch oven, and stir everything together, while also stirring in the frozen peas.",
+      "11. Cover and simmer on the stovetop on med/low heat for five minutes. Check for taste, adding salt and pepper as needed."
+    ],
+    "tag": [{"tagName": "Other Meets"}]
+  },
+  {
+    "recipeTitle": "Pichelsteiner",
+    "description": "Pichelsteiner is a very typical stew, found in similar shapes and sizes all over the world. There are several stories to explain its invention, a common trait among stews. One folk tale details how a farmer wife fed the stew to a group of marauding soldiers, saving the day (and her family) with this new culinary invention. Another tale explains how a Bavarian chef prepared Pichelsteiner for party atop Büchelstein mountain (allegedly, the name of this dish morphed from there). Finally, the small Bavarian village of Regen, along the Czech border, claims ownership of this dish as well, which they have communally served at the anniversary of their church dedication in 1874.",
+    "author": "Heir Spleigel",
+    "img": "A-Dish-A-Day/client/src/assets/images/Pichelsteiner.webp",
+    "ingredients": ["1 lb boneless stew beef, cut into 1” chunks",
+        "1 lb boneless pork shoulder, cut into 1” chunks",
+        "1 lb boneless lamb shoulder, cut into 1” chunks",
+        "3 tbsp all-purpose gluten-free flour or white rice flour",
+        "1/2 tsp salt, more to taste",
+        "1/2 tsp black pepper, more to taste",
+        "3 tbsp lard or ghee",
+        "1 onion, diced (about 1 cup diced)",
+        "1 cup chicken broth",
+        "1/2 oz dried wild or porcini mushrooms",
+        "1 lb starchy potatoes (russet, yukon gold, or similar), peeled and cut into bite-sized chunks",
+        "3 carrots, peeled and coarsely chopped (about 1 cup chopped)",
+        "1 leek, sliced (about 1 cup sliced)",
+        "1/2 head (~1 lb) green or savoy cabbage, cut into bite-sized chunks (about 3 cups chopped)",
+        "chopped parsley to garnish"],
+    "preperationStep": ["1. Place the beef, pork, and lamb in a large mixing bowl; pat dry with paper towels, then toss with the flour, salt, and pepper until evenly coated. Warm the lard in a dutch oven over medium-high heat. Brown the meat in batches to prevent overcrowding, turning often, until dark brown and crispy at the edges, about 8 minutes per batch. Remove each batch with a slotted spoon and set aside, adding more lard to the pot if needed.",
+        "2. Once the meat is browned and out of the way, add the onions and reduce heat to medium; saute until softened, about 6 minutes. Return the meats to the pot and add the chicken broth and enough water to reach 3/4 of the way up the meat. Bring to a simmer, stirring with a wooden spoon and scraping up any browned bits at the bottom of the pot, then cover and reduce heat to low; simmer until the meats are just tender, about 1 1/2 hours, stirring occasionally. As the meats simmer, place the mushrooms in a small bowl and cover with warm water; set aside to reconstitute, about 15 minutes, then chop into bite-sized pieces (reserve the water you soaked them in).",
+        "3. Stir in the potatoes, carrots, mushrooms, and the water you soaked the mushrooms in (minus any sediment that has accumulated at the bottom); simmer, uncovered, for another 20 minutes, stirring once or twice. Stir in the leek and cabbage, and simmer until the meat and vegetables are tender, about 10 more minutes. Add salt and pepper to taste, then serve garnished with parsley.",
+        "** Electric pressure cooker (Instant Pot) instructions: Brown the floured meats in batches using the “Saute” function of the pressure-cooker, then remove the meats and saute the onions. Return the meats to the pot, plus the chicken broth, then pressure-cook under Manual high pressure for 30 minutes. Allow to depressurize naturally, then add the potatoes, carrots, mushrooms, leek, and cabbage, and pressure-cook for another 8 minutes. Allow to depressurize naturally, season with salt and pepper to taste, then serve garnished with chopped parsley.",
+        "** For a richer experience, throw a couple marrow bones in the pot with the meat."],
+    "tag": [{"tagName": "Other Meets"}]
+  }
 ]
