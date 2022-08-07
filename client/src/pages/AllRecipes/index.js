@@ -8,6 +8,7 @@ import Select, { SelectChangeEvent } from '@mui/material/Select';
 import Button from '@mui/material/Button';
 import { useQuery, gql } from '@apollo/client';
 import { QUERY_ALL_RECIPES, QUERY_RECIPE_ID } from '../../utils/queries';
+import recipeStyles from './recipes.module.css';
 
 // //query all recipes MOVED TO utils/queries
 // const QUERY_ALL_RECIPES = gql`
@@ -110,10 +111,11 @@ export default function RecipeSearch() {
             <MenuItem value='vegetarian'>Vegetarian</MenuItem>
           </Select>
         </FormControl>
-
+        <div className={recipeStyles.all}>
         {data.recipes.map((recipe, index) => {
           return <RecipeCard recipe={recipe} key={index} />
         })}
+        </div>
 
       </div>
     );

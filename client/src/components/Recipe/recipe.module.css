@@ -1,3 +1,13 @@
 .card {
-    background-color: aquamarine;
+    background-color: #FAEEC7 !important;
+    width:345px;
+    flex-wrap: wrap;
+    flex-direction: column;
+    flex-wrap: wrap;
+    flex-grow:1;
+    display: inline-flex;
+    align-content: space-evenly;
+    margin: 125px 20px 20px 20px;
+    padding: 30px;
+    align-items:stretch;
 }
