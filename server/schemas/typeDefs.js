@@ -15,7 +15,6 @@ const typeDefs = gql`
         recipe(_id: String!): Recipe
     }
 
-
     type Tag {
         tagName: String
     }
@@ -44,10 +43,6 @@ const typeDefs = gql`
         tag: [Tag]        
         
     }
-
-
-
-
 
     type Mutation {
         addTag(tagName: String!): Tag
