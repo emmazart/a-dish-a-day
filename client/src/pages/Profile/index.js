@@ -6,7 +6,14 @@ function Profile() {
     return (
         <>
         <Header></Header>
-            <h1>Profile</h1>
+            <Typography
+                variant='h4'
+                color='textPrimary'
+                align='center'
+                margin='140px 0px 50px 0px'
+            >
+                My Profile
+            </Typography>
         <Footer></Footer>
         </>
     )
