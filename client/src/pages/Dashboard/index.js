@@ -1,3 +1,15 @@
+<<<<<<< HEAD
+import React, { useState } from 'react';
+import Box from '@mui/material/Box';
+import Button from '@mui/material/Button';
+import Rating from '@mui/material/Rating';
+import TextField from '@mui/material/TextField';
+import dashStyles from './dashboard.module.css';
+import Footer from '../../components/Footer';
+import FavoriteRecipe from '../../components/FavoriteRecipe';
+import Header from '../../components/Header';
+import { Typography } from '@mui/material';
+=======
 import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
@@ -92,4 +104,96 @@ const Dashboard = () => {
   );
 };
 
+<<<<<<< HEAD
+        // post request to db 
+        // {
+        //     _id: {currentRecipe._id},
+        //     user: {}
+        //     reviewText: {},
+        //     reviewStars: {value}
+        // }
+
+        console.log('submitted');
+    };
+
+    return (
+        <div className={dashStyles.test}>
+            <Header></Header>
+            <Typography
+                variant='h4'
+                color='textPrimary'
+                align='center'
+                margin='140px 0px 50px 0px'
+            >
+                Dashboard
+            </Typography>
+                <main className={dashStyles.main}>
+
+                        {/* Recent recipes */}
+                        <section className={dashStyles.recipeContainer}>
+                            {recipes.map((recipe, index) => {
+                                return (
+                                    <FavoriteRecipe
+                                    key={index}
+                                    source={recipe.img}
+                                    title={recipe.recipeTitle}
+                                    _id={recipe._id}
+                                    author={recipe.author}
+                                    description={recipe.description}
+                                    currentRecipe={currentRecipe}
+                                    setCurrentRecipe={setCurrentRecipe}
+                                    >
+                                    </FavoriteRecipe>
+                                )
+                            })}
+                                
+                        </section>
+
+                        {/* Review section */}
+                        <section className={dashStyles.formContainer} >
+                            <Box className={dashStyles.form} component="form" onSubmit={handleSubmitReview} noValidate sx={{ mt: 3 }}>
+                                {currentRecipe.title ?
+                                <h2>Write a review for <br /> {currentRecipe.title}</h2> :
+                                <h2>Write a review!</h2>
+                                }
+                                <TextField
+                                    name="reviewText"
+                                    required
+                                    fullWidth
+                                    multiline
+                                    rows={4}
+                                    id="reviewText"
+                                    // label="Your review here"
+                                    placeholder='Your review here'
+                                    autoFocus
+                                />
+                                <Rating
+                                className={dashStyles.rating}
+                                size="large"
+                                name="simple-controlled"
+                                value={value}
+                                onChange={(event, newValue) => {
+                                    setValue(newValue);
+                                }}
+                                />
+                                <Box sx={{ ml: 2 }}>{labels[value]}</Box>
+                                <Button
+                                type="submit"
+                                fullWidth
+                                variant="contained"
+                                sx={{ mt: 3, mb: 2 }}
+                                >
+                                Submit
+                                </Button>
+                            </Box>
+                        </section>
+                </main>
+            <Footer />
+        </div>
+    )
+}
+
 export default Dashboard;
+=======
+export default Dashboard;
+>>>>>>> 8b9814dc1d9815a8d3ce931f1637ff4c43ac75b0
