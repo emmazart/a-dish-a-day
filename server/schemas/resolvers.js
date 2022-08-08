@@ -22,6 +22,9 @@ const resolvers = {
       recipes: async () => {
         return Recipe.find();
       },
+      recipesByDescTitle: async () => {//returns recipes by descending alphabetical order
+        return Recipe.find().sort({"recipeTitle" : 1});//find -> sort ({"field" : 1/-1}), where 1/-1 determine ascending/descending order
+      },
       recipe: async (parent, {_id}) => {
         return Recipe.findOne({_id});
       },
