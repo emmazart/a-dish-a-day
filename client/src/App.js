@@ -55,7 +55,7 @@ function App() {
             element={<RecipeSearch />}
           />
           <Route 
-            path="/singlerecipe"
+            path="/recipes/*"
             element={<SingleRecipe />}
           />
           <Route 

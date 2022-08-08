@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import Grid from '@mui/material/Grid';
@@ -14,16 +14,16 @@ import { QUERY_RECIPE_ID } from '../../utils/queries';
 
 function SingleRecipe() {
 
-    const { recipeTitle, _id, description, ingredient, img, preperationStep } = {
-        "recipeTitle" : "Chicken Parm",
-        "description" : "This is a great chicken dish",
-        "author" : "Emma",
-        "img" : "https://placekitten.com/400/200",
-        "ingredient" : ["chicken", "parmesan", "tomato sauce", "pasta", "basil", "mozarella"],
-        "preperationStep" : ["do this", "to this second", "do this third"],
-        "tag": [],
-        "_id": 5
-    };
+    // const { recipeTitle, _id, description, ingredient, img, preparationStep } = {
+    //     "recipeTitle" : "Chicken Parm",
+    //     "description" : "This is a great chicken dish",
+    //     "author" : "Emma",
+    //     "img" : "https://placekitten.com/400/200",
+    //     "ingredient" : ["chicken", "parmesan", "tomato sauce", "pasta", "basil", "mozarella"],
+    //     "preparationStep" : ["do this", "to this second", "do this third"],
+    //     "tag": [],
+    //     "_id": 5
+    // };
 
     const reviewData = [
         {
@@ -42,14 +42,21 @@ function SingleRecipe() {
             "starRating": 5
         }
     ];
+      
+    const URL = window.location.href;
+    const selectedRecipeId = URL.substr(30);
 
     // query database for single recipe
-    // const { error, loading, data } = useQuery(QUERY_RECIPE_ID, {
-    //     variables: { id: "62eecc95846969b8e564065a" }
-    // });
-    
-    // const { recipeTitle, _id, description, ingredient, img, preperationStep } = data?.recipe || [];
-    // console.log('RECIPE DATA', recipeTitle, _id);
+    const { error, loading, data } = useQuery(QUERY_RECIPE_ID, {
+        variables: { id: selectedRecipeId }
+    });
+        
+    const { recipeTitle, _id, description, ingredient, img, preparationStep } = data?.recipe || [];
+    console.log('RECIPE DATA', recipeTitle, _id);
+
+    useEffect(() => {
+        if (!data) return console.log('no data')
+      }, [data])
 
     // implement state to keep track of which recipe has been selected to review
     const [currentRecipe, setCurrentRecipe] = useState({ title: `${recipeTitle}`, _id: `${_id}` });
@@ -63,11 +70,14 @@ function SingleRecipe() {
         padding: theme.spacing(1),
         textAlign: 'center',
         color: theme.palette.text.secondary,
-      }));
+    }));
+
+    if (loading) return "loading"
+    if (error) return <pre>{error.message}</pre>  
 
     return (
         <section className={detailStyles.main}>
-            {/* <Header /> */}
+            <Header />
             <Grid className={detailStyles.container} container spacing={2}>
 
                 {/* recipe title always takes up full 12 columns */}
@@ -100,15 +110,15 @@ function SingleRecipe() {
                 </Grid>
 
                 <Grid item xs={12}>
-                    <Item>
-                        <h4>Instructions</h4>
-                        <ol>
-                            {preperationStep.map((step, index) => {
+                    <Item className={detailStyles.stepContainer}>
+                        <h4 className={detailStyles.stepHeader}>Instructions</h4>
+                        <ul className={detailStyles.steps}>
+                            {preparationStep.map((step, index) => {
                                 return (
                                     <li key={index}>{step}</li>
                                 )
                             })}
-                        </ol>
+                        </ul>
                     </Item>
                 </Grid>
 
@@ -140,7 +150,7 @@ function SingleRecipe() {
                 </Grid>
 
             </Grid>
-            {/* <Footer /> */}
+            <Footer />
         </section>
     )
 }
