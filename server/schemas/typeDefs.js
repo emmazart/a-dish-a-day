@@ -13,6 +13,8 @@ const typeDefs = gql`
         user(_id: String!): User
         recipes: [Recipe]
         recipe(_id: String!): Recipe
+        recipesbyTag(tagName: String!): Recipe
+        
     }
 
     type Tag {
