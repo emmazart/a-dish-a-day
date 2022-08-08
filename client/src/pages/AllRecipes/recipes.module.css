@@ -4,7 +4,10 @@
     flex-wrap:wrap;
 }
 
-body {
-    background-color: antiquewhite;
+.btn {
+    color: #BB9316;
 }
 
+.dropdown {
+    background-color: #BB9316;
+}

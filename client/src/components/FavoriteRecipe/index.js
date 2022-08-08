@@ -48,7 +48,7 @@ function FavoriteRecipe(props) {
         </Typography>
       </CardContent>
       <CardActions className={cardStyles.btnContainer}>
-        <Button onClick={handleClick} size="small">Write a review</Button>
+        <Button className={cardStyles.btn} onClick={handleClick} size="small">Write a review</Button>
       </CardActions>
     </Card>
   );
