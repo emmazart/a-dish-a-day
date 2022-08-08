@@ -105,10 +105,10 @@ export default function RecipeCard({recipe}) {
         </Typography>
       </CardContent>
       <CardActions disableSpacing>
-        <IconButton aria-label="add to favorites" onClick={handleFavoriteClick}>
+        <IconButton className={recipeStyles.icon} aria-label="add to favorites" onClick={handleFavoriteClick}>
           <FavoriteIcon />
         </IconButton>
-        <IconButton aria-label="share">
+        <IconButton className={recipeStyles.icon} aria-label="share">
           <ShareIcon />
         </IconButton>
         <ExpandMore
@@ -116,6 +116,7 @@ export default function RecipeCard({recipe}) {
           onClick={handleExpandClick}
           aria-expanded={expanded}
           aria-label="show more"
+          className={recipeStyles.icon}
         >
           <ExpandMoreIcon />
         </ExpandMore>

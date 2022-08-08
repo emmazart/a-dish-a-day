@@ -1,5 +1,4 @@
 .card {
-    background-color: rgba(247, 240, 109, 0.8) !important;
     width:345px;
     flex-wrap: wrap;
     flex-direction: column;
@@ -10,4 +9,11 @@
     margin: 40px 20px 20px 20px;
     padding: 30px;
     align-items:stretch;
+}
+
+
+/* icon element styles */
+
+.icon path {
+    color: #BB9316;
 }

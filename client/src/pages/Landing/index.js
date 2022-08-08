@@ -14,7 +14,7 @@ function Landing() {
                 <ResponsiveAppBar></ResponsiveAppBar>
                 <h1>for independent recipe writers <br /> & home chefs</h1>
                 <Link to="/login">
-                    <Button variant='contained'>Login</Button>
+                    <Button className={landingStyles.btn} variant='contained'>Login</Button>
                 </Link>
                 <Link to="/signup" className={landingStyles.signup}>Don't have an account? Sign Up</Link>
             </Paper>

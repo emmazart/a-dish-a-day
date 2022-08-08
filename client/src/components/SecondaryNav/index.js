@@ -72,7 +72,7 @@ const SecondaryNav = () => {
                                 fontFamily: 'monospace',
                                 fontWeight: 700,
                                 letterSpacing: '.3rem',
-                                color: 'black',
+                                color: '#BB9316',
                                 textDecoration: 'none'
                             }}
                         >
@@ -156,7 +156,7 @@ const SecondaryNav = () => {
                                 <MenuIcon alt="Remy Sharp" src="/static/images/avatar/2.jpg"
                                     sx={{
                                         color: 'default',
-                                        backgroundColor: 'black',
+                                        backgroundColor: '#BB9316',
                                         
                                     }} />
                             </IconButton>
