@@ -7,38 +7,20 @@ import FormControl from '@mui/material/FormControl';
 import FormGroup from '@mui/material/FormGroup';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import Button from '@mui/material/Button';
-import { useQuery, gql } from '@apollo/client';
+import { useQuery } from '@apollo/client';
 import { QUERY_ALL_RECIPES, QUERY_RECIPE_ID } from '../../utils/queries';
 import SecondayNav from '../../components/SecondaryNav';
 import recipeStyles from './recipes.module.css';
 
-
-import { useQuery } from '@apollo/client';
-import { QUERY_RECIPES, QUERY_TAGS } from '../../utils/queries';
-
 export default function RecipeSearch() {
-<<<<<<< HEAD
-
-  // GET RECIPE DATA FROM APOLLO
-  const { loading, data } = useQuery(QUERY_RECIPES);
-  // allRecipes will contain all returned data
-  const allRecipes = data?.recipes || []; 
-
-  // // GET TAG DATA FROM APOLLO
-  // const tagData = useQuery(QUERY_TAGS);
-  // const tags = tagData.data;
-  // tags.map(tag => console.log('MAPPING', tag));
-  // // const allTags = tagData?.data.data.tags || [];
-  // console.log("TAGSSSSSS", tags);
-
 
     const [recipes, setRecipes] = useState([
       {title:"the title", ingredients: "ingredients", instructions: "instructions", author: "author", image:{src:"broken/image/link.jpg", alt:"broken iamge text"}}
     ]);
-=======
+
     const id = "62eeef9f31ff208513efd696";
+    // GET RECIPE DATA FROM APOLLO
     const { data, loading, error } = useQuery(QUERY_ALL_RECIPES);
->>>>>>> 51d958b41a1b7779e0fdba28c4e1088d9d670ecc
     const [filteredRecipes, setFilteredRecipes] = useState([]);
     const [search, setSearch] = useState('all');
     const [open, setOpen] = useState(false);

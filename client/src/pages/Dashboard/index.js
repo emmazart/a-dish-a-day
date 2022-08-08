@@ -10,7 +10,7 @@ import FavoriteRecipe from "../../components/FavoriteRecipe";
 
 import Review from "../../components/ReviewForm";
 import { useQuery } from "@apollo/client";
-import { QUERY_RECIPES } from "../../utils/queries";
+import { QUERY_ALL_RECIPES } from "../../utils/queries";
 
 const Dashboard = () => {
   // implement state to keep track of which recipe has been selected to review
@@ -19,7 +19,7 @@ const Dashboard = () => {
   // implement state to set star rating
   const [value, setValue] = useState();
 
-  const { loading, data } = useQuery(QUERY_RECIPES);
+  const { loading, data } = useQuery(QUERY_ALL_RECIPES);
   const recipes = data?.recipes || [];
 
   // const recipes = [
