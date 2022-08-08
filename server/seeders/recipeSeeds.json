@@ -123,48 +123,6 @@
     "tag": [{"tagName": "Other Meats"}]
   },
     {
-<<<<<<< HEAD
-        "recipeTitle" : "Chicken Pot Pie",
-        "description" : "the best meal never maid",
-        "author" : "some old guy name Andre",
-        "img" : "https://placekitten.com/400/200",
-        "ingredient" : [],
-        "preperationStep" : [],
-        "tag": []
-        
-    },
-    {
-        "recipeTitle" : "Good Pizza",
-        "description" : "Bacon and Hamberger",
-        "author" : "Larry Jones",
-        "img" : "https://placekitten.com/400/200",
-        "ingredient" : [],
-        "preperationStep" : [],
-        "tag": []
-        
-    },
-    {
-        "recipeTitle" : "Mac N Cheese",
-        "description" : " Noodles and cheese and thats it",
-        "author" : "The Smart Kid",
-        "img" : "https://placekitten.com/400/200",
-        "ingredient" : [],
-        "preperationStep" : [],
-        "tag": []
-        
-    },
-    {
-        "recipeTitle" : "Chicken Parm",
-        "description" : "This is a great chicken dish",
-        "author" : "Emma",
-        "img" : "https://placekitten.com/400/200",
-        "ingredient" : ["chicken", "parmesan", "tomato sauce", "pasta"],
-        "preperationStep" : ["1: do this", "2: to this second", "3: do this third"],
-        "tag": []
-        
-    }
-=======
-
         "recipeTitle" : "Peach Salsa Bowl",
         "description" : "These tasty bowls are one of our favorite summer dinners! I love the contrast of the sweet, refreshing peach salsa with the creamy avocado.",
         "author" : "Larry Jones",
@@ -388,6 +346,4 @@
           "7. Rest the ribs for 5 minutes, then serve. Personally, I like to cut each rib individually with a pair of kitchen shears, to make it easier for the kids to eat. You do you."],
           "tag": [{"tagName" : "Beef"}]
         }
-      
->>>>>>> 51d958b41a1b7779e0fdba28c4e1088d9d670ecc
 ]
