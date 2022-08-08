@@ -54,7 +54,7 @@ const SecondaryNav = () => {
             position="fixed"
             // elevation={0}
             style={{
-                backgroundColor: "transparent",
+                backgroundColor: "white",
                 color: "red",
             }}>
             <Container maxWidth="xl">
@@ -89,7 +89,9 @@ const SecondaryNav = () => {
                             onClick={handleOpenNavMenu}
                             color="inherit"
                         >
-                            <MenuIcon />
+                            <MenuIcon 
+                            color='default'
+                            />
                         </IconButton>
                         <Menu
                             id="menu-appbar"
@@ -153,8 +155,8 @@ const SecondaryNav = () => {
                             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                                 <MenuIcon alt="Remy Sharp" src="/static/images/avatar/2.jpg"
                                     sx={{
-                                        color: 'white',
-                                        backgroundColor: 'blue',
+                                        color: 'default',
+                                        backgroundColor: 'black',
                                         
                                     }} />
                             </IconButton>

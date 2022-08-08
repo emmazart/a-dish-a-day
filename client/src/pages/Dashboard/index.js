@@ -11,6 +11,7 @@ import FavoriteRecipe from "../../components/FavoriteRecipe";
 import Review from "../../components/ReviewForm";
 import { useQuery } from "@apollo/client";
 import { QUERY_ALL_RECIPES } from "../../utils/queries";
+import { Typography } from "@mui/material";
 
 const Dashboard = () => {
   // implement state to keep track of which recipe has been selected to review
@@ -58,7 +59,14 @@ const Dashboard = () => {
   return (
     <div className={dashStyles.test}>
       <SecondaryNav></SecondaryNav>
-      <h2>Dashboard</h2>
+      <Typography
+                variant='h4'
+                color='textPrimary'
+                align='center'
+                margin='140px 0px 50px 0px'
+            >
+                Dashboard
+            </Typography>
       <main className={dashStyles.main}>
         {/* Recent recipes */}
         <section className={dashStyles.recipeContainer}>
