@@ -72,6 +72,10 @@ function SingleRecipe() {
         color: theme.palette.text.secondary,
     }));
 
+    const getImgPath = i => {
+        return `${process.env.PUBLIC_URL}/${i}`
+    }
+
     if (loading) return "loading"
     if (error) return <pre>{error.message}</pre>  
 
@@ -93,7 +97,7 @@ function SingleRecipe() {
                 {/* recipe image */}
                 <Grid item xs={12} md={6} lg={4}>
                     <Item>
-                        <img src={img} alt="finished recipe"></img>
+                        <img src={getImgPath(img)} alt="finished recipe"></img>
                     </Item>
                 </Grid>
 
