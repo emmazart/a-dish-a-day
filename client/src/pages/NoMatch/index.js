@@ -1,13 +1,16 @@
 import React from 'react';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import { Typography } from '@mui/material';
 
 function NoMatch() {
 
     return(
         <section>
             <Header />
-            <h2>Oops, we couldn't find that page.</h2>
+            <Typography>
+            Oops, we couldn't find that page.
+            </Typography>
             <Footer />
         </section>
     )

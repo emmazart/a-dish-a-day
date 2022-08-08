@@ -12,6 +12,32 @@ export const QUERY_RECIPES = gql`
   }
 `;
 
+<<<<<<< HEAD
+export const QUERY_RECIPE_ID = gql`
+  query Recipe($id: String!) {
+    recipe(_id: $id) {
+      _id
+      recipeTitle
+      description
+      author
+      img
+      ingredient
+      preperationStep
+      tag {
+        tagName
+      }
+    }
+  }
+`;
+
+export const QUERY_TAGS = gql`
+  query Tags {
+    tags {
+      tagName
+    }
+  }
+`;
+=======
 
 
 
@@ -47,3 +73,4 @@ query Recipe($id: String!) {
   }
 }
 `
+>>>>>>> 51d958b41a1b7779e0fdba28c4e1088d9d670ecc
