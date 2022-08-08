@@ -24,6 +24,15 @@ const resolvers = {
       },
       recipe: async (parent, {_id}) => {
         return Recipe.findOne({_id});
+      },
+      recipesbyTag: async (parent, {tagName}) => {
+        const params = [tagName];
+        return  await Recipe.find({
+          "tag": params //PARAMS IS ARRAY, TAG IS ARRAY, NOW PROPERLY COMPARED
+          //array of tags, array of strings
+          //tagName naming convention, so this comparison works (?)
+          //anytime you find something in an array you search by value
+        });
       }
     },
 
