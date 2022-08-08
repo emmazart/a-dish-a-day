@@ -1,6 +1,7 @@
 //working 8/4//
 
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 // import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import Card from '@mui/material/Card';
@@ -65,6 +66,12 @@ export default function RecipeCard({recipe}) {
     });
   };
 
+  let navigate = useNavigate();
+
+  function handleNavigate(e) {
+    navigate(`../recipes/${recipe._id}`, { replace: true });  
+  }
+
   const handleExpandClick = () => {
     setExpanded(!expanded);
   };
@@ -84,6 +91,7 @@ export default function RecipeCard({recipe}) {
         //   </IconButton>
         // }
         title={recipe.recipeTitle}
+        onClick={() => handleNavigate()}
       />
       <CardMedia
         component="img"
