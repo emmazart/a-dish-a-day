@@ -42,14 +42,21 @@ const typeDefs = gql`
         img: String
         ingredient: [String]
         preparationStep: [String]
-        tag: [Tag]        
+        tag: [Tag] 
+        review: [Review]       
         
+    }
+    type Review {
+        reviewText: String
+        rating: Int
+        username: String
     }
 
     type Mutation {
         addTag(tagName: String!): Tag
         login(email: String!, password: String!): Auth
         addUser(username: String!, email: String!, password: String!): Auth
+        addReview(_id: String, reviewText: String!, rating: Int!): Review
     }
     
 `;
