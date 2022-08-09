@@ -39,9 +39,6 @@ function Review(props) {
         context: { headers: { authorization: token }}
       });
 
-      // // USE STATE TO CAPTURE FORM TEXT VALUE
-      // const [reviewText, setReviewText] = useState("");
-
       const handleText = (e) => {
         setFormData({ ...formData, "reviewText": e.target.value})
       };
