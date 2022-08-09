@@ -25,6 +25,14 @@ const resolvers = {
       recipesByDescTitle: async () => {//returns recipes by descending alphabetical order
         return Recipe.find().sort({"recipeTitle" : 1});//find -> sort ({"field" : 1/-1}), where 1/-1 determine ascending/descending order
       },
+      recipesByDescNaturalOrder: async () => {//returns recipes by descending (order of storage?); DOES NOT ACTUALLY RETURN IN INPUT ORDER
+        //https://stackoverflow.com/questions/33018048/how-does-mongodb-order-their-docs-in-one-collection#:~:text=MongoDB%20does%20not%20%22order%22%20the,tell%20it%20to%20do%20otherwise
+        return Recipe.find().sort({$natural : -1});//https://www.mongodb.com/docs/manual/reference/glossary/
+      },
+      recipesByDescDateOrder: async () => {
+        return Recipe.find().sort({"_id" : -1});//https://stackoverflow.com/questions/5125521/uses-for-mongodb-objectid-creation-time
+        //https://www.mongodb.com/docs/manual/reference/method/ObjectId.getTimestamp/
+      },
       recipe: async (parent, {_id}) => {
         return Recipe.findOne({_id});
       },
