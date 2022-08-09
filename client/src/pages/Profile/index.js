@@ -25,27 +25,27 @@ function Profile() {
       }}
       noValidate
       autoComplete="off"
+      margin='0px 0px 40px 0px'
     >
     <div>
     <TextField
-          id="filled-helperText"
-          label=""
-          defaultValue=""
-          helperText="User Name"
+          id="filled-read-only-input"
+          label="User Name"
+          defaultValue="Hello World"
+          color='primary'
+          InputProps={{
+            readOnly: true,
+          }}
           variant="filled"
         />
-        <TextField
-          id="filled-helperText"
-          label=""
-          defaultValue="Default Value"
-          helperText="Some important text"
-          variant="filled"
-        />
-        <TextField
-          id="filled-helperText"
-          label=""
-          defaultValue="Default Value"
-          helperText="Some important text"
+         <TextField
+          id="filled-read-only-input"
+          label="Email"
+          defaultValue="Hello World"
+          color='primary'
+          InputProps={{
+            readOnly: true,
+          }}
           variant="filled"
         />
       </div>
