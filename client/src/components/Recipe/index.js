@@ -1,8 +1,5 @@
-//working 8/4//
-import ReactTooltip from 'react-tooltip';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-// import * as React from 'react';
 import { styled } from '@mui/material/styles';
 import Card from '@mui/material/Card';
 import CardHeader from '@mui/material/CardHeader';
@@ -10,16 +7,11 @@ import CardMedia from '@mui/material/CardMedia';
 import CardContent from '@mui/material/CardContent';
 import CardActions from '@mui/material/CardActions';
 import Collapse from '@mui/material/Collapse';
-// import Avatar from '@mui/material/Avatar';
 import IconButton, { IconButtonProps } from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
-// import { red } from '@mui/material/colors';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ShareIcon from '@mui/icons-material/Share';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-// import MoreVertIcon from '@mui/icons-material/MoreVert';
-import Rating from '@mui/material/Rating';
-import Ratings from '../Rating';
 import recipeStyles from './recipe.module.css';
 import Tooltip from '@mui/material/Tooltip';
 import Auth from '../../utils/auth';
@@ -80,7 +72,7 @@ export default function RecipeCard({recipe}) {
   return (
     <>
     <Card className={recipeStyles.card} sx={{ maxWidth: 345 }}>
-      <Tooltip title="Click for Recipe">
+      <Tooltip title="Click for Recipe" placement="top">
         <CardHeader title={recipe.recipeTitle} onClick={() => handleNavigate()} />
       </Tooltip>
       <CardMedia
@@ -117,7 +109,6 @@ export default function RecipeCard({recipe}) {
           <Typography>
            `Submitted by {recipe.author}`
           </Typography>
-            <Rating/>
         </CardContent>
       </Collapse>
     </Card>
