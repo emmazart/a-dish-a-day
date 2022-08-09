@@ -4,8 +4,13 @@ import Footer from '../../components/Footer';
 import { Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
+import { useUserContext } from '../../utils/GlobalState'
+
+
 
 function Profile() {
+  const [state, dispatch] = useUserContext();
+  console.log(state);
     return (
         <>
         <Header></Header>

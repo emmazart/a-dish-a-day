@@ -1,5 +1,5 @@
 import { useReducer } from "react";
-import { TOGGLE_LOGIN } from './actions';
+import { TOGGLE_LOGIN, UPDATE_USER } from './actions';
 
 export const reducer = (state, action) => {
     switch (action.type) {
@@ -8,6 +8,12 @@ export const reducer = (state, action) => {
                 ...state,
                 loggedIn: !state.loggedIn
             };
+        case UPDATE_USER:
+            return {
+                // ...state,
+                loggedIn: true,
+                userID: action.userID
+            }
         default:
             return state;
     }
