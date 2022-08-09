@@ -6,6 +6,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import cardStyles from './favorite.module.css';
+import { useNavigate } from 'react-router-dom';
 
 function FavoriteRecipe(props) {
     const { _id, source, author, title, description, currentRecipe, setCurrentRecipe } = props;
@@ -22,6 +23,11 @@ function FavoriteRecipe(props) {
         console.log(currentRecipe)
     }, [currentRecipe]);
 
+    let navigate = useNavigate();
+
+  function handleNavigate(e) {
+    navigate(`../recipes/${_id}`, { replace: true });  
+  }
 
   return (
     <Card className={cardStyles.card} sx={{ minWidth: 275 }}>
@@ -37,7 +43,7 @@ function FavoriteRecipe(props) {
         {/* <Typography sx={{ fontSize: 14 }} color="text.secondary" gutterBottom>
           Word of the Day
         </Typography> */}
-        <Typography variant="h5" component="div">
+        <Typography variant="h5" component="div" onClick={() => handleNavigate()}>
           {title}
         </Typography>
         <Typography sx={{ mb: 1.5 }} color="text.secondary">
