@@ -1,5 +1,5 @@
 const { Tag, Recipe, User } = require("../models");
-
+// const reviewSchema = require("./Review");
 const { AuthenticationError } = require('apollo-server-express');
 const { signToken } = require('../utils/auth');
 
@@ -32,6 +32,21 @@ const resolvers = {
         const newTag = await Tag.create(args);
         return newTag;
       },
+      addReview: async (parent,  { _id, reviewText, rating }, context) => {
+        
+        if (context.user) {
+          const updatedRecipe = await Recipe.findOneAndUpdate(
+            { _id: _id },
+            { $push: { review: { reviewText, username: context.user.username, rating } } },
+            { new: true, runValidators: true }
+          );
+          console.log(updatedRecipe);
+          return updatedRecipe;
+
+            }
+            throw new AuthenticationError('You need to be logged in!');
+      },
+
       login: async (parent, { email, password }) => { //finding one email, if no user, no email
         const user = await User.findOne({ email });
   
