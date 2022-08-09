@@ -15,18 +15,14 @@ import MenuItem from '@mui/material/MenuItem';
 import secondNavStyles from './nav.module.css';
 // import AdbIcon from '@mui/icons-material/Adb';
 import { color } from '@mui/system';
+import Auth from '../../utils/auth';
 
 const pages = [
-    { name: "Protein Search", link: "/recipes" },
     { name: "View Recipes", link: "/recipes" },
     { name: "About", link: "/about" },
 ];
-const settings = [
-    { name: 'Profile', link: "/profile" },
-    { name: 'Account', link: "/account" },
-    { name: 'Dashboard', link: "/dashboard" },
-    { name: 'Logout', link: "/" },
-];
+
+let settings = [];
 
 const SecondaryNav = () => {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -47,7 +43,18 @@ const SecondaryNav = () => {
         setAnchorElUser(null);
     };
 
-
+    if (!Auth.loggedIn()) {
+    settings = [
+    { name: 'Login', link: "/login" },
+    { name: 'Sign Up', link: "/signup" },
+  ]
+    } else {
+        settings = [
+            { name: 'Profile', link: "/profile" },
+            { name: 'Dashboard', link: "/dashboard" },
+            { name: 'Logout', link: "/" },
+        ];
+    };
 
     return (
         <AppBar
@@ -161,6 +168,7 @@ const SecondaryNav = () => {
                                     }} />
                             </IconButton>
                         </Tooltip>
+
                         <Menu
                             sx={{ 
                                 mt: '45px' }}
