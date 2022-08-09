@@ -1,0 +1,20 @@
+[
+    {
+        "tagName" : "Chicken"
+    },
+    {
+        "tagName" : "Seafood" 
+    },
+    {
+        "tagName" : "Beef"  
+    },
+    {
+        "tagName" : "Pork"
+    },
+    {
+        "tagName" : "Other Meats" 
+    },
+    {
+        "tagName" : "Vegetarian" 
+    }
+]

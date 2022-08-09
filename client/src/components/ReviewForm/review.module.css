@@ -1,0 +1,17 @@
+.form {
+    padding: 1rem;
+    margin: 1rem;
+}
+
+/* five star rating element styles */
+.rating {
+    margin-top: 1rem;
+}
+
+.rating path {
+    color: #BB9316;
+}
+
+.btn {
+    background-color: #C0C4C2;
+}

@@ -1,0 +1,12 @@
+/* .container {
+    border-bottom: solid 2px #faaf00;
+} */
+
+/* five star rating element styles */
+.rating {
+    margin-top: 1rem;
+}
+
+.rating path {
+    color: #faaf00;
+}

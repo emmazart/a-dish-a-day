@@ -1,0 +1,42 @@
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    width: 85vw;
+    padding: 2rem;
+}
+
+.ingredients, .steps {
+    list-style: none;
+}
+
+.main ul {
+    padding: 0;
+}
+
+/* PREPARATION STEP STYLES */
+
+.stepContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+}
+
+.stepHeader {
+    width: 100%;
+}
+
+.steps {
+    width: 80%;
+}
+
+.steps > li {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}

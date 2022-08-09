@@ -1,0 +1,23 @@
+
+
+
+[
+    {
+        "username" : "Cris", 
+        "email" : "Waters59@hotmail.com", 
+        "password" : "kGjRfUNWUIRwfS_", 
+        "favorite": []   
+    },
+    {
+        "username" : "Justin", 
+        "email" : "Waters59@gmail.com", 
+        "password" : "jRfUNWUIRwfS_", 
+        "favorite": []   
+    },
+    {
+        "username" : "Andre", 
+        "email" : "ablankholm@gmail.com", 
+        "password" : "Pleasehelp", 
+        "favorite": []   
+    }
+]
