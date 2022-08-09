@@ -51,7 +51,7 @@ function SingleRecipe() {
         variables: { id: selectedRecipeId }
     });
         
-    const { recipeTitle, _id, description, ingredient, img, preparationStep } = data?.recipe || [];
+    const { recipeTitle, _id, description, author, ingredient, img, preparationStep } = data?.recipe || [];
     console.log('RECIPE DATA', recipeTitle, _id);
 
     useEffect(() => {
@@ -90,18 +90,19 @@ function SingleRecipe() {
                         {/* <Typography variant="h2">{recipe.recipeTitle}</Typography> 
                         <Typography variant="h3">{recipe.description}</Typography> */}
                         <h2>{recipeTitle}</h2>
+                        <p>by {author}</p>
                         <h3>{description}</h3>
                     </Item>
                 </Grid>
 
                 {/* recipe image */}
                 <Grid item xs={12} md={6} lg={4}>
-                    <Item>
-                        <img src={getImgPath(img)} alt="finished recipe"></img>
+                    <Item className={detailStyles.imgContainer}>
+                        <img className={detailStyles.img} src={getImgPath(img)} alt="finished recipe"></img>
                     </Item>
                 </Grid>
 
-                <Grid item xs={12} md={6} lg={8}>
+                <Grid item xs={12} md={6} lg={7}>
                     <Item>
                         <h4>Ingredients</h4>
                         <ul className={detailStyles.ingredients}>
@@ -154,7 +155,7 @@ function SingleRecipe() {
                 </Grid>
 
             </Grid>
-            <Footer />
+            <Footer className={detailStyles.footer} />
         </section>
     )
 }

@@ -57,9 +57,9 @@ export default function RecipeSearch() {
     if (error) return <pre>{error.message}</pre>
 
     return (
-      <div>
+      <div className={recipeStyles.main}>
         <SecondayNav/>
-        <FormGroup id="search">
+        <FormGroup id="search" className={recipeStyles.filter}>
           <Button className={recipeStyles.btn} sx={{ display: 'block', mt: 2 }} onClick={handleOpen}>
             Filter Recipes
           </Button>
