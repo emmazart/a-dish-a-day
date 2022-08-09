@@ -51,15 +51,19 @@ function SingleRecipe() {
         variables: { id: selectedRecipeId }
     });
         
-    const { recipeTitle, _id, description, author, ingredient, img, preparationStep } = data?.recipe || [];
+    const { recipeTitle, _id, description, author, ingredient, img, preparationStep, review } = data?.recipe || [];
     console.log('RECIPE DATA', recipeTitle, _id);
+
+    // implement state to keep track of which recipe has been selected to review
+    const [currentRecipe, setCurrentRecipe] = useState({ title: '', _id: '' });
 
     useEffect(() => {
         if (!data) return console.log('no data')
+        setCurrentRecipe({
+            title: recipeTitle,
+            _id: _id
+        })
       }, [data])
-
-    // implement state to keep track of which recipe has been selected to review
-    const [currentRecipe, setCurrentRecipe] = useState({ title: `${recipeTitle}`, _id: `${_id}` });
 
     // implement state to set star rating
     const [value, setValue] = useState();
@@ -140,13 +144,13 @@ function SingleRecipe() {
 
                 <Grid item xs={12} lg={8}>
                     <Item>
-                        <h4>Reviews coming soon</h4>
-                        {reviewData.map((review, index) => {
+                        <h4>Reviews</h4>
+                        {review.map((review, index) => {
                             return (
                                 <Review 
                                 key={index}
-                                text={review.text}
-                                value={review.starRating}
+                                text={review.reviewText}
+                                value={review.rating}
                                 user={review.username}
                                 ></Review>             
                             )

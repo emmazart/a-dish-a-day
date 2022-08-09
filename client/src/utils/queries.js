@@ -36,12 +36,11 @@ query Recipe($id: String!) {
     img
     ingredient
     preparationStep
+    review {
+      reviewText
+      rating
+      username
+    }
   }
 }
 `
-
-// review {
-//   reviewText
-//   rating
-//   username
-// }
