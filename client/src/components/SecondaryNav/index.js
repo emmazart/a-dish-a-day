@@ -52,8 +52,13 @@ const SecondaryNav = () => {
         settings = [
             { name: 'Profile', link: "/profile" },
             { name: 'Dashboard', link: "/dashboard" },
-            { name: 'Logout', link: "/" },
+            // { name: 'Logout', link: "/" },
         ];
+    };
+
+    const handleLogout = (e) => {
+        console.log('logging out');
+        Auth.logout();
     };
 
     return (
@@ -199,6 +204,19 @@ const SecondaryNav = () => {
                                         {setting.name}</Typography>
                                 </MenuItem>
                             ))}
+                            {Auth.loggedIn() ? 
+                                ( <MenuItem key='logout' onClick={handleLogout}
+                                style={{
+                                backgroundColor: 'white'
+                                }}>
+                                <Typography
+                                // textAlign="center"
+                                color='textSecondary'
+                                letterSpacing='.1rem'
+                                >
+                                Logout</Typography>
+                                </MenuItem> ) : ''
+                            }
                         </Menu>
                     </Box>
                 </Toolbar>

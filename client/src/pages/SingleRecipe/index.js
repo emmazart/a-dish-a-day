@@ -14,6 +14,8 @@ import { QUERY_RECIPE_ID } from '../../utils/queries';
 
 function SingleRecipe() {
 
+    // HARDCODED DATA FOR DEVELOPMENT PROCESS
+
     // const { recipeTitle, _id, description, ingredient, img, preparationStep } = {
     //     "recipeTitle" : "Chicken Parm",
     //     "description" : "This is a great chicken dish",
@@ -25,23 +27,23 @@ function SingleRecipe() {
     //     "_id": 5
     // };
 
-    const reviewData = [
-        {
-            "text": "wow this is such a great recipe I love it so much 5 stars",
-            "username": "Emma",
-            "starRating": 5
-        },
-        {
-            "text": "wow this is such a great recipe I love it so much 5 stars",
-            "username": "Emma",
-            "starRating": 5
-        },
-        {
-            "text": "wow this is such a great recipe I love it so much 5 stars",
-            "username": "Emma",
-            "starRating": 5
-        }
-    ];
+    // const reviewData = [
+    //     {
+    //         "text": "wow this is such a great recipe I love it so much 5 stars",
+    //         "username": "Emma",
+    //         "starRating": 5
+    //     },
+    //     {
+    //         "text": "wow this is such a great recipe I love it so much 5 stars",
+    //         "username": "Emma",
+    //         "starRating": 5
+    //     },
+    //     {
+    //         "text": "wow this is such a great recipe I love it so much 5 stars",
+    //         "username": "Emma",
+    //         "starRating": 5
+    //     }
+    // ];
       
     const URL = window.location.href;
     const selectedRecipeId = URL.substr(30);
@@ -62,7 +64,7 @@ function SingleRecipe() {
         setCurrentRecipe({
             title: recipeTitle,
             _id: _id
-        })
+        });
       }, [data])
 
     // implement state to set star rating
@@ -80,8 +82,37 @@ function SingleRecipe() {
         return `${process.env.PUBLIC_URL}/${i}`
     }
 
+    function renderReviews(review) {
+        console.log(review);
+        if (review === undefined) {
+            return (
+                <Item>
+                <h4>Reviews</h4>
+                {review.map((review, index) => {
+                    return (
+                        <Review 
+                        key={index}
+                        text={review.reviewText}
+                        value={review.rating}
+                        user={review.username}
+                        ></Review>             
+                    )
+                })}
+            </Item>
+            )
+        } else {
+            return (
+                <Item>
+                    <h4>Be the first to review!</h4>
+                </Item>
+            )
+        }
+    };
+
     if (loading) return "loading"
     if (error) return <pre>{error.message}</pre>  
+
+    console.log(review);
 
     return (
         <section className={detailStyles.main}>
@@ -143,21 +174,20 @@ function SingleRecipe() {
                 </Grid>
 
                 <Grid item xs={12} lg={8}>
-                    <Item>
-                        <h4>Reviews</h4>
-                        {review.map((review, index) => {
-                            return (
-                                <Review 
-                                key={index}
-                                text={review.reviewText}
-                                value={review.rating}
-                                user={review.username}
-                                ></Review>             
-                            )
-                        })}
-                    </Item>
+                <Item>
+                {review.length < 1 ? <h4>Be the first to review!</h4> : <h4>Reviews</h4>}
+                {review.map((review, index) => {
+                    return (
+                        <Review 
+                        key={index}
+                        text={review.reviewText}
+                        value={review.rating}
+                        user={review.username}
+                        ></Review>             
+                    )
+                })}
+            </Item>
                 </Grid>
-
             </Grid>
             <Footer className={detailStyles.footer} />
         </section>
