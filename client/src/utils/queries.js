@@ -45,3 +45,14 @@ query Recipe($id: String!) {
 //   rating
 //   username
 // }
+
+
+// query user by id
+export const QUERY_USER_ID = gql`
+query User($id: String!) {
+  user(_id: $id) {
+    username
+    email
+  }
+}
+`;

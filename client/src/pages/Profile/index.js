@@ -4,8 +4,28 @@ import Footer from '../../components/Footer';
 import { Typography } from '@mui/material';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
+// import { useUserContext } from '../../utils/GlobalState'
+import { useQuery } from "@apollo/client";
+import { QUERY_USER_ID } from '../../utils/queries';
+
+
+
 
 function Profile() {
+  // const [state, dispatch] = useUserContext();
+  let user = localStorage.getItem('user');
+  console.log(user);
+
+  // query database for single recipe
+  const { error, loading, data } = useQuery(QUERY_USER_ID, {
+    variables: { id: user }
+});
+
+    if (loading) return "loading"
+    if (error) return <pre>{error.message}</pre> 
+
+  console.log(data.user);
+
     return (
         <>
         <Header></Header>
@@ -31,7 +51,7 @@ function Profile() {
     <TextField
           id="filled-read-only-input"
           label="User Name"
-          defaultValue="Hello World"
+          defaultValue={data.user.username}
           color='primary'
           InputProps={{
             readOnly: true,
@@ -41,7 +61,7 @@ function Profile() {
          <TextField
           id="filled-read-only-input"
           label="Email"
-          defaultValue="Hello World"
+          defaultValue={data.user.email}
           color='primary'
           InputProps={{
             readOnly: true,
