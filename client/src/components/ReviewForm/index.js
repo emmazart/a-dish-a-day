@@ -1,9 +1,11 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Rating from '@mui/material/Rating';
 import TextField from '@mui/material/TextField';
 import reviewStyles from './review.module.css';
+import { useMutation } from "@apollo/client";
+import { ADD_REVIEW } from '../../utils/mutations';
 
 function Review(props) {
 
@@ -23,20 +25,39 @@ function Review(props) {
         console.log(value)
     }, [value]);
 
-    const handleSubmitReview = (e) => {
-        e.preventDefault();
+      // USE MUTATION
+      const [addReview, { error }] = useMutation(ADD_REVIEW);
 
-        // post request to db 
-        // {
-        //     _id: {currentRecipe._id},
-        //     user: {}
-        //     reviewText: {},
-        //     reviewStars: {value}
-        // }
+      // USE STATE TO CAPTURE FORM TEXT VALUE
+      const [reviewText, setReviewText] = useState("");
 
-        console.log('submitted');
+      const handleText = (e) => {
+        setReviewText(e.target.value)
+      };
+
+      // SUBMIT REVIEW HANDLER QUERIES DB
+      const handleSubmitReview = async event => {
+        event.preventDefault();
+        let token = localStorage.getItem('id_token');
+        console.log(value, reviewText, currentRecipe._id);
+
+        try {
+          // destructured 'data' because that's what's being returned from addUser query in Apollo
+          const data = await addReview({
+            variables: {
+              "reviewText": `${reviewText}`,
+              "rating": `${value}`,
+              "id": `${currentRecipe._id}`
+            }
+          });
+
+          console.log("review submitted", data);
+          
+        } catch (e) {
+          console.log(e);
+        }
     };
-
+    
   return (
     <Box
       className={reviewStyles.form}
@@ -58,6 +79,7 @@ function Review(props) {
         fullWidth
         multiline
         rows={4}
+        onBlur={handleText}
         id="reviewText"
         // label="Your review here"
         placeholder="Your review here"

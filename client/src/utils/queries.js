@@ -39,3 +39,9 @@ query Recipe($id: String!) {
   }
 }
 `
+
+// review {
+//   reviewText
+//   rating
+//   username
+// }

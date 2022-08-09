@@ -32,5 +32,13 @@ mutation AddFavorite($recipe_id: String!, $user_id: String!) {
 }
 `;
 
-
-// HELLO GITHUB
+// mutation to post a review
+export const ADD_REVIEW = gql `
+mutation AddReview($reviewText: String!, $rating: Int!, $id: String) {
+  addReview(reviewText: $reviewText, rating: $rating, _id: $id) {
+    reviewText
+    rating
+    username
+  }
+}
+`;

@@ -34,7 +34,7 @@ const theme = createTheme();
 export default function SignUp() {
 
   // USE MUTATION
-  const [addUser, { error }] = useMutation(ADD_USER);
+  const [addUser, {error}] = useMutation(ADD_USER);
 
   // SIGNUP FORM LOGIC
   const handleSubmit = async event => {
