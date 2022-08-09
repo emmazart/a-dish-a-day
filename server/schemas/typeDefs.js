@@ -12,6 +12,10 @@ const typeDefs = gql`
         users: [User]
         user(_id: String!): User
         recipes: [Recipe]
+        recipesByDescTitle: [Recipe]
+        recipesByDescNaturalOrder: [Recipe]
+        recipesByDescDateOrder: [Recipe]
+
         recipe(_id: String!): Recipe
         recipesbyTag(tagName: String!): Recipe
         
