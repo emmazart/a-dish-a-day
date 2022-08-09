@@ -80,10 +80,9 @@ export default function RecipeCard({recipe}) {
   return (
     <>
     <Card className={recipeStyles.card} sx={{ maxWidth: 345 }}>
-      <div data-tip="Click for Recipe"> <ReactTooltip />
-      <CardHeader title={recipe.recipeTitle} onClick={() => handleNavigate()} >
-      </CardHeader>
-      </div>
+      <Tooltip title="Click for Recipe">
+        <CardHeader title={recipe.recipeTitle} onClick={() => handleNavigate()} />
+      </Tooltip>
       <CardMedia
         component="img"
         height="194"
