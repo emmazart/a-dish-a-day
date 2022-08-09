@@ -1,4 +1,5 @@
 const { Schema, model } = require("mongoose");
+const reviewSchema = require("./Review");
 //const { Tag } = require('../schemas/resolvers');
 
 const tag = require("./Tag");
@@ -44,6 +45,7 @@ const recipeSchema = new Schema(
         ref: "Tag",
       },
     ],
+    review: [reviewSchema]
   },
   {
     toJSON: {
