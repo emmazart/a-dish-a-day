@@ -58,6 +58,7 @@ export default function SignIn() {
       console.log("logged in", data.login);
 
      updateState(data);
+     localStorage.setItem('user', data.login.user._id)
 
 
 
