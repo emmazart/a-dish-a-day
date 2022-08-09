@@ -5,9 +5,9 @@
 }
 
 .btn {
-    color: #BB9316;
+    color: #BB9316 !important;
 }
 
 .dropdown {
-    background-color: #BB9316;
+    background-color: #BB9316 !important;
 }

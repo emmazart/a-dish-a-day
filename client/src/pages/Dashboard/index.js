@@ -63,13 +63,18 @@ const Dashboard = () => {
                 variant='h4'
                 color='textPrimary'
                 align='center'
-                margin='140px 0px 50px 0px'
+                margin='140px 0px 0px 0px'
             >
                 Dashboard
             </Typography>
       <main className={dashStyles.main}>
         {/* Recent recipes */}
         <section className={dashStyles.recipeContainer}>
+        <h2
+                className={dashStyles.header}
+            >
+                Favorited Recipes
+                </h2>
           {recipes.map((recipe, index) => {
             return (
               <FavoriteRecipe
