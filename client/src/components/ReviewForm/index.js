@@ -9,7 +9,7 @@ import { ADD_REVIEW } from '../../utils/mutations';
 
 function Review(props) {
 
-    const { currentRecipe, value, setValue } = props;
+    const { currentRecipe, stars, setStars } = props;
 
     const labels = {
         0: 'Terrible',
@@ -22,8 +22,8 @@ function Review(props) {
 
     // rerender page when value is changed
     useEffect(() => {
-        console.log(value)
-    }, [value]);
+        console.log(stars)
+    }, [stars]);
 
     // GET TOKEN FROM LOCAL STORAGE
     let token = localStorage.getItem('id_token');
@@ -43,14 +43,14 @@ function Review(props) {
       // SUBMIT REVIEW HANDLER QUERIES DB
       const handleSubmitReview = async event => {
         event.preventDefault();
-        console.log(value, reviewText, currentRecipe._id);
+        console.log(stars, reviewText, currentRecipe._id);
 
         try {
           // destructured 'data' because that's what's being returned from addUser query in Apollo
           const data = await addReview({
             variables: {
               "reviewText": reviewText,
-              "rating": value,
+              "rating": stars,
               "id": currentRecipe._id
             }
           });
@@ -92,12 +92,12 @@ function Review(props) {
         className={reviewStyles.rating}
         size="large"
         name="simple-controlled"
-        value={value ?? 0}
+        value={stars ?? 0}
         onChange={(event, newValue) => {
-          setValue(newValue);
+          setStars(newValue);
         }}
       />
-      <Box sx={{ ml: 2 }}>{labels[value]}</Box>
+      <Box sx={{ ml: 2 }}>{labels[stars]}</Box>
       <Button className={reviewStyles.btn} type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
         Submit
       </Button>

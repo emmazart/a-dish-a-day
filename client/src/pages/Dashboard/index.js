@@ -14,7 +14,7 @@ const Dashboard = () => {
   const [currentRecipe, setCurrentRecipe] = useState({ title: "", _id: "" });
 
   // implement state to set star rating
-  const [value, setValue] = useState();
+  const [stars, setStars] = useState();
 
   const { loading, data } = useQuery(QUERY_ALL_RECIPES);
   const recipes = data?.recipes || [];
@@ -90,8 +90,8 @@ const Dashboard = () => {
         {/* Review section */}
         <section className={dashStyles.formContainer}>
           <Review
-            value={value}
-            setValue={setValue}
+            stars={stars}
+            setStars={setStars}
             currentRecipe={currentRecipe}
           ></Review>
         </section>

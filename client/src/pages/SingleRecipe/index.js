@@ -58,19 +58,22 @@ function SingleRecipe() {
     console.log('RECIPE DATA', recipeTitle, _id);
 
     // implement state to keep track of which recipe has been selected to review
-    const [currentRecipe, setCurrentRecipe] = useState({ title: '', _id: '' });
+    const [currentRecipe, setCurrentRecipe] = useState({ title: "", _id: "" });
 
     // re-render page when data changes & set current recipe to the new title and id
     useEffect(() => {
         if (!data) return console.log('no data');
         setCurrentRecipe({
-            title: recipeTitle,
-            _id: _id
-        });
+            title: `${recipeTitle}`,
+            _id: `${_id}`
+        })
       }, [data])
 
     // implement state to set star rating
-    const [value, setValue] = useState();
+    const [stars, setStars] = useState();
+
+    // implement state to keep track of review form data
+    // const [formData, setFormData] = useState()
 
     // Item component styling from MUI
     const Item = styled(Paper)(({ theme }) => ({
@@ -142,8 +145,8 @@ function SingleRecipe() {
                 <Grid item xs={12} lg={4}>
                     <Item>
                         <ReviewForm
-                            value={value}
-                            setValue={setValue}
+                            stars={stars}
+                            setStars={setStars}
                             currentRecipe={currentRecipe}
                         ></ReviewForm>
                     </Item>
