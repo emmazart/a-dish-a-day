@@ -18,7 +18,6 @@ db.once('open', async () => {
         await Recipe.deleteMany({});
     
         await Recipe.create(recipeSeeds);
-    
         
       } catch (err) {
         console.error(err);

@@ -114,7 +114,6 @@ export default function SignIn() {
           </Box>
         </Box>
         <Copyright sx={{ mt: 8, mb: 4 }} />
-        <RecipeSearch/>
       </Container>
     </ThemeProvider>
   );

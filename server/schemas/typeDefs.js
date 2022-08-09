@@ -60,7 +60,11 @@ const typeDefs = gql`
         addTag(tagName: String!): Tag
         login(email: String!, password: String!): Auth
         addUser(username: String!, email: String!, password: String!): Auth
+
         addReview(_id: String, reviewText: String!, rating: Int!): Review
+
+        addFavorite(recipe_id: String!, user_id: String!): String
+
     }
     
 `;

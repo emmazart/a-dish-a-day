@@ -1,17 +1,19 @@
 import React from 'react';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
+import { Typography } from '@mui/material';
 
 function About() {
     return (
         <>
         <Header></Header>
-        
-            <h1>About Us</h1>
+        <Typography>
+
+        About Us
+        </Typography>
             <hr></hr>
 
-            <div>
-                <div>
+            <Typography>
                     <img src='client\public\logo512.png' />
                     <p>
                         Lorem ipsum dolor sit amet, mea in facer debet dolor, illud elitr imperdiet ne vim. Graece alterum at mei. Duo in case corpora argumentum. Libris luptatum per ad.
@@ -28,10 +30,8 @@ function About() {
 
                         Iusto quidam facilisi eos ne, an vero atomorum sapientem eum. Efficiendi voluptatibus eu nam. Id vis iisque euripidis gloriatur, ut purto veniam delicata vix. Id tritani inimicus sea, alterum mandamus deterruisset ut eos. Quem elit inimicus ius eu. Consul appareat sea cu, at eum suas iracundia efficiendi. Ad vix idque sadipscing complectitur.</p>
                     <p>I hope that you find my first React application a decent starting point. I will continue to update and expand upon my experiences and projects along the way while also incorportating more advanced tools as I learn them. Thank you so much for your interest and please feel welcome to provide comments, feedback, and critism via my contact page.</p>
+           </Typography>
             
-                </div>
-            </div>
-      
         <Footer></Footer>
         </>
     )
