@@ -20,10 +20,16 @@ function Review(props) {
         5: 'Delicious!',
     };
 
+     // implement state to keep track of review form data
+     const [formData, setFormData] = useState({
+      "stars": "",
+      "reviewText": ""
+  })
+
     // rerender page when value is changed
     useEffect(() => {
-        console.log(stars)
-    }, [stars]);
+        console.log(formData)
+    }, [formData]);
 
     // GET TOKEN FROM LOCAL STORAGE
     let token = localStorage.getItem('id_token');
@@ -33,24 +39,23 @@ function Review(props) {
         context: { headers: { authorization: token }}
       });
 
-      // USE STATE TO CAPTURE FORM TEXT VALUE
-      const [reviewText, setReviewText] = useState("");
+      // // USE STATE TO CAPTURE FORM TEXT VALUE
+      // const [reviewText, setReviewText] = useState("");
 
       const handleText = (e) => {
-        setReviewText(e.target.value)
+        setFormData({ ...formData, "reviewText": e.target.value})
       };
 
       // SUBMIT REVIEW HANDLER QUERIES DB
       const handleSubmitReview = async event => {
         event.preventDefault();
-        console.log(stars, reviewText, currentRecipe._id);
+        console.log(formData.stars, formData.reviewText, currentRecipe._id);
 
         try {
-          // destructured 'data' because that's what's being returned from addUser query in Apollo
           const data = await addReview({
             variables: {
-              "reviewText": reviewText,
-              "rating": stars,
+              "reviewText": formData.reviewText,
+              "rating": formData.stars,
               "id": currentRecipe._id
             }
           });
@@ -94,7 +99,7 @@ function Review(props) {
         name="simple-controlled"
         value={stars ?? 0}
         onChange={(event, newValue) => {
-          setStars(newValue);
+          setFormData({ ...formData, "stars": newValue});
         }}
       />
       <Box sx={{ ml: 2 }}>{labels[stars]}</Box>

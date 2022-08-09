@@ -72,9 +72,6 @@ function SingleRecipe() {
     // implement state to set star rating
     const [stars, setStars] = useState();
 
-    // implement state to keep track of review form data
-    // const [formData, setFormData] = useState()
-
     // Item component styling from MUI
     const Item = styled(Paper)(({ theme }) => ({
         backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
