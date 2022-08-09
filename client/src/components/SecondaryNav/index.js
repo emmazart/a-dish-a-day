@@ -8,13 +8,13 @@ import Typography from '@mui/material/Typography';
 import Menu from '@mui/material/Menu';
 import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
-import Avatar from '@mui/material/Avatar';
+// import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import secondNavStyles from './nav.module.css';
+// import secondNavStyles from './nav.module.css';
 // import AdbIcon from '@mui/icons-material/Adb';
-import { color } from '@mui/system';
+// import { color } from '@mui/system';
 import Auth from '../../utils/auth';
 
 const pages = [
@@ -22,6 +22,7 @@ const pages = [
     { name: "About", link: "/about" },
 ];
 
+// declare global settings variable
 let settings = [];
 
 const SecondaryNav = () => {
@@ -43,19 +44,21 @@ const SecondaryNav = () => {
         setAnchorElUser(null);
     };
 
+    // conditionally declare settings variable depening on loggedIn auth check
+    // user can only see the profile and dashboard options if they are logged in
     if (!Auth.loggedIn()) {
-    settings = [
-    { name: 'Login', link: "/login" },
-    { name: 'Sign Up', link: "/signup" },
-  ]
+        settings = [
+        { name: 'Login', link: "/login" },
+        { name: 'Sign Up', link: "/signup" },
+        ]
     } else {
         settings = [
             { name: 'Profile', link: "/profile" },
             { name: 'Dashboard', link: "/dashboard" },
-            // { name: 'Logout', link: "/" },
         ];
     };
 
+    // logout handler
     const handleLogout = (e) => {
         console.log('logging out');
         Auth.logout();
@@ -174,6 +177,7 @@ const SecondaryNav = () => {
                             </IconButton>
                         </Tooltip>
 
+                        {/* SETTINGS MENU (RIGHT DROP DOWN) */}
                         <Menu
                             sx={{ 
                                 mt: '45px' }}
@@ -204,6 +208,8 @@ const SecondaryNav = () => {
                                         {setting.name}</Typography>
                                 </MenuItem>
                             ))}
+                            
+                            {/* CONDITIONALLY RENDER LOGOUT OPTION */}
                             {Auth.loggedIn() ? 
                                 ( <MenuItem key='logout' onClick={handleLogout}
                                 style={{

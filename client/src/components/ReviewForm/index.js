@@ -25,8 +25,13 @@ function Review(props) {
         console.log(value)
     }, [value]);
 
+    // GET TOKEN FROM LOCAL STORAGE
+    let token = localStorage.getItem('id_token');
+
       // USE MUTATION
-      const [addReview, { error }] = useMutation(ADD_REVIEW);
+      const [addReview, { error }] = useMutation(ADD_REVIEW, {
+        context: { headers: { authorization: token }}
+      });
 
       // USE STATE TO CAPTURE FORM TEXT VALUE
       const [reviewText, setReviewText] = useState("");
@@ -38,16 +43,15 @@ function Review(props) {
       // SUBMIT REVIEW HANDLER QUERIES DB
       const handleSubmitReview = async event => {
         event.preventDefault();
-        let token = localStorage.getItem('id_token');
         console.log(value, reviewText, currentRecipe._id);
 
         try {
           // destructured 'data' because that's what's being returned from addUser query in Apollo
           const data = await addReview({
             variables: {
-              "reviewText": `${reviewText}`,
-              "rating": `${value}`,
-              "id": `${currentRecipe._id}`
+              "reviewText": reviewText,
+              "rating": value,
+              "id": currentRecipe._id
             }
           });
 

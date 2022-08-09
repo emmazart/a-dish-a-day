@@ -1,9 +1,5 @@
 
 import React, { useState } from "react";
-import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import Rating from "@mui/material/Rating";
-import TextField from "@mui/material/TextField";
 import dashStyles from "./dashboard.module.css";
 import SecondaryNav from "../../components/SecondaryNav";
 import Footer from "../../components/Footer";
