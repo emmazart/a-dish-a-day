@@ -61,7 +61,6 @@ function Review(props) {
         id="reviewText"
         // label="Your review here"
         placeholder="Your review here"
-        autoFocus
       />
       <Rating
         className={reviewStyles.rating}
