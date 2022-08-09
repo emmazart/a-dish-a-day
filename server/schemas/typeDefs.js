@@ -12,6 +12,10 @@ const typeDefs = gql`
         users: [User]
         user(_id: String!): User
         recipes: [Recipe]
+        recipesByDescTitle: [Recipe]
+        recipesByDescNaturalOrder: [Recipe]
+        recipesByDescDateOrder: [Recipe]
+
         recipe(_id: String!): Recipe
         recipesbyTag(tagName: String!): Recipe
         
@@ -42,15 +46,25 @@ const typeDefs = gql`
         img: String
         ingredient: [String]
         preparationStep: [String]
-        tag: [Tag]        
+        tag: [Tag] 
+        review: [Review]       
         
+    }
+    type Review {
+        reviewText: String
+        rating: Int
+        username: String
     }
 
     type Mutation {
         addTag(tagName: String!): Tag
         login(email: String!, password: String!): Auth
         addUser(username: String!, email: String!, password: String!): Auth
+
+        addReview(_id: String, reviewText: String!, rating: Int!): Review
+
         addFavorite(recipe_id: String!, user_id: String!): String
+
     }
     
 `;
