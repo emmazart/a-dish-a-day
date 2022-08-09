@@ -29,6 +29,7 @@ export const QUERY_ALL_RECIPES = gql`
 export const QUERY_RECIPE_ID = gql`
 query Recipe($id: String!) {
   recipe(_id: $id) {
+    _id
     recipeTitle
     description
     author

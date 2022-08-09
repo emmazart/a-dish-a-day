@@ -1,10 +1,26 @@
+.main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.filter {
+    width: 100%;
+}
+
 .all {
     display:flex;
     width:100%;
     flex-wrap:wrap;
+    justify-content: center;
 }
 
-body {
-    background-color: antiquewhite;
+.btn {
+    color: #BB9316 !important;
 }
 
+.dropdown {
+    background-color: #BB9316 !important;
+}

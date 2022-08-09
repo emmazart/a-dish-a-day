@@ -3,7 +3,7 @@
     height: 500px;
     min-height: 600px;
     max-height: 1000px;
-    background-color: #FAEEC7;
+    background-color: #F7F5F3;
     position: relative;
 }
   
@@ -42,4 +42,8 @@
     font-size: large;
     padding-top: 1rem;
     margin-top: 10px;
+}
+
+.btn {
+    background-color: #BB9316 !important;
 }

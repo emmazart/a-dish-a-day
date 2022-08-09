@@ -14,18 +14,16 @@ import MenuItem from '@mui/material/MenuItem';
 // import AdbIcon from '@mui/icons-material/Adb';
 // import { color } from '@mui/system';
 import styles from './nav.module.css';
+import Auth from '../../utils/auth';
+
 
 const pages = [
-    { name: "Protein Search", link: "/recipes"}, 
     { name: "View Recipes", link: "/recipes"}, 
     { name: "About", link: "/about"}, 
 ];
-const settings = [
-    { name: 'Profile', link: "/profile"},
-    { name: 'Account', link: "/account"},
-    { name: 'Dashboard', link: "/dashboard"},
-    { name: 'Logout', link: "/"},
-];
+
+let settings = [];
+
 
 const ResponsiveAppBar = () => {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -46,7 +44,18 @@ const ResponsiveAppBar = () => {
         setAnchorElUser(null);
     };
 
-    
+    if (!Auth.loggedIn()) {
+        settings = [
+        { name: 'Login', link: "/login" },
+        { name: 'Sign Up', link: "/signup" },
+      ]
+        } else {
+            settings = [
+                { name: 'Profile', link: "/profile" },
+                { name: 'Dashboard', link: "/dashboard" },
+                { name: 'Logout', link: "/" },
+            ];
+        };
 
     return (
         <div className={styles.appbar}>

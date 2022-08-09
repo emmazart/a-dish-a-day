@@ -1,3 +1,4 @@
+
 import React, { useState } from "react";
 import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
@@ -7,10 +8,10 @@ import dashStyles from "./dashboard.module.css";
 import SecondaryNav from "../../components/SecondaryNav";
 import Footer from "../../components/Footer";
 import FavoriteRecipe from "../../components/FavoriteRecipe";
-
 import Review from "../../components/ReviewForm";
 import { useQuery } from "@apollo/client";
 import { QUERY_ALL_RECIPES } from "../../utils/queries";
+import { Typography } from "@mui/material";
 
 const Dashboard = () => {
   // implement state to keep track of which recipe has been selected to review
@@ -56,12 +57,24 @@ const Dashboard = () => {
   // ];
 
   return (
-    <div className={dashStyles.test}>
+    <div>
       <SecondaryNav></SecondaryNav>
-      <h2>Dashboard</h2>
+      <Typography
+                variant='h4'
+                color='textPrimary'
+                align='center'
+                margin='140px 0px 0px 0px'
+            >
+                Dashboard
+            </Typography>
       <main className={dashStyles.main}>
         {/* Recent recipes */}
         <section className={dashStyles.recipeContainer}>
+        <h2
+                className={dashStyles.header}
+            >
+                Favorited Recipes
+                </h2>
           {recipes.map((recipe, index) => {
             return (
               <FavoriteRecipe
@@ -91,5 +104,7 @@ const Dashboard = () => {
     </div>
   );
 };
+
+
 
 export default Dashboard;

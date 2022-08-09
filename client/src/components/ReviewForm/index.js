@@ -61,7 +61,6 @@ function Review(props) {
         id="reviewText"
         // label="Your review here"
         placeholder="Your review here"
-        autoFocus
       />
       <Rating
         className={reviewStyles.rating}
@@ -73,7 +72,7 @@ function Review(props) {
         }}
       />
       <Box sx={{ ml: 2 }}>{labels[value]}</Box>
-      <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
+      <Button className={reviewStyles.btn} type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
         Submit
       </Button>
     </Box>

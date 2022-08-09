@@ -15,18 +15,14 @@ import MenuItem from '@mui/material/MenuItem';
 import secondNavStyles from './nav.module.css';
 // import AdbIcon from '@mui/icons-material/Adb';
 import { color } from '@mui/system';
+import Auth from '../../utils/auth';
 
 const pages = [
-    { name: "Protein Search", link: "/recipes"}, 
-    { name: "View Recipes", link: "/recipes"}, 
-    { name: "About", link: "/about"}, 
+    { name: "View Recipes", link: "/recipes" },
+    { name: "About", link: "/about" },
 ];
-const settings = [
-    { name: 'Profile', link: "/profile"},
-    { name: 'Account', link: "/account"},
-    { name: 'Dashboard', link: "/dashboard"},
-    { name: 'Logout', link: "/"},
-];
+
+let settings = [];
 
 const SecondaryNav = () => {
     const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -47,14 +43,25 @@ const SecondaryNav = () => {
         setAnchorElUser(null);
     };
 
-    
+    if (!Auth.loggedIn()) {
+    settings = [
+    { name: 'Login', link: "/login" },
+    { name: 'Sign Up', link: "/signup" },
+  ]
+    } else {
+        settings = [
+            { name: 'Profile', link: "/profile" },
+            { name: 'Dashboard', link: "/dashboard" },
+            { name: 'Logout', link: "/" },
+        ];
+    };
 
     return (
         <AppBar
             position="fixed"
             // elevation={0}
             style={{
-                backgroundColor: "transparent",
+                backgroundColor: "white",
                 color: "red",
             }}>
             <Container maxWidth="xl">
@@ -72,7 +79,7 @@ const SecondaryNav = () => {
                                 fontFamily: 'monospace',
                                 fontWeight: 700,
                                 letterSpacing: '.3rem',
-                                color: 'black',
+                                color: '#BB9316',
                                 textDecoration: 'none'
                             }}
                         >
@@ -89,7 +96,9 @@ const SecondaryNav = () => {
                             onClick={handleOpenNavMenu}
                             color="inherit"
                         >
-                            <MenuIcon />
+                            <MenuIcon 
+                            color='default'
+                            />
                         </IconButton>
                         <Menu
                             id="menu-appbar"
@@ -152,15 +161,17 @@ const SecondaryNav = () => {
                         <Tooltip title="Open settings">
                             <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                                 <MenuIcon alt="Remy Sharp" src="/static/images/avatar/2.jpg"
-                                style={{
-                                    color: 'black',
-                                    backgroundColor: 'black',
-
-                                }} />
+                                    sx={{
+                                        color: 'default',
+                                        backgroundColor: '#BB9316',
+                                        
+                                    }} />
                             </IconButton>
                         </Tooltip>
+
                         <Menu
-                            sx={{ mt: '45px' }}
+                            sx={{ 
+                                mt: '45px' }}
                             id="menu-appbar"
                             anchorEl={anchorElUser}
                             anchorOrigin={{
@@ -177,10 +188,15 @@ const SecondaryNav = () => {
                         >
                             {settings.map((setting) => (
                                 <MenuItem key={setting.name} component={Link} to={setting.link} onClick={handleCloseUserMenu}
-                                style={{
-                                    backgroundColor: 'white'
-                                }}>
-                                    <Typography textAlign="center">{setting.name}</Typography>
+                                    style={{
+                                        backgroundColor: 'white'
+                                    }}>
+                                    <Typography
+                                        // textAlign="center"
+                                        color='textSecondary'
+                                        letterSpacing='.1rem'
+                                    >
+                                        {setting.name}</Typography>
                                 </MenuItem>
                             ))}
                         </Menu>
