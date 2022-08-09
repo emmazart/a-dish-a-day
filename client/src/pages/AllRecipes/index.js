@@ -64,7 +64,7 @@ export default function RecipeSearch() {
       <div>
         <SecondayNav/>
         <FormGroup id="search">
-          <Button sx={{ display: 'block', mt: 2 }} onClick={handleOpen}>
+          <Button className={recipeStyles.btn} sx={{ display: 'block', mt: 2 }} onClick={handleOpen}>
             Filter Recipes
           </Button>
           <FormControl sx={{ m: 1, minWidth: 120 }}>

@@ -73,7 +73,7 @@ function Review(props) {
         }}
       />
       <Box sx={{ ml: 2 }}>{labels[value]}</Box>
-      <Button type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
+      <Button className={reviewStyles.btn} type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
         Submit
       </Button>
     </Box>

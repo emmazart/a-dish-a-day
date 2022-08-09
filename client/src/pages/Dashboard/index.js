@@ -57,7 +57,7 @@ const Dashboard = () => {
   // ];
 
   return (
-    <div className={dashStyles.test}>
+    <div>
       <SecondaryNav></SecondaryNav>
       <Typography
                 variant='h4'
