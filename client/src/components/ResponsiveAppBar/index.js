@@ -53,9 +53,14 @@ const ResponsiveAppBar = () => {
             settings = [
                 { name: 'Profile', link: "/profile" },
                 { name: 'Dashboard', link: "/dashboard" },
-                { name: 'Logout', link: "/" },
             ];
         };
+
+     // logout handler
+     const handleLogout = (e) => {
+        console.log('logging out');
+        Auth.logout();
+    };
 
     return (
         <div className={styles.appbar}>
@@ -186,6 +191,16 @@ const ResponsiveAppBar = () => {
                                     <Typography textAlign="center">{setting.name}</Typography>
                                 </MenuItem>
                             ))}
+                            {/* CONDITIONALLY RENDER LOGOUT OPTION */}
+                            {Auth.loggedIn() ? 
+                                ( <MenuItem key='logout' onClick={handleLogout} className={styles.dropdown}
+                                >
+                                <Typography
+                                textAlign="center"
+                                >
+                                Logout</Typography>
+                                </MenuItem> ) : ''
+                            }
                         </Menu>
                     </Box>
                 </Toolbar>

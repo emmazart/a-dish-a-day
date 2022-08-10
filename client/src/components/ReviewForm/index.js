@@ -1,13 +1,15 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Rating from '@mui/material/Rating';
 import TextField from '@mui/material/TextField';
 import reviewStyles from './review.module.css';
+import { useMutation } from "@apollo/client";
+import { ADD_REVIEW } from '../../utils/mutations';
 
 function Review(props) {
 
-    const { currentRecipe, value, setValue } = props;
+    const { currentRecipe, stars } = props;
 
     const labels = {
         0: 'Terrible',
@@ -18,25 +20,50 @@ function Review(props) {
         5: 'Delicious!',
     };
 
+     // implement state to keep track of review form data
+     const [formData, setFormData] = useState({
+      "stars": "",
+      "reviewText": ""
+  })
+
     // rerender page when value is changed
     useEffect(() => {
-        console.log(value)
-    }, [value]);
+        console.log(formData)
+    }, [formData]);
 
-    const handleSubmitReview = (e) => {
-        e.preventDefault();
+    // GET TOKEN FROM LOCAL STORAGE
+    let token = localStorage.getItem('id_token');
 
-        // post request to db 
-        // {
-        //     _id: {currentRecipe._id},
-        //     user: {}
-        //     reviewText: {},
-        //     reviewStars: {value}
-        // }
+      // USE MUTATION
+      const [addReview, { error }] = useMutation(ADD_REVIEW, {
+        context: { headers: { authorization: token }}
+      });
 
-        console.log('submitted');
+      const handleText = (e) => {
+        setFormData({ ...formData, "reviewText": e.target.value})
+      };
+
+      // SUBMIT REVIEW HANDLER QUERIES DB
+      const handleSubmitReview = async event => {
+        event.preventDefault();
+        console.log(formData.stars, formData.reviewText, currentRecipe._id);
+
+        try {
+          const data = await addReview({
+            variables: {
+              "reviewText": formData.reviewText,
+              "rating": formData.stars,
+              "id": currentRecipe._id
+            }
+          });
+
+          console.log("review submitted", data);
+          
+        } catch (e) {
+          console.log(e);
+        }
     };
-
+    
   return (
     <Box
       className={reviewStyles.form}
@@ -58,6 +85,7 @@ function Review(props) {
         fullWidth
         multiline
         rows={4}
+        onBlur={handleText}
         id="reviewText"
         // label="Your review here"
         placeholder="Your review here"
@@ -66,12 +94,12 @@ function Review(props) {
         className={reviewStyles.rating}
         size="large"
         name="simple-controlled"
-        value={value ?? 0}
+        value={stars ?? 0}
         onChange={(event, newValue) => {
-          setValue(newValue);
+          setFormData({ ...formData, "stars": newValue});
         }}
       />
-      <Box sx={{ ml: 2 }}>{labels[value]}</Box>
+      <Box sx={{ ml: 2 }}>{labels[stars]}</Box>
       <Button className={reviewStyles.btn} type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
         Submit
       </Button>
