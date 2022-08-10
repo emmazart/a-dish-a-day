@@ -102,6 +102,20 @@ const resolvers = {
   
         return { token, user };
       },
+
+      // addFavorite: async (parent, args) => {
+      //   const {recipe_id, user_id} = args;
+
+      //   User.findOne( { _id: user_id } )
+      //   .then(user => {
+      //     user.favorite.push(recipe_id);
+      //     user.save();
+      //   });
+
+      //   return "Favorite added";
+      // }
+
+    
       addFavorite: async (parent, args) => {
         const {recipe_id, user_id} = args;
         const alteredUser = await User.findOneAndUpdate( { _id: user_id }, {$push: {favorite: recipe_id}}, {new: true, runValidators: true} );        
