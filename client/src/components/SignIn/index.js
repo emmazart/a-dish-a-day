@@ -11,10 +11,11 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../../utils/mutations';
 import Auth from '../../utils/auth';
+import { useUserContext } from '../../utils/GlobalState';
+import { UPDATE_USER} from '../../utils/actions';
 
 function Copyright(props) {
   return (
@@ -35,6 +36,12 @@ export default function SignIn() {
 
   const [loginUser, { error }] = useMutation(LOGIN_USER);
 
+  const [, dispatch] = useUserContext(); 
+
+  const updateState = (data) => {dispatch({
+    type: UPDATE_USER,
+    userID: data.login.user._id
+  })};
 
   const handleSubmit = async event => {
     event.preventDefault();
@@ -49,7 +56,12 @@ export default function SignIn() {
         }
       });
       console.log("logged in", data.login);
-      
+
+     updateState(data);
+     localStorage.setItem('user', data.login.user._id)
+
+
+
       // login method called from utils/auth takes in token and redirects user to dashboard
       Auth.login(data.login.token);
 

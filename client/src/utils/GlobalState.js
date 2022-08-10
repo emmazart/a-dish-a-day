@@ -8,11 +8,12 @@ const { Provider } = UserContext;
 // UserProvider func intantiates initial global state 
 const UserProvider = ({ value = [], ...props }) => {
     const [state, dispatch] = useProductReducer({
-        loggedIn: false
+        loggedIn: false, 
+        userID: ''
     });
 
     // use this to confirm it works
-    console.log(state);
+    // console.log(state);
     return <Provider value={[state, dispatch]} {...props} />;
 };
 
