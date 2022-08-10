@@ -59,6 +59,12 @@ export default function RecipeCard({recipe}) {
     });
   };
 
+  const handleShareClick = () => {
+    const shareUrl = `${window.location.href}/${recipe._id}`
+    navigator.clipboard.writeText(shareUrl);
+    alert("recipe link saved to clipboard");
+  };
+
   let navigate = useNavigate();
 
   function handleNavigate(e) {
@@ -84,13 +90,12 @@ export default function RecipeCard({recipe}) {
         alt="Some alt"
       />
       <CardContent>
-       
       </CardContent>
       <CardActions disableSpacing>
         <IconButton className={recipeStyles.icon} aria-label="add to favorites" onClick={handleFavoriteClick}>
           <FavoriteIcon />
         </IconButton>
-        <IconButton className={recipeStyles.icon} aria-label="share">
+        <IconButton className={recipeStyles.icon} aria-label="share" onClick={handleShareClick}>
           <ShareIcon />
         </IconButton>
         <ExpandMore
