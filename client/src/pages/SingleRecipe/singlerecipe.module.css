@@ -3,11 +3,13 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 5rem 2rem 1rem 2rem;
+    margin: 2rem;
 }
 
 .container {
-    width: 85vw;
-    padding: 2rem;
+    padding-bottom: 2rem;
+    justify-content: space-between;    
 }
 
 .ingredients, .steps {
@@ -18,6 +20,17 @@
     padding: 0;
 }
 
+/* IMAGE STYLES */
+
+.imgContainer {
+    width: 400px;
+    height: 400px;
+}
+
+.img {
+    width: 400px;
+    height: 400px;
+}
 /* PREPARATION STEP STYLES */
 
 .stepContainer {

@@ -27,10 +27,21 @@ mutation Login($email: String!, $password: String!) {
 
 // create mutation to add favorite
 export const ADD_FAVORITE = gql`
-mutation AddFavorite($recipe_id: String!, $user_id: String!) {
-  addFavorite(recipe_id: $recipe_id, user_id: $user_id) 
+mutation AddFavorite($recipeId: String!, $userId: String!) {
+  addFavorite(recipe_id: $recipeId, user_id: $userId) {
+    _id
+    username
+  }
 }
 `;
 
-
-// HELLO GITHUB
+// mutation to post a review
+export const ADD_REVIEW = gql `
+mutation AddReview($reviewText: String!, $rating: Int!, $id: String) {
+  addReview(reviewText: $reviewText, rating: $rating, _id: $id) {
+    reviewText
+    rating
+    username
+  }
+}
+`;

@@ -8,7 +8,7 @@ import FormGroup from '@mui/material/FormGroup';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import Button from '@mui/material/Button';
 import { useQuery } from '@apollo/client';
-import { QUERY_ALL_RECIPES, QUERY_RECIPE_ID } from '../../utils/queries';
+import { QUERY_ALL_RECIPES } from '../../utils/queries';
 import SecondayNav from '../../components/SecondaryNav';
 import recipeStyles from './recipes.module.css';
 
@@ -57,9 +57,9 @@ export default function RecipeSearch() {
     if (error) return <pre>{error.message}</pre>
 
     return (
-      <div>
+      <div className={recipeStyles.main}>
         <SecondayNav/>
-        <FormGroup id="search">
+        <FormGroup id="search" className={recipeStyles.filter}>
           <Button className={recipeStyles.btn} sx={{ display: 'block', mt: 2 }} onClick={handleOpen}>
             Filter Recipes
           </Button>

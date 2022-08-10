@@ -1,16 +1,12 @@
 
 import React, { useState } from "react";
-import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import Rating from "@mui/material/Rating";
-import TextField from "@mui/material/TextField";
 import dashStyles from "./dashboard.module.css";
 import SecondaryNav from "../../components/SecondaryNav";
 import Footer from "../../components/Footer";
 import FavoriteRecipe from "../../components/FavoriteRecipe";
 import Review from "../../components/ReviewForm";
 import { useQuery } from "@apollo/client";
-import { QUERY_ALL_RECIPES } from "../../utils/queries";
+import { QUERY_ALL_RECIPES, QUERY_FAVORITES } from "../../utils/queries";
 import { Typography } from "@mui/material";
 
 const Dashboard = () => {
@@ -18,10 +14,24 @@ const Dashboard = () => {
   const [currentRecipe, setCurrentRecipe] = useState({ title: "", _id: "" });
 
   // implement state to set star rating
-  const [value, setValue] = useState();
+  const [stars, setStars] = useState();
 
-  const { loading, data } = useQuery(QUERY_ALL_RECIPES);
-  const recipes = data?.recipes || [];
+  let user = localStorage.getItem('user');
+  // console.log(user);
+
+  // const { loading, data } = useQuery(QUERY_ALL_RECIPES);
+  // const recipes = data?.recipes || [];
+
+  const { error, loading, data } = useQuery(QUERY_FAVORITES, {
+    variables: { id: user }
+  });
+
+  // const recipes = data?.userFavorites || [];
+
+  if (loading) return "loading"
+  if (error) return <pre>{error.message}</pre>
+
+const recipes = data?.userFavorites.favorite || [];
 
   // const recipes = [
   //     {
@@ -56,6 +66,8 @@ const Dashboard = () => {
   //     }
   // ];
 
+
+
   return (
     <div>
       <SecondaryNav></SecondaryNav>
@@ -63,13 +75,18 @@ const Dashboard = () => {
                 variant='h4'
                 color='textPrimary'
                 align='center'
-                margin='140px 0px 50px 0px'
+                margin='140px 0px 0px 0px'
             >
                 Dashboard
             </Typography>
       <main className={dashStyles.main}>
         {/* Recent recipes */}
         <section className={dashStyles.recipeContainer}>
+        <h2
+                className={dashStyles.header}
+            >
+                Favorited Recipes
+                </h2>
           {recipes.map((recipe, index) => {
             return (
               <FavoriteRecipe
@@ -89,8 +106,8 @@ const Dashboard = () => {
         {/* Review section */}
         <section className={dashStyles.formContainer}>
           <Review
-            value={value}
-            setValue={setValue}
+            stars={stars}
+            setStars={setStars}
             currentRecipe={currentRecipe}
           ></Review>
         </section>

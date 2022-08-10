@@ -1,5 +1,4 @@
 // template from MUI getting started templates
-import RecipeSearch from '../../pages/AllRecipes'
 import * as React from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
@@ -11,10 +10,12 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../../utils/mutations';
 import Auth from '../../utils/auth';
+import { useUserContext } from '../../utils/GlobalState';
+import { UPDATE_USER} from '../../utils/actions';
+import formStyles from './signin.module.css';
 
 function Copyright(props) {
   return (
@@ -35,6 +36,12 @@ export default function SignIn() {
 
   const [loginUser, { error }] = useMutation(LOGIN_USER);
 
+  const [, dispatch] = useUserContext(); 
+
+  const updateState = (data) => {dispatch({
+    type: UPDATE_USER,
+    userID: data.login.user._id
+  })};
 
   const handleSubmit = async event => {
     event.preventDefault();
@@ -49,7 +56,12 @@ export default function SignIn() {
         }
       });
       console.log("logged in", data.login);
-      
+
+     updateState(data);
+     localStorage.setItem('user', data.login.user._id)
+
+
+
       // login method called from utils/auth takes in token and redirects user to dashboard
       Auth.login(data.login.token);
 
@@ -70,7 +82,7 @@ export default function SignIn() {
             alignItems: 'center',
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+          <Avatar sx={{ m: 1, bgcolor: '#BB9316' }}>
           </Avatar>
           <Typography component="h1" variant="h5">
             Sign in
@@ -81,7 +93,7 @@ export default function SignIn() {
               required
               fullWidth
               id="email"
-              label="Email Address"
+              placeholder="Email Address*"
               name="email"
               autoComplete="email"
               autoFocus
@@ -91,7 +103,7 @@ export default function SignIn() {
               required
               fullWidth
               name="password"
-              label="Password"
+              placeholder="Password*"
               type="password"
               id="password"
               autoComplete="current-password"
@@ -100,13 +112,14 @@ export default function SignIn() {
               type="submit"
               fullWidth
               variant="contained"
+              className={formStyles.btn}
               sx={{ mt: 3, mb: 2 }}
             >
               Sign In
             </Button>
             <Grid container>
               <Grid item>
-                <Link href="/signup" variant="body2">
+                <Link href="/signup" variant="body2" className={formStyles.link}>
                   {"Don't have an account? Sign Up"}
                 </Link>
               </Grid>

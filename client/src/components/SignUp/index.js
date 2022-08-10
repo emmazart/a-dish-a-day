@@ -11,6 +11,7 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import formStyles from './signup.module.css';
 
 import { useMutation } from '@apollo/client';
 import { ADD_USER } from '../../utils/mutations';
@@ -34,7 +35,7 @@ const theme = createTheme();
 export default function SignUp() {
 
   // USE MUTATION
-  const [addUser, { error }] = useMutation(ADD_USER);
+  const [addUser, {error}] = useMutation(ADD_USER);
 
   // SIGNUP FORM LOGIC
   const handleSubmit = async event => {
@@ -72,7 +73,7 @@ export default function SignUp() {
             alignItems: 'center',
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+          <Avatar sx={{ m: 1, bgcolor: '#BB9316' }}>
           </Avatar>
           <Typography component="h1" variant="h5">
             Sign up
@@ -105,7 +106,7 @@ export default function SignUp() {
                   required
                   fullWidth
                   id="email"
-                  label="Email Address"
+                  placeholder="Email Address*"
                   name="email"
                   autoComplete="email"
                 />
@@ -115,7 +116,7 @@ export default function SignUp() {
                   required
                   fullWidth
                   name="password"
-                  label="Password"
+                  placeholder="Password*"
                   type="password"
                   id="password"
                   autoComplete="new-password"
@@ -125,6 +126,7 @@ export default function SignUp() {
             <Button
               type="submit"
               fullWidth
+              className={formStyles.btn}
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
             >
@@ -132,7 +134,7 @@ export default function SignUp() {
             </Button>
             <Grid container justifyContent="flex-end">
               <Grid item>
-                <Link href="/login" variant="body2">
+                <Link href="/login" className={formStyles.link} variant="body2">
                   Already have an account? Sign in
                 </Link>
               </Grid>

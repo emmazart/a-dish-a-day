@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { styled } from '@mui/material/styles';
 import Card from '@mui/material/Card';
@@ -51,11 +51,11 @@ export default function RecipeCard({recipe}) {
 
     addFavorite({
       variables: {
-        recipe_id: recipe_id,
-        user_id: user_id
+        recipeId: recipe_id,
+        userId: user_id
       }
     }).then (result => {
-      alert(result.data.addFavorite)
+      console.log('added');
     });
   };
 
@@ -73,7 +73,9 @@ export default function RecipeCard({recipe}) {
     <>
     <Card className={recipeStyles.card} sx={{ maxWidth: 345 }}>
       <Tooltip title="Click for Recipe" placement="top">
-        <CardHeader title={recipe.recipeTitle} onClick={() => handleNavigate()} />
+        <div>
+          <CardHeader title={recipe.recipeTitle} onClick={() => handleNavigate()} />
+        </div>
       </Tooltip>
       <CardMedia
         component="img"
