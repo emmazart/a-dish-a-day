@@ -39,3 +39,34 @@ query Recipe($id: String!) {
   }
 }
 `
+
+// query favorites
+export const QUERY_FAVORITES = gql`
+query UserFavorites($id: String!) {
+  userFavorites(_id: $id) {
+    _id
+    username
+    email
+    password
+    favorite {
+      _id
+      recipeTitle
+      description
+      author
+      img
+      ingredient
+    }
+  }
+}
+`;
+
+
+// query UserFavorites($id: String!) {
+//   userFavorites(_id: $id) {
+//     _id
+//     recipeTitle
+//     description
+//     author
+//     img
+//   }
+// }
