@@ -19,6 +19,7 @@ const pages = [
     { name: "About", link: "/about" },
 ];
 
+// declare global settings variable
 let settings = [];
 
 const SecondaryNav = () => {
@@ -40,17 +41,24 @@ const SecondaryNav = () => {
         setAnchorElUser(null);
     };
 
+    // conditionally declare settings variable depening on loggedIn auth check
+    // user can only see the profile and dashboard options if they are logged in
     if (!Auth.loggedIn()) {
-    settings = [
-    { name: 'Login', link: "/login" },
-    { name: 'Sign Up', link: "/signup" },
-  ]
+        settings = [
+        { name: 'Login', link: "/login" },
+        { name: 'Sign Up', link: "/signup" },
+        ]
     } else {
         settings = [
             { name: 'Profile', link: "/profile" },
             { name: 'Dashboard', link: "/dashboard" },
-            { name: 'Logout', link: "/" },
         ];
+    };
+
+    // logout handler
+    const handleLogout = (e) => {
+        console.log('logging out');
+        Auth.logout();
     };
 
     return (
@@ -166,6 +174,7 @@ const SecondaryNav = () => {
                             </IconButton>
                         </Tooltip>
 
+                        {/* SETTINGS MENU (RIGHT DROP DOWN) */}
                         <Menu
                             sx={{ 
                                 mt: '45px' }}
@@ -196,6 +205,21 @@ const SecondaryNav = () => {
                                         {setting.name}</Typography>
                                 </MenuItem>
                             ))}
+                            
+                            {/* CONDITIONALLY RENDER LOGOUT OPTION */}
+                            {Auth.loggedIn() ? 
+                                ( <MenuItem key='logout' onClick={handleLogout}
+                                style={{
+                                backgroundColor: 'white'
+                                }}>
+                                <Typography
+                                // textAlign="center"
+                                color='textSecondary'
+                                letterSpacing='.1rem'
+                                >
+                                Logout</Typography>
+                                </MenuItem> ) : ''
+                            }
                         </Menu>
                     </Box>
                 </Toolbar>

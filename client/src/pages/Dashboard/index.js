@@ -1,9 +1,5 @@
 
 import React, { useState } from "react";
-import Box from "@mui/material/Box";
-import Button from "@mui/material/Button";
-import Rating from "@mui/material/Rating";
-import TextField from "@mui/material/TextField";
 import dashStyles from "./dashboard.module.css";
 import SecondaryNav from "../../components/SecondaryNav";
 import Footer from "../../components/Footer";
@@ -18,7 +14,7 @@ const Dashboard = () => {
   const [currentRecipe, setCurrentRecipe] = useState({ title: "", _id: "" });
 
   // implement state to set star rating
-  const [value, setValue] = useState();
+  const [stars, setStars] = useState();
 
   const { loading, data } = useQuery(QUERY_ALL_RECIPES);
   const recipes = data?.recipes || [];
@@ -94,8 +90,8 @@ const Dashboard = () => {
         {/* Review section */}
         <section className={dashStyles.formContainer}>
           <Review
-            value={value}
-            setValue={setValue}
+            stars={stars}
+            setStars={setStars}
             currentRecipe={currentRecipe}
           ></Review>
         </section>

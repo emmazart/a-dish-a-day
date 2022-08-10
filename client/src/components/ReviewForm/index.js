@@ -9,7 +9,7 @@ import { ADD_REVIEW } from '../../utils/mutations';
 
 function Review(props) {
 
-    const { currentRecipe, value, setValue } = props;
+    const { currentRecipe, stars, setStars } = props;
 
     const labels = {
         0: 'Terrible',
@@ -20,34 +20,40 @@ function Review(props) {
         5: 'Delicious!',
     };
 
+     // implement state to keep track of review form data
+     const [formData, setFormData] = useState({
+      "stars": "",
+      "reviewText": ""
+  })
+
     // rerender page when value is changed
     useEffect(() => {
-        console.log(value)
-    }, [value]);
+        console.log(formData)
+    }, [formData]);
+
+    // GET TOKEN FROM LOCAL STORAGE
+    let token = localStorage.getItem('id_token');
 
       // USE MUTATION
-      const [addReview, { error }] = useMutation(ADD_REVIEW);
-
-      // USE STATE TO CAPTURE FORM TEXT VALUE
-      const [reviewText, setReviewText] = useState("");
+      const [addReview, { error }] = useMutation(ADD_REVIEW, {
+        context: { headers: { authorization: token }}
+      });
 
       const handleText = (e) => {
-        setReviewText(e.target.value)
+        setFormData({ ...formData, "reviewText": e.target.value})
       };
 
       // SUBMIT REVIEW HANDLER QUERIES DB
       const handleSubmitReview = async event => {
         event.preventDefault();
-        let token = localStorage.getItem('id_token');
-        console.log(value, reviewText, currentRecipe._id);
+        console.log(formData.stars, formData.reviewText, currentRecipe._id);
 
         try {
-          // destructured 'data' because that's what's being returned from addUser query in Apollo
           const data = await addReview({
             variables: {
-              "reviewText": `${reviewText}`,
-              "rating": `${value}`,
-              "id": `${currentRecipe._id}`
+              "reviewText": formData.reviewText,
+              "rating": formData.stars,
+              "id": currentRecipe._id
             }
           });
 
@@ -88,12 +94,12 @@ function Review(props) {
         className={reviewStyles.rating}
         size="large"
         name="simple-controlled"
-        value={value ?? 0}
+        value={stars ?? 0}
         onChange={(event, newValue) => {
-          setValue(newValue);
+          setFormData({ ...formData, "stars": newValue});
         }}
       />
-      <Box sx={{ ml: 2 }}>{labels[value]}</Box>
+      <Box sx={{ ml: 2 }}>{labels[stars]}</Box>
       <Button className={reviewStyles.btn} type="submit" fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
         Submit
       </Button>
