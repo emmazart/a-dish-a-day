@@ -1,5 +1,5 @@
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import dashStyles from "./dashboard.module.css";
 import SecondaryNav from "../../components/SecondaryNav";
 import Footer from "../../components/Footer";
@@ -17,21 +17,20 @@ const Dashboard = () => {
   const [stars, setStars] = useState();
 
   let user = localStorage.getItem('user');
-  // console.log(user);
-
-  // const { loading, data } = useQuery(QUERY_ALL_RECIPES);
-  // const recipes = data?.recipes || [];
 
   const { error, loading, data } = useQuery(QUERY_FAVORITES, {
     variables: { id: user }
   });
 
-  // const recipes = data?.userFavorites || [];
+  useEffect(() => {
+    if (!data) return
+    console.log('re-rendering for new data')
+  }, [data])
 
   if (loading) return "loading"
   if (error) return <pre>{error.message}</pre>
 
-const recipes = data?.userFavorites.favorite || [];
+  const recipes = data?.userFavorites.favorite || [];
 
   // const recipes = [
   //     {
