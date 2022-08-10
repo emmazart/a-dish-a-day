@@ -51,11 +51,11 @@ export default function RecipeCard({recipe}) {
 
     addFavorite({
       variables: {
-        recipe_id: recipe_id,
-        user_id: user_id
+        recipeId: recipe_id,
+        userId: user_id
       }
     }).then (result => {
-      alert(result.data.addFavorite)
+      console.log('added');
     });
   };
 

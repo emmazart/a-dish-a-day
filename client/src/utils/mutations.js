@@ -27,8 +27,11 @@ mutation Login($email: String!, $password: String!) {
 
 // create mutation to add favorite
 export const ADD_FAVORITE = gql`
-mutation AddFavorite($recipe_id: String!, $user_id: String!) {
-  addFavorite(recipe_id: $recipe_id, user_id: $user_id) 
+mutation AddFavorite($recipeId: String!, $userId: String!) {
+  addFavorite(recipe_id: $recipeId, user_id: $userId) {
+    _id
+    username
+  }
 }
 `;
 

@@ -44,6 +44,19 @@ const resolvers = {
           //tagName naming convention, so this comparison works (?)
           //anytime you find something in an array you search by value
         });
+      },
+      userFavorites: async (parent, {_id}) => {
+        const userFavorites = await User.findOne({_id})
+        .populate("favorite")
+        .select("favorite");
+        console.log(userFavorites);        
+        return userFavorites;
+      },
+      recentFiveFavorites: async (parent, {_id}) => {
+        const fiveFavorites = await User.find({_id})
+        .populate("favorite").limit(5);
+        console.log(fiveFavorites);
+        return fiveFavorites;
       }
     },
 
@@ -89,16 +102,24 @@ const resolvers = {
   
         return { token, user };
       },
+
+      // addFavorite: async (parent, args) => {
+      //   const {recipe_id, user_id} = args;
+
+      //   User.findOne( { _id: user_id } )
+      //   .then(user => {
+      //     user.favorite.push(recipe_id);
+      //     user.save();
+      //   });
+
+      //   return "Favorite added";
+      // }
+
+    
       addFavorite: async (parent, args) => {
         const {recipe_id, user_id} = args;
-
-        User.findOne( { _id: user_id } )
-        .then(user => {
-          user.favorite.push(recipe_id);
-          user.save();
-        });
-        
-        return "Favorite added";
+        const alteredUser = await User.findOneAndUpdate( { _id: user_id }, {$push: {favorite: recipe_id}}, {new: true, runValidators: true} );        
+        return alteredUser;
       }
 
     }

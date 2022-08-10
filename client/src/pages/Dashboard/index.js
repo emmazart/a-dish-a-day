@@ -6,7 +6,7 @@ import Footer from "../../components/Footer";
 import FavoriteRecipe from "../../components/FavoriteRecipe";
 import Review from "../../components/ReviewForm";
 import { useQuery } from "@apollo/client";
-import { QUERY_ALL_RECIPES } from "../../utils/queries";
+import { QUERY_ALL_RECIPES, QUERY_FAVORITES } from "../../utils/queries";
 import { Typography } from "@mui/material";
 
 const Dashboard = () => {
@@ -16,8 +16,22 @@ const Dashboard = () => {
   // implement state to set star rating
   const [stars, setStars] = useState();
 
-  const { loading, data } = useQuery(QUERY_ALL_RECIPES);
-  const recipes = data?.recipes || [];
+  let user = localStorage.getItem('user');
+  // console.log(user);
+
+  // const { loading, data } = useQuery(QUERY_ALL_RECIPES);
+  // const recipes = data?.recipes || [];
+
+  const { error, loading, data } = useQuery(QUERY_FAVORITES, {
+    variables: { id: user }
+  });
+
+  // const recipes = data?.userFavorites || [];
+
+  if (loading) return "loading"
+  if (error) return <pre>{error.message}</pre>
+
+const recipes = data?.userFavorites.favorite || [];
 
   // const recipes = [
   //     {
@@ -51,6 +65,8 @@ const Dashboard = () => {
   //         tag: ["Chicken"]
   //     }
   // ];
+
+
 
   return (
     <div>
