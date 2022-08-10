@@ -5,7 +5,7 @@
 ## <ins>Description</ins>
 TODO: See process on slides
 
-![Screenshot of A Dish A Day](./src/Screenshot%202022-06-18%20194919.png)
+![Screenshot of A Dish A Day](./client/src/assets/images/Screen%20Shot%202022-08-09%20at%209.50.01%20PM.png)
 
 ## <ins>Table of Contents</ins>
 - [Application Link](#application-link)
