@@ -15,7 +15,7 @@ import SingleRecipe from './pages/SingleRecipe';
 import { Typography } from '@mui/material';
 
 const httpLink = createHttpLink({
-  uri: 'http://localhost:3001/graphql',
+  uri: 'http://localhost:38797/graphql',
 });
 
 const client = new ApolloClient({
