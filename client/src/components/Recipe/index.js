@@ -73,7 +73,9 @@ export default function RecipeCard({recipe}) {
     <>
     <Card className={recipeStyles.card} sx={{ maxWidth: 345 }}>
       <Tooltip title="Click for Recipe" placement="top">
-        <CardHeader title={recipe.recipeTitle} onClick={() => handleNavigate()} />
+        <div>
+          <CardHeader title={recipe.recipeTitle} onClick={() => handleNavigate()} />
+        </div>
       </Tooltip>
       <CardMedia
         component="img"
