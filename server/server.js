@@ -18,10 +18,10 @@ const server = new ApolloServer({
 
 const app = express();
 
-// //kayla added test//
-// if (process.env.NODE_ENV === 'production') {
-//   app.use(express.static(path.join(__dirname, '../client/build')));
-// }
+//kayla added test//
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '../client/build')));
+}
 
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
