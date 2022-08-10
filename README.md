@@ -1,75 +1,82 @@
-# Getting Started with Create React App
+# A-Dish-A-Day
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# <ins>A-DISH-A-DAY</ins>
+![](https://img.shields.io/badge/JavaScript-323330?style=for-the-badge&logo=javascript&logoColor=F7DF1E)![](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)![](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge)![](https://img.shields.io/badge/MongoDB-00000F?style=for-the-badge&logo=MongoDB&logoColor=white)![](https://img.shields.io/badge/-Mongoose-d3d3d3?style=for-the-badge&logo=mongoose&logoColor=52B0E7)![](https://img.shields.io/badge/-React-d3dFd3?style=for-the-badge&logo=react&logoColor=52B0E7)![](https://img.shields.io/badge/-GraphQl-d3d3dF?style=for-the-badge&logo=graphql&logoColor=e535ab)![](https://img.shields.io/badge/-Apollo-d3dFF3?style=for-the-badge&logo=apollo&logoColor=52B0E7)
+## <ins>Description</ins>
+TODO: See process on slides
 
-## Available Scripts
+![Screenshot of A Dish A Day](./src/Screenshot%202022-06-18%20194919.png)
 
-In the project directory, you can run:
+## <ins>Table of Contents</ins>
+- [Application Link](#application-link)
+- [Installation](#installation)
+- [Infrastructure](#infrastructure)
+- [Usage](#usage)
+- [License](#license)
+- [FAQ](#faq)
+- [Future Development Ideas](#future-development-ideas)
+- [Contributers](#contributers)
 
-### `npm start`
+## <ins>Application Link</ins> 
+[A DISH A DAY](REPLACE LINK HERE)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## <ins>Installation</ins>  
+ To run the site:  
+ - Download the code  
+ - In the root folder, open bash  
+ - Type *node install*  
+ - Type *node seeds* (unless you want to proceed without seeding the database)  
+ - Type *npm run develop*  
+ - Open prefered web broswer and go to *localhost:3000* (or go to http://localhost:4000/graphql to test using apollographql sandbox)  
+  
+ Alternatively, a live site can be be found at the Application Link section.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm run watch`
-mongosh starts the server 
-npm run watch 
-nodemon on http://localhost:3001/graphql.
+ 
+## <ins>Infrastructure</ins>  
+This project uses:  
+- MUI (front-end Material UI)  
+- React (templating)
+- Apollo-server-express (server)  
+- Bcrypt (password encryption)
+- Express.js (back-end framework)
+- Express-session (authentication)
+- Node.js (runtime environment)
+- MongoDB (database)
+- Mongoose (ODM)
+- GraphQl (ORM)
 
-### `npm test`
+Deployed on Heroku
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## <ins>Usage</ins>
 
-### `npm run build`
+ The user must sign in or create an account by entering a username, password, and email.  
+ Once logged in, the user is taken to the dashboard where they can choose to go to:  
+ - TODO
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## <ins>License</ins>
+![](https://img.shields.io/badge/License-MIT%20-blue?style=flat-square)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+This project is covered under MIT
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## <ins>Future Development Ideas</ins>
+- More tag functionality (add multiple tags to search for)
+- More user interactivity  
+ - Allow users to add their own recipes
+- Search bar  
+- Monetization via a subscription model
+- Expand into other areas of interests
+ - E.g  woodworking
+ 
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## <ins>Contributers</ins>
+- [Emma Olson-Rossow](https://github.com/emmazart)
+- [Christopher Borer](https://github.com/cspower5)
+- [Kayla Vangel](https://github.com/KaylaVangel)
+- [Andre Blankholm](https://github.com/AndreBlankholm)
+- [Justin Huang](https://github.com/justincode98)
+- [Robert Kreuser](https://github.com/MNlegion)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
