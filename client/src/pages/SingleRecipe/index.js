@@ -46,7 +46,8 @@ function SingleRecipe() {
     
     // retrieve recipe id for query from url 
     const URL = window.location.href;
-    const selectedRecipeId = URL.substr(30);
+    const urlArray = URL.split("\/");
+    const selectedRecipeId = urlArray[urlArray.length -1];
 
     // query database for single recipe using id
     const { error, loading, data } = useQuery(QUERY_RECIPE_ID, {

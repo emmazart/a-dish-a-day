@@ -47,7 +47,7 @@ export default function SignUp() {
       const { data } = await addUser({
         variables: {
           email: formData.get('email'),
-          username: formData.get('email'),
+          username: formData.get('username'),
           password: formData.get('password'),
         }
       });
@@ -109,6 +109,17 @@ export default function SignUp() {
                   placeholder="Email Address*"
                   name="email"
                   autoComplete="email"
+                />
+              </Grid>
+              <Grid item xs={12}>
+                <TextField
+                  required
+                  fullWidth
+                  name="username"
+                  placeholder="username*"
+                  type="username"
+                  id="username"
+                  autoComplete="username"
                 />
               </Grid>
               <Grid item xs={12}>

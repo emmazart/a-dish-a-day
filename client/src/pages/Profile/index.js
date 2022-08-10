@@ -7,18 +7,21 @@ import TextField from '@mui/material/TextField';
 // import { useUserContext } from '../../utils/GlobalState'
 import { useQuery } from "@apollo/client";
 import { QUERY_USER_ID } from '../../utils/queries';
+import Auth from '../../utils/auth';
 
 
 
 
 function Profile() {
   // const [state, dispatch] = useUserContext();
-  let user = localStorage.getItem('user');
+  let id_token = localStorage.getItem('id_token');
+  const user = Auth.getProfile(id_token);
+  const id = user.data._id;
   console.log(user);
 
   // query database for single recipe
   const { error, loading, data } = useQuery(QUERY_USER_ID, {
-    variables: { id: user }
+    variables: { id: id }
 });
 
     if (loading) return "loading"

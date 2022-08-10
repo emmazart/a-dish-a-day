@@ -14,8 +14,10 @@ import RecipeSearch from './pages/AllRecipes';
 import SingleRecipe from './pages/SingleRecipe';
 import { Typography } from '@mui/material';
 
+
 const httpLink = createHttpLink({
-  uri: 'https://agile-ocean-35043.herokuapp.com/graphql',
+  uri: 'http://localhost:3001/graphql',
+  // uri: 'https://agile-ocean-35043.herokuapp.com/graphql',
 });
 
 const client = new ApolloClient({
@@ -26,6 +28,7 @@ const client = new ApolloClient({
 
 
 function App() {
+  localStorage.clear();
 
   return (
     <ApolloProvider client={client}>

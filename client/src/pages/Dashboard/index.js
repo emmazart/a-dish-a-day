@@ -8,6 +8,7 @@ import Review from "../../components/ReviewForm";
 import { useQuery } from "@apollo/client";
 import { QUERY_ALL_RECIPES, QUERY_FAVORITES } from "../../utils/queries";
 import { Typography } from "@mui/material";
+import Auth from "../../utils/auth";
 
 const Dashboard = () => {
   // implement state to keep track of which recipe has been selected to review
@@ -16,10 +17,15 @@ const Dashboard = () => {
   // implement state to set star rating
   const [stars, setStars] = useState();
 
-  let user = localStorage.getItem('user');
+  console.log("HERE");
+  // const [state, dispatch] = useUserContext();
+  let id_token = localStorage.getItem('id_token');
+  const user = Auth.getProfile(id_token);
+  const id = user.data._id;
+  console.log(user);
 
   const { error, loading, data } = useQuery(QUERY_FAVORITES, {
-    variables: { id: user }
+    variables: { id: id }
   });
 
   useEffect(() => {

@@ -52,6 +52,7 @@ export default function SignIn() {
       const { data } = await loginUser({
         variables: {
           email: formData.get('email'),
+          username: formData.get('username'),
           password: formData.get('password'),
         }
       });
