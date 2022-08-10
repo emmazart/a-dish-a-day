@@ -15,7 +15,7 @@ import SingleRecipe from './pages/SingleRecipe';
 import { Typography } from '@mui/material';
 
 const httpLink = createHttpLink({
-  uri: 'http://localhost:3001/graphql',
+  uri: 'https://agile-ocean-35043.herokuapp.com/graphql',
 });
 
 const client = new ApolloClient({
