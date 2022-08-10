@@ -52,14 +52,16 @@ Deployed on Heroku
 
  The user must sign in or create an account by entering a username, password, and email.  
  Once logged in, the user is taken to the dashboard where they can choose to go to:  
- - TODO
+ - View their favorite recipes
+ - Comment on their favorite recipes
+ - View their profile
+ - Logout
 
 
 ## <ins>License</ins>
 ![](https://img.shields.io/badge/License-MIT%20-blue?style=flat-square)
 
 This project is covered under MIT
-
 
 ## <ins>Future Development Ideas</ins>
 - More tag functionality (add multiple tags to search for)
