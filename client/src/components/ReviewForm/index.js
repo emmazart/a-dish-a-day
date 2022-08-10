@@ -9,7 +9,7 @@ import { ADD_REVIEW } from '../../utils/mutations';
 
 function Review(props) {
 
-    const { currentRecipe, stars, setStars } = props;
+    const { currentRecipe, stars } = props;
 
     const labels = {
         0: 'Terrible',

@@ -1,5 +1,4 @@
 // template from MUI getting started templates
-import RecipeSearch from '../../pages/AllRecipes'
 import * as React from 'react';
 import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
@@ -16,6 +15,7 @@ import { LOGIN_USER } from '../../utils/mutations';
 import Auth from '../../utils/auth';
 import { useUserContext } from '../../utils/GlobalState';
 import { UPDATE_USER} from '../../utils/actions';
+import formStyles from './signin.module.css';
 
 function Copyright(props) {
   return (
@@ -82,7 +82,7 @@ export default function SignIn() {
             alignItems: 'center',
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+          <Avatar sx={{ m: 1, bgcolor: '#BB9316' }}>
           </Avatar>
           <Typography component="h1" variant="h5">
             Sign in
@@ -93,7 +93,7 @@ export default function SignIn() {
               required
               fullWidth
               id="email"
-              label="Email Address"
+              placeholder="Email Address*"
               name="email"
               autoComplete="email"
               autoFocus
@@ -103,7 +103,7 @@ export default function SignIn() {
               required
               fullWidth
               name="password"
-              label="Password"
+              placeholder="Password*"
               type="password"
               id="password"
               autoComplete="current-password"
@@ -112,13 +112,14 @@ export default function SignIn() {
               type="submit"
               fullWidth
               variant="contained"
+              className={formStyles.btn}
               sx={{ mt: 3, mb: 2 }}
             >
               Sign In
             </Button>
             <Grid container>
               <Grid item>
-                <Link href="/signup" variant="body2">
+                <Link href="/signup" variant="body2" className={formStyles.link}>
                   {"Don't have an account? Sign Up"}
                 </Link>
               </Grid>

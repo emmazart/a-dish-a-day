@@ -8,7 +8,7 @@ import FormGroup from '@mui/material/FormGroup';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import Button from '@mui/material/Button';
 import { useQuery } from '@apollo/client';
-import { QUERY_ALL_RECIPES, QUERY_RECIPE_ID } from '../../utils/queries';
+import { QUERY_ALL_RECIPES } from '../../utils/queries';
 import SecondayNav from '../../components/SecondaryNav';
 import recipeStyles from './recipes.module.css';
 
