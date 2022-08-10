@@ -13,12 +13,6 @@ import SecondayNav from '../../components/SecondaryNav';
 import recipeStyles from './recipes.module.css';
 
 export default function RecipeSearch() {
-
-    const [recipes, setRecipes] = useState([
-      {title:"the title", ingredients: "ingredients", instructions: "instructions", author: "author", image:{src:"broken/image/link.jpg", alt:"broken iamge text"}}
-    ]);
-
-    const id = "62eeef9f31ff208513efd696";
     // GET RECIPE DATA FROM APOLLO
     const { data, loading, error } = useQuery(QUERY_ALL_RECIPES);
     const [filteredRecipes, setFilteredRecipes] = useState([]);
@@ -31,17 +25,19 @@ export default function RecipeSearch() {
     }, [data])
     
 
-    // useEffect(() => {
-    //   if (!data) return
-    //   let r = data.recipes;
-    //   if (search !== "all") {
-    //     r = data.recipes.filter(recipe => {
-    //       return data.recipe.tag.tagName === search
-    //     })
-    //   }
-    //   setFilteredRecipes(r)
+    useEffect(() => {
+      if (!data) return
+      let r = data.recipes;
+      if (search !== "all") {
+        r = data.recipes.filter(recipe => {
+          return recipe.tag.filter(t => {
+            return t.tagName === search
+          }).length > 0
+        })
+      }
+      setFilteredRecipes(r)
       
-    // }, [search, data])
+    }, [search])
 
   
     const handleChange = (event: SelectChangeEvent<typeof search>) => {
@@ -80,16 +76,16 @@ export default function RecipeSearch() {
               onChange={handleChange}
             >
               <MenuItem value='all'>All</MenuItem>
-              <MenuItem value='chicken'>Chicken</MenuItem>
-              <MenuItem value='seafood'>Seafood</MenuItem>
-              <MenuItem value='beef'>Beef</MenuItem>
-              <MenuItem value='pork'>Pork</MenuItem>
-              <MenuItem value='vegetarian'>Vegetarian</MenuItem>
+              <MenuItem value='Chicken'>Chicken</MenuItem>
+              <MenuItem value='Seafood'>Seafood</MenuItem>
+              <MenuItem value='Beef'>Beef</MenuItem>
+              <MenuItem value='Pork'>Pork</MenuItem>
+              <MenuItem value='Vegetarian'>Vegetarian</MenuItem>
             </Select>
           </FormControl>
-        </FormGroup>
+        </FormGroup> 
         <div className={recipeStyles.all}>
-        {data.recipes.map((recipe, index) => {
+        {filteredRecipes.map((recipe, index) => {
           return <RecipeCard recipe={recipe} key={index} />
         })}
         </div>
