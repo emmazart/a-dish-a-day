@@ -18,7 +18,7 @@ TODO: See process on slides
 - [Contributers](#contributers)
 
 ## <ins>Application Link</ins> 
-[A DISH A DAY](https://github.com/MNlegion/A-Dish-A-Day)
+[A DISH A DAY](https://agile-ocean-35043.herokuapp.com/)
 
 ## <ins>Installation</ins>  
  To run the site:  
