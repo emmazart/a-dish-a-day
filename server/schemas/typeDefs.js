@@ -18,7 +18,7 @@ const typeDefs = gql`
 
         recipe(_id: String!): Recipe
         recipesbyTag(tagName: String!): Recipe
-        userFavorites(_id: String!): Recipe
+        userFavorites(_id: String!): User
         recentFiveFavorites(_id: String!): [Recipe]
     }
 
